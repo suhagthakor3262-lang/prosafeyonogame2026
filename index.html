@@ -7,7 +7,6 @@
 <meta name="keywords" content="ProSafe Bet, prosafeyonogame2026, Slots winner, Neta VIP, MBM bet, jaiho win, ABC Rummy, Yono VIP, Jaiho 91, Yono Rummy, Spin 777, Spin Crush, 567 Slots, IND Rummy, Bingo 101, 101Z, Rumble Rummy, Rummy 77, EVER 777, Slots Spin, Jaiho Arcade, Jaiho Spin, Rummy Ludo, Maha game, Yes spin, Yono Slots, Rummy 888, Jaiho slots, Yono games, Top Rummy, Spin winner, joy Rummy, love rummy">
 <title>ProSafe Bet - Best Rummy & Casino Games Download</title>
 
-<!-- LOGO INJECTED FOR BOTH BROWSER TAB AND GOOGLE SEARCH RESULTS -->
 <link rel="icon" type="image/png" sizes="32x32" href="https://i.ibb.co/SXrcFVvz/file-000000002aa872089a44603a2278ac14.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://i.ibb.co/SXrcFVvz/file-000000002aa872089a44603a2278ac14.png">
 <link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co/SXrcFVvz/file-000000002aa872089a44603a2278ac14.png">
@@ -30,15 +29,31 @@ body { background-color: #f5f5f5; color: #333; display: flex; flex-direction: co
 header { background-color: #1a2229; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
 .logo-container { display: flex; align-items: center; gap: 8px; }
 .logo-img { width: 35px; height: 35px; border-radius: 50%; background: #fff; padding: 2px; }
-.logo-text { font-size: 20px; font-weight: bold; color: #fff; }
-.three-dots { color: white; font-size: 24px; cursor: pointer; }
+.logo-text { font-size: 20px; font-weight: bold; }
+.logo-text .wht { color: #fff; }
+.logo-text .grn { color: #4caf50; }
+.logo-text .ylw { color: #ffeb3b; }
+.three-dots { color: white; font-size: 24px; cursor: pointer; padding: 5px; }
 .floating-sidebar { position: fixed; right: calc(50% - 285px); bottom: 180px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
 @media (max-width: 620px) { .floating-sidebar { right: 15px; bottom: 180px; } }
 .float-btn { width: 46px; height: 46px; border-radius: 8px; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); cursor: pointer; text-decoration: none; border: none; }
 .float-tg { background-color: #0088cc; }
-.float-top { background-color: #72a0c1; font-size: 11px; font-weight: bold; color: white; display: none; }
-.search-container { padding: 15px; }
-.search-box { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; outline: none; }
+.float-top { background-color: #72a0c1; font-size: 11px; font-weight: bold; color: white; display: none; flex-direction: column; line-height: 1.1; }
+
+/* STYLISH SLIDE DOWN MENU OVERLAY */
+.menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; z-index: 200; justify-content: center; align-items: center; backdrop-filter: blur(3px); }
+.menu-content { background: white; width: 85%; max-width: 340px; border-radius: 16px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.menu-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eee; padding-bottom: 12px; margin-bottom: 15px; }
+.menu-header h3 { font-size: 18px; color: #1a2229; }
+.close-btn { font-size: 26px; cursor: pointer; color: #999; transition: 0.2s; }
+.close-btn:hover { color: #333; }
+.menu-item { padding: 10px 5px; border-bottom: 1px solid #f9f9f9; }
+.menu-link-btn { display: inline-block; text-decoration: none; color: #1e88e5; font-weight: bold; font-size: 16px; margin-bottom: 4px; }
+.menu-item p { font-size: 12px; color: #666; line-height: 1.4; }
+
+.search-container { padding: 15px; width: 100%; }
+.search-box { width: 100%; padding: 12px 18px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; outline: none; }
 .telegram-ticker { background-color: #0088cc; color: white; padding: 9px 0; overflow: hidden; white-space: nowrap; font-size: 13px; font-weight: bold; margin: 0 15px 10px 15px; border-radius: 6px; }
 .telegram-ticker marquee a { color: white; text-decoration: none; }
 .slider-section-heading { font-size: 20px; font-weight: 600; color: #222; padding: 15px 15px 5px 15px; }
@@ -76,14 +91,26 @@ footer { background-color: #1a2229; color: #999; text-align: center; padding: 15
     <div class="wrapper" id="topContainer">
         <div class="floating-sidebar">
             <a href="https://t.me/invitnew" target="_blank" class="float-btn float-tg"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="TG"></a>
-            <button class="float-btn float-top" id="scrollTopBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})">▲<br>TOP</button>
+            <button class="float-btn float-top" id="scrollTopBtn" onclick="scrollToTop()">▲<br>TOP</button>
         </div>
         <header>
             <div class="logo-container">
                 <img src="https://i.ibb.co/SXrcFVvz/file-000000002aa872089a44603a2278ac14.png" alt="Logo" class="logo-img">
-                <div class="logo-text">ProSafe Bet</div>
+                <div class="logo-text"><span class="wht">Pro</span><span class="grn">Safe</span><span class="ylw">Bet</span></div>
             </div>
+            <div class="three-dots" onclick="toggleMenu(true)">&#8942;</div>
         </header>
+
+        <!-- THREE DOT MENU INTERFACE LOADED -->
+        <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu(false)">
+            <div class="menu-content" onclick="event.stopPropagation()">
+                <div class="menu-header"><h3>Menu Options</h3><span class="close-btn" onclick="toggleMenu(false)">&times;</span></div>
+                <div class="menu-item"><a href="#" class="menu-link-btn" onclick="goHome()">🏠 Home</a></div>
+                <div class="menu-item"><a href="https://t.me/invitnew" target="_blank" class="menu-link-btn">📞 Contact (Telegram)</a><p>Latest update or free promo code join telegram channel.</p></div>
+                <div class="menu-item"><span class="menu-link-btn" style="color:#222">ℹ About Us</span><p style="color:#d32f2f;font-weight:bold">Warning ⚠️: 18+ players only. Financial risk involved.</p></div>
+            </div>
+        </div>
+
         <div class="search-container"><input type="text" id="searchBox" class="search-box" placeholder="What you want to search ?" oninput="filterGames()"></div>
         <div class="telegram-ticker"><marquee scrollamount="5"><a href="https://t.me/invitnew" target="_blank">📢 Join Our Official Telegram Channel For Daily Updates! Click Here: https://t.me/invitnew 🚀</a></marquee></div>
         
@@ -115,7 +142,7 @@ footer { background-color: #1a2229; color: #999; text-align: center; padding: 15
             <div class="game-card" data-category="casino"><div class="game-image-wrapper"><img src="https://i.ibb.co/PGKmgd81/IMG-20260601-134329-100.jpg" class="game-img"></div><div class="rating">★ 10</div><div class="game-name">ABC Rummy</div><a href="https://d34i569g8ztoql.cloudfront.net/abcrummy_MeApp.apk" class="play-btn">Play</a></div>
             <div class="game-card" data-category="casino"><div class="game-image-wrapper"><img src="https://i.ibb.co/gLCMDkSM/IMG-20260601-134349-455.jpg" class="game-img"></div><div class="rating">★ 10</div><div class="game-name">Yono VIP</div><a href="https://yonoviponline.vip/?code=3CRBS9ZLC6U&t=1780296095" class="play-btn">Play</a></div>
 
-            <!-- OLD CASINO PORTFOLIO LIST -->
+            <!-- PORTS / CASINO PORTFOLIO LIST -->
             <div class="game-card" data-category="casino"><div class="game-image-wrapper"><img src="https://i.ibb.co/wZBnk9sF/IMG-20260528-165407-231.jpg" class="game-img"></div><div class="rating">★ 10</div><div class="game-name">jaiho slots</div><a href="https://www.jaihoslots22.com/?code=EGPEAZTSMVU&t=1779962073" class="play-btn">Play</a></div>
             <div class="game-card" data-category="casino"><div class="game-image-wrapper"><img src="https://i.ibb.co/GQ6GP2LS/Screenshot-2026-0528-165315.png" class="game-img"></div><div class="rating">★ 10</div><div class="game-name">Yono games</div><a href="https://yonogames8.com/?code=GK1JRVZD9K5&t=1779961990" class="play-btn">Play</a></div>
             <div class="game-card" data-category="casino"><div class="game-image-wrapper"><img src="https://i.ibb.co/RGtvj6Dd/IMG-20260528-165052-353.jpg" class="game-img"></div><div class="rating">★ 10</div><div class="game-name">Top Rummy</div><a href="https://toprummy07.vip/?code=7K96EQ5AKMP&t=1779961780" class="play-btn">Play</a></div>
@@ -155,12 +182,7 @@ footer { background-color: #1a2229; color: #999; text-align: center; padding: 15
             <p>⚡ <strong>Real-Time Direct Downloads:</strong> Hum aapko kisi teesri website par nahi bhejte aur na hi koi irritating pop-up ads dikhate hain. Aap single click mein seedhe official aur safe APK file download kar sakte hain.</p>
             <p>💰 <strong>100% Verified Signup Bonus:</strong> Har game ke neeche uska exact signup bonus (₹51 se lekar ₹500 tak) clear likha hai. Hum pehle khud game par register karke bonus check karte hain, uske baad hi use apni website par list karte hain.</p>
             <p>🛡️ <strong>Secure & Safe APKs:</strong> Aapki security hamari priority hai. Hamari technical team har ek Android APK file ka virus aur malware check karti hai, taaki aapka phone poori tarah safe rahe.</p>
-            <p>💸 <strong>Fast Withdrawal Apps:</strong> Hum apni list mein sirf wahi Rummy aur Slots apps shaamil karte hain jo instant aur trusted cash withdrawal (UPI ya Direct Bank Transfer) deti hain.</p>
-            <h2>Popular Categories Available on prosafeyonogame2026</h2>
-            <p>Hamari website par aapko gaming ke sabhi trends ek hi jagah mil jaate hain. Aap apni pasand ke hisab se niche diye gaye kisi bhi game ko download kaar sakte hain:</p>
-            <p><strong>1. All Latest Yono Games List:</strong> Yono franchise ke games aaj kal pure India mein dhoom macha rahe hain. Inmein aapko smooth graphics, kam ping, aur zabardast bonus milta hai. Hamare paas Yono Arcade, Yono Rummy, Yono VIP, aur Yono Slots ke sabhi upgraded versions available hain.</p>
-            <p><strong>2. New Rummy Apps (₹51 to ₹500 Bonus):</strong> Agar aap Rummy ke shaukeen hain, toh hum aapke liye daily naye application lekar aate hain. In apps mein Point Rummy, Pool Rummy, aur Deal Rummy jaise modes hote hain jahan aap apni skills ka use karke cash prize jeet sakte hain.</p>
-            <p><strong>3. Trending Slots & Casino Games:</strong> Instant jackpot jeetne ke liye Slots games sabse best hain. Spin karke real money jeetne waale games jaise Spin Winner, Spin Crush, aur Mega Winner ke direct working download links aapko yahan milenge.</p>
+            <p>💸 <strong>Fast Withdrawal Apps:</strong> Hum apni list mein sirf wahi Rummy aur Slots apps shaamil karte hain jo instant aur trusted cash withdrawal (UPI ya Bank) deti hain.</p>
         </div>
 
         <footer>&copy; 2026 ProSafe Bet. All Rights Reserved.</footer>
