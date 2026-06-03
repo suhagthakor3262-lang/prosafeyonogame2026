@@ -11,72 +11,91 @@
 <link rel="shortcut icon" type="image/x-icon" href="https://i.ibb.co/SXrcFVvz/file-000000002aa872089a44603a2278ac14.png">
 <link rel="apple-touch-icon" sizes="180x180" href="https://i.ibb.co/SXrcFVvz/file-000000002aa872089a44603a2278ac14.png">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-body { background-color: #0f172a; color: #f8fafc; display: flex; flex-direction: column; min-height: 100vh; }
-.wrapper { width: 100%; max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; flex: 1; background-color: #1e293b; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-.live-ticker { background: #020617; color: #38bdf8; padding: 6px 15px; font-size: 12px; border-bottom: 1px solid #334155; display: flex; align-items: center; gap: 8px; font-weight: 500; }
+:root {
+    --bg-main: #0f172a; --bg-wrapper: #1e293b; --bg-card: #0f172a; --text-main: #f8fafc;
+    --text-muted: #94a3b8; --border-color: #334155; --header-bg: #0f172a; --search-bg: #0f172a;
+}
+[data-theme="light"] {
+    --bg-main: #f1f5f9; --bg-wrapper: #ffffff; --bg-card: #f8fafc; --text-main: #0f172a;
+    --text-muted: #475569; --border-color: #cbd5e1; --header-bg: #ffffff; --search-bg: #f1f5f9;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; transition: background-color 0.3s, border-color 0.3s, color 0.3s; }
+body { background-color: var(--bg-main); color: var(--text-main); display: flex; flex-direction: column; min-height: 100vh; }
+.wrapper { width: 100%; max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; flex: 1; background-color: var(--bg-wrapper); box-shadow: 0 0 20px rgba(0,0,0,0.3); }
+.live-ticker { background: #020617; color: #38bdf8; padding: 6px 15px; font-size: 12px; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 8px; font-weight: 500; }
 .live-badge { background: #ef4444; color: white; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: bold; text-transform: uppercase; animation: blink 1.5s infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 #winnerMessage { font-style: italic; color: #e2e8f0; }
-header { background-color: #0f172a; padding: 14px 15px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid #3b82f6; }
+header { background-color: var(--header-bg); padding: 14px 15px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid #3b82f6; }
 .logo-container { display: flex; align-items: center; gap: 10px; }
 .logo-img { width: 38px; height: 38px; border-radius: 50%; background: #fff; padding: 1px; }
 .logo-text { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; }
-.logo-text .wht { color: #ffffff; }
+.logo-text .wht { color: #3b82f6; }
+[data-theme="dark"] .logo-text .wht { color: #ffffff; }
 .logo-text .grn { color: #22c55e; }
 .logo-text .ylw { color: #eab308; }
-.three-dots { color: #94a3b8; font-size: 26px; cursor: pointer; padding: 5px; }
-.floating-sidebar { position: fixed; right: calc(50% - 285px); bottom: 180px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
+.header-actions { display: flex; align-items: center; gap: 18px; }
+.theme-toggle-btn { font-size: 20px; cursor: pointer; background: none; border: none; outline: none; position: relative; width: 30px; height: 30px; display: flex; justify-content: center; align-items: center; border-radius: 50%; animation: moonGlow 2s infinite alternate; }
+@keyframes moonGlow { 0% { box-shadow: 0 0 4px rgba(234, 179, 8, 0.2); transform: scale(1); } 100% { box-shadow: 0 0 14px rgba(234, 179, 8, 0.7); transform: scale(1.08); } }
+.three-dots { color: var(--text-muted); font-size: 26px; cursor: pointer; padding: 2px; }
+.floating-sidebar { position: fixed; right: calc(50% - 285px); bottom: 180px; display: flex; flex-direction: column; gap: 16px; z-index: 999; }
 @media (max-width: 620px) { .floating-sidebar { right: 15px; bottom: 180px; } }
-.float-btn { width: 48px; height: 48px; border-radius: 10px; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.4); cursor: pointer; text-decoration: none; border: none; }
+.float-btn { width: 52px; height: 52px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 14px rgba(0,0,0,0.4); cursor: pointer; text-decoration: none; border: none; position: relative; }
 .float-tg { background-color: #0088cc; }
-.float-top { background-color: #38bdf8; font-size: 11px; font-weight: bold; color: #0f172a; display: none; flex-direction: column; line-height: 1.1; }
-.menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(2,6,23,0.8); display: none; z-index: 200; justify-content: center; align-items: center; backdrop-filter: blur(4px); }
-.menu-content { background: #1e293b; width: 85%; max-width: 340px; border-radius: 16px; padding: 22px; border: 1px solid #334155; }
-.menu-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; padding-bottom: 12px; margin-bottom: 16px; }
-.menu-header h3 { font-size: 18px; color: #f8fafc; font-weight: 700; }
-.close-btn { font-size: 28px; cursor: pointer; color: #64748b; }
-.menu-item { padding: 12px 5px; border-bottom: 1px solid #334155; }
+.float-tg::before, .float-tg::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 50%; background: rgba(0, 136, 204, 0.4); animation: waterRipple 2.5s infinite ease-out; z-index: -1; }
+.float-tg::after { animation-delay: 1.25s; }
+@keyframes waterRipple { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(2.2); opacity: 0; } }
+.float-top { background-color: #38bdf8; font-size: 11px; font-weight: bold; color: #0f172a; display: none; flex-direction: column; line-height: 1.1; border-radius: 10px; }
+.menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(2,6,23,0.6); display: none; z-index: 200; justify-content: flex-end; backdrop-filter: blur(3px); }
+.menu-content { background: var(--bg-wrapper); width: 75%; max-width: 300px; height: 100%; padding: 22px; border-left: 1px solid var(--border-color); display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.3s ease-out; }
+.menu-overlay.active .menu-content { transform: translateX(0); }
+.menu-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 16px; }
+.menu-header h3 { font-size: 18px; color: var(--text-main); font-weight: 700; }
+.close-btn { font-size: 28px; cursor: pointer; color: var(--text-muted); }
+.menu-item { padding: 14px 5px; border-bottom: 1px solid var(--border-color); }
 .menu-link-btn { display: inline-block; text-decoration: none; color: #38bdf8; font-weight: bold; font-size: 16px; margin-bottom: 4px; }
-.menu-item p { font-size: 12px; color: #94a3b8; line-height: 1.4; }
+.menu-item p { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
 .search-container { padding: 16px 15px 10px 15px; width: 100%; }
-.search-box { width: 100%; padding: 14px 18px; background: #0f172a; border: 1px solid #334155; border-radius: 10px; font-size: 16px; outline: none; color: #fff; }
+.search-box { width: 100%; padding: 14px 18px; background: var(--search-bg); border: 1px solid var(--border-color); border-radius: 10px; font-size: 16px; outline: none; color: var(--text-main); }
 .telegram-ticker { background: linear-gradient(90deg, #0284c7, #0369a1); color: white; padding: 10px 0; overflow: hidden; white-space: nowrap; font-size: 13px; font-weight: bold; margin: 5px 15px 10px 15px; border-radius: 8px; }
 .telegram-ticker marquee a { color: white; text-decoration: none; }
-.slider-section-heading { font-size: 18px; font-weight: 700; color: #f1f5f9; padding: 15px 15px 5px 15px; text-transform: uppercase; display: flex; align-items: center; gap: 6px; }
+.slider-section-heading { font-size: 18px; font-weight: 700; color: var(--text-main); padding: 15px 15px 5px 15px; text-transform: uppercase; display: flex; align-items: center; gap: 6px; }
 .slider-section-heading::before { content: ''; display: inline-block; width: 4px; height: 16px; background: #eab308; border-radius: 2px; }
 .horizontal-slider { display: flex; gap: 14px; overflow-x: auto; padding: 10px 15px 20px 15px; width: 100%; }
 .horizontal-slider::-webkit-scrollbar { display: none; }
-.slider-card { flex: 0 0 145px; background: #0f172a; border: 1px solid #233554; border-radius: 14px; padding: 15px 10px; text-align: center; position: relative; display: flex; flex-direction: column; align-items: center; }
+.slider-card { flex: 0 0 145px; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 15px 10px; text-align: center; position: relative; display: flex; flex-direction: column; align-items: center; }
 .slider-card .badge { position: absolute; top: -6px; right: -6px; color: white; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 8px; }
 .slider-card .badge.badge-new { background: #ef4444; }
 .slider-card .badge.badge-hot { background: #f97316; }
 .slider-img-wrapper { width: 76px; height: 76px; margin-bottom: 10px; }
-.slider-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid #334155; }
+.slider-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid var(--border-color); }
 .slider-card .rating { color: #22c55e; font-size: 13px; font-weight: bold; margin-bottom: 6px; }
-.slider-name { font-size: 13px; font-weight: 700; color: #f8fafc; text-transform: uppercase; margin-bottom: 12px; }
+.slider-name { font-size: 13px; font-weight: 700; color: var(--text-main); text-transform: uppercase; margin-bottom: 12px; }
 .slider-btn { display: block; width: 100%; padding: 8px 0; background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; text-decoration: none; font-weight: bold; border-radius: 8px; font-size: 13px; }
-.section-title { text-align: center; margin-top: 20px; font-size: 24px; color: #fff; font-weight: 800; }
-.section-subtitle { text-align: center; color: #94a3b8; font-size: 13px; margin: 6px 0 22px 0; padding: 0 20px; line-height: 1.5; }
+.section-title { text-align: center; margin-top: 20px; font-size: 24px; color: var(--text-main); font-weight: 800; }
+.section-subtitle { text-align: center; color: var(--text-muted); font-size: 13px; margin: 6px 0 22px 0; padding: 0 20px; line-height: 1.5; }
 .tabs-container { display: flex; justify-content: center; gap: 8px; margin-bottom: 22px; padding: 0 15px; width: 100%; }
-.tab-btn { flex: 1; padding: 12px 0; background-color: #0f172a; border: 1px solid #334155; border-radius: 10px; color: #94a3b8; font-weight: bold; font-size: 14px; cursor: pointer; text-align: center; }
+.tab-btn { flex: 1; padding: 12px 0; background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 10px; color: var(--text-muted); font-weight: bold; font-size: 14px; cursor: pointer; text-align: center; }
 .tab-btn.active { background: #2563eb; color: white; box-shadow: 0 4px 14px rgba(37,99,235,0.4); font-weight: 800; border-color: #2563eb; }
 .games-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; padding: 0 15px 30px 15px; width: 100%; }
-.game-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 14px; padding: 18px 10px; text-align: center; display: flex; flex-direction: column; align-items: center; width: 100%; }
+.game-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 18px 10px; text-align: center; display: flex; flex-direction: column; align-items: center; width: 100%; }
 .hot-badge { background: #ef4444; color: white; font-size: 9px; font-weight: bold; padding: 3px 8px; border-radius: 6px; margin-bottom: 10px; text-transform: uppercase; }
 .game-image-wrapper { width: 90px; height: 90px; margin-bottom: 12px; }
-.game-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid #1e293b; }
+.game-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid var(--border-color); }
 .rating { color: #22c55e; font-size: 13px; font-weight: bold; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
-.game-name { font-size: 12px; font-weight: 700; color: #f1f5f9; margin-bottom: 14px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-transform: uppercase; min-height: 50px; }
-.play-btn { display: block; width: 100%; padding: 10px 0; background-color: #1e293b; color: #38bdf8; text-decoration: none; font-weight: bold; border-radius: 8px; font-size: 13px; border: 1px solid #334155; }
-.seo-content { padding: 22px 18px; background: #0f172a; margin: 15px; border-radius: 14px; border: 1px solid #1e293b; font-size: 14px; line-height: 1.6; color: #94a3b8; }
-.seo-content h2 { color: #f8fafc; margin: 18px 0 10px 0; font-size: 18px; font-weight: 700; border-left: 3px solid #2563eb; padding-left: 8px; }
+.game-name { font-size: 12px; font-weight: 700; color: var(--text-main); margin-bottom: 14px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-transform: uppercase; min-height: 50px; }
+.play-btn { display: block; width: 100%; padding: 10px 0; background-color: var(--bg-wrapper); color: #38bdf8; text-decoration: none; font-weight: bold; border-radius: 8px; font-size: 13px; border: 1px solid var(--border-color); }
+.mid-tags-layout { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 10px 15px 25px 15px; width: 100%; }
+.mid-tag-badge { background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid #3b82f6; color: #38bdf8; font-size: 12px; font-weight: bold; padding: 8px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+[data-theme="light"] .mid-tag-badge { background: linear-gradient(135deg, #f1f5f9, #ffffff); border: 1px solid #3b82f6; color: #1d4ed8; }
+.seo-content { padding: 22px 18px; background: var(--bg-card); margin: 15px; border-radius: 14px; border: 1px solid var(--border-color); font-size: 14px; line-height: 1.6; color: var(--text-muted); }
+.seo-content h2 { color: var(--text-main); margin: 18px 0 10px 0; font-size: 18px; font-weight: 700; border-left: 3px solid #2563eb; padding-left: 8px; }
 .seo-content h2:first-child { margin-top: 0; }
 .seo-content p { margin-bottom: 12px; text-align: justify; }
-footer { background-color: #0f172a; color: #64748b; text-align: center; padding: 18px; font-size: 13px; border-top: 1px solid #1e293b; width: 100%; margin-top: auto; }
+footer { background-color: var(--header-bg); color: var(--text-muted); text-align: center; padding: 18px; font-size: 13px; border-top: 1px solid var(--border-color); width: 100%; margin-top: auto; }
 </style>
 </head>
-<body>
+<body data-theme="dark">
     <div class="wrapper" id="topContainer">
         <div class="live-ticker"><span class="live-badge">Live</span><span id="winnerMessage">User73** won ₹2,500 in Slots winner</span></div>
         <div class="floating-sidebar">
@@ -88,14 +107,17 @@ footer { background-color: #0f172a; color: #64748b; text-align: center; padding:
                 <img src="https://i.ibb.co/SXrcFVvz/file-000000002aa872089a44603a2278ac14.png" alt="Logo" class="logo-img">
                 <div class="logo-text"><span class="wht">Pro</span><span class="grn">Safe</span><span class="ylw">Bet</span></div>
             </div>
-            <div class="three-dots" onclick="toggleMenu(true)">&#8942;</div>
+            <div class="header-actions">
+                <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle Theme">🌙</button>
+                <div class="three-dots" onclick="toggleMenu(true)">&#8942;</div>
+            </div>
         </header>
         <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu(false)">
             <div class="menu-content" onclick="event.stopPropagation()">
                 <div class="menu-header"><h3>Menu Options</h3><span class="close-btn" onclick="toggleMenu(false)">&times;</span></div>
                 <div class="menu-item"><a href="#" class="menu-link-btn" onclick="goHome()">🏠 Home</a></div>
                 <div class="menu-item"><a href="https://t.me/invitnew" target="_blank" class="menu-link-btn">📞 Contact (Telegram)</a><p>Latest update or free promo code join telegram channel.</p></div>
-                <div class="menu-item"><span class="menu-link-btn" style="color:#f8fafc">ℹ About Us</span><p style="color:#ef4444;font-weight:bold">Warning ⚠️: 18+ players only. Financial risk involved.</p></div>
+                <div class="menu-item"><span class="menu-link-btn" style="color:var(--text-main)">ℹ About Us</span><p style="color:#ef4444;font-weight:bold">Warning ⚠️: 18+ players only. Financial risk involved.</p></div>
             </div>
         </div>
         <div class="search-container"><input type="text" id="searchBox" class="search-box" placeholder="What you want to search ?" oninput="filterGames()"></div>
@@ -121,7 +143,7 @@ footer { background-color: #0f172a; color: #64748b; text-align: center; padding:
             <button class="tab-btn" id="btn-bonus" onclick="changeTab('bonus')">Bonus 🎁</button>
         </div>
         <div class="games-grid" id="mainGamesGrid">
-                      <div class="game-card" data-category="casino"><div class="game-image-wrapper"><img src="https://i.ibb.co/JRfZxJFz/IMG-20260601-134057-693.jpg" class="game-img"></div><div class="rating">★ 10</div><div class="game-name">Slots winner (Yono) Apk Download & Bonus ₹55 Free</div><a href="https://slotswinnerg.com/?code=K4EZ67RG8PF&t=1780297366" class="play-btn">Play</a></div>
+                        <div class="game-card" data-category="casino"><div class="game-image-wrapper"><img src="https://i.ibb.co/JRfZxJFz/IMG-20260601-134057-693.jpg" class="game-img"></div><div class="rating">★ 10</div><div class="game-name">Slots winner (Yono) Apk Download & Bonus ₹55 Free</div><a href="https://slotswinnerg.com/?code=K4EZ67RG8PF&t=1780297366" class="play-btn">Play</a></div>
             <div class="game-card" data-category="casino"><div class="game-image-wrapper"><img src="https://i.ibb.co/q3mdn5fK/IMG-20260601-134207-570.jpg" class="game-img"></div><div class="rating">★ 10</div><div class="game-name">Neta VIP (Yono) Apk Download & Bonus ₹55 Free</div><a href="https://www.neta2.vip/?code=58HEMXTVB2K/?code=DR0F4KK6SEH&t=1780297303" class="play-btn">Play</a></div>
             <div class="game-card" data-category="casino"><div class="game-image-wrapper"><img src="https://i.ibb.co/TxzVSnrm/IMG-20260601-134235-452.jpg" class="game-img"></div><div class="rating">★ 10</div><div class="game-name">MBM bet (Yono) Apk Download & Bonus ₹55 Free</div><a href="https://mbmbet7.com/?code=T09NFWHC51Z&t=1780296803" class="play-btn">Play</a></div>
             <div class="game-card" data-category="casino"><div class="game-image-wrapper"><img src="https://i.ibb.co/zVGcGjrv/IMG-20260601-134303-975.jpg" class="game-img"></div><div class="rating">★ 10</div><div class="game-name">jaiho win (Yono) Apk Download & Bonus ₹55 Free</div><a href="https://www.jaihowin13.com/?code=1XNE6CBX613&t=1780296363" class="play-btn">Play</a></div>
@@ -162,6 +184,15 @@ footer { background-color: #0f172a; color: #64748b; text-align: center; padding:
             <div class="game-card" data-category="bonus"><div class="hot-badge" style="background:#eab308;color:#000">Bonus</div><div class="game-image-wrapper"><img src="https://i.ibb.co/mF600568/Screenshot-2026-0524-122402.png" class="game-img"></div><div class="rating">★ 10</div><div class="game-name">Spin Crush (Yono) Apk Download & Bonus ₹55 Free</div><a href="https://bkfadsegtgs.safelyearnmillionsbysharingonepersonaqfxzqyj8.com/?code=ADEX2NMGVQT&t=1779605852" class="play-btn">Play</a></div>
             <div class="game-card" data-category="bonus"><div class="hot-badge" style="background:#eab308;color:#000">Bonus</div><div class="game-image-wrapper"><img src="https://i.ibb.co/GQ6GP2LS/Screenshot-2026-0528-165315.png" class="game-img"></div><div class="rating">★ 10</div><div class="game-name">Yono games (Yono) Apk Download & Bonus ₹55 Free</div><a href="https://yonogames8.com/?code=GK1JRVZD9K5&t=1779961990" class="play-btn">Play</a></div>
             <div class="game-card" data-category="bonus"><div class="hot-badge" style="background:#eab308;color:#000">Bonus</div><div class="game-image-wrapper"><img src="https://i.ibb.co/gLCMDkSM/IMG-20260601-134349-455.jpg" class="game-img"></div><div class="rating">★ 10</div><div class="game-name">Yono VIP (Yono) Apk Download & Bonus ₹55 Free</div><a href="https://yonoviponline.vip/?code=3CRBS9ZLC6U&t=1780296095" class="play-btn">Play</a></div>
+        </div>
+
+        <div class="mid-tags-layout">
+            <span class="mid-tag-badge">Slots Winner</span>
+            <span class="mid-tag-badge">Neta VIP</span>
+            <span class="mid-tag-badge">MBM Bet</span>
+            <span class="mid-tag-badge">Yono Slots</span>
+            <span class="mid-tag-badge">Jaiho 91</span>
+            <span class="mid-tag-badge">Rummy Apps</span>
         </div>
                 <div class="seo-content">
             <h2>Welcome to prosafeyonogame2026 – Top Rummy & Slots Apps Downloader (2026)</h2>
@@ -208,7 +239,32 @@ footer { background-color: #0f172a; color: #64748b; text-align: center; padding:
         };
         
         function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-        function toggleMenu(s) { document.getElementById('menuOverlay').style.display = s ? 'flex' : 'none'; }
+        
+        function toggleMenu(show) {
+            let overlay = document.getElementById('menuOverlay');
+            if(show) {
+                overlay.style.display = 'flex';
+                setTimeout(() => overlay.classList.add('active'), 10);
+            } else {
+                overlay.classList.remove('active');
+                setTimeout(() => overlay.style.display = 'none', 300);
+            }
+        }
+        
+        function toggleTheme() {
+            let body = document.body;
+            let btn = document.getElementById('themeToggleBtn');
+            if(body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                btn.innerText = '☀️';
+                btn.style.animation = "none";
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                btn.innerText = '🌙';
+                btn.style.animation = "moonGlow 2s infinite alternate";
+            }
+        }
+        
         function goHome() { toggleMenu(false); changeTab('casino'); scrollToTop(); }
         
         function changeTab(t) {
@@ -245,4 +301,3 @@ footer { background-color: #0f172a; color: #64748b; text-align: center; padding:
     </script>
 </body>
 </html>
-
