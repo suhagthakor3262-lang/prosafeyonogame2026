@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ProSafe Yono Story</title>
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; font-family: sans-serif; }
+        .story-container { width: 100%; height: 100%; position: relative; display: flex; align-items: center; justify-content: center; }
+        .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: white; padding: 20px; box-sizing: border-box; }
+        .slide.active { display: flex; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .bg1 { background: linear-gradient(180deg, #1e3a8a, #0f172a); }
+        .bg2 { background: linear-gradient(180deg, #111827, #311b92); }
+        .bg3 { background: linear-gradient(180deg, #111827, #1a237e); }
+        .card-img { width: 100px; height: 100px; border-radius: 20px; border: 3px solid #fff; margin-bottom: 20px; }
+        h1 { font-size: 28px; margin: 10px 0; }
+        p { font-size: 16px; margin-bottom: 20px; }
+        .btn { background: #f59e0b; color: #000; padding: 12px 30px; border-radius: 25px; font-weight: bold; text-decoration: none; font-size: 18px; }
+        .nav-btn { position: absolute; width: 50%; height: 100%; top: 0; z-index: 10; cursor: pointer; }
+        .prev-nav { left: 0; }
+        .next-nav { right: 0; }
+    </style>
+</head>
+<body>
+    <div class="story-container" id="story">
+        <!-- Slide 1 -->
+        <div class="slide active bg1" id="s1">
+            <img src="https://i.ibb.co/yBYVKhXR/file-000000002aa872089a44603a2278ac14.png" class="card-img">
+            <h1>ProSafe Yono Games</h1>
+            <p>Trending Apps 2026</p>
+            <div class="nav-btn next-nav" onclick="next()"></div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide bg2" id="s2">
+            <img src="https://i.ibb.co/XxTS3tdZ/Screenshot-2026-0524-121950.png" class="card-img">
+            <h1>Yono Rummy</h1>
+            <p>Claim ₹55 Free Bonus</p>
+            <a href="https://yonorummy043.com/?code=VIP3X1XWA3G&t=1780576965" class="btn">Download Now</a>
+            <div class="nav-btn prev-nav" onclick="prev()"></div>
+            <div class="nav-btn next-nav" onclick="next()"></div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide bg3" id="s3">
+            <img src="https://i.ibb.co/m5xd7qpZ/Screenshot-2026-0524-122312.png" class="card-img">
+            <h1>Spin 777 Slots</h1>
+            <p>High Return Wins</p>
+            <a href="https://spin777dd.com/?code=7V9FYWPMDEW&t=1780577153" class="btn">Download Now</a>
+            <div class="nav-btn prev-nav" onclick="prev()"></div>
+        </div>
+    </div>
+
+    <script>
+        let current = 1;
+        function next() { if(current < 3) { document.getElementById('s'+current).classList.remove('active'); current++; document.getElementById('s'+current).classList.add('active'); } }
+        function prev() { if(current > 1) { document.getElementById('s'+current).classList.remove('active'); current--; document.getElementById('s'+current).classList.add('active'); } }
+    </script>
+</body>
+</html>
