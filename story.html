@@ -25,15 +25,16 @@
         
         .card-img { width: 110px; height: 110px; border-radius: 22px; border: 3px solid #fff; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
         h1 { font-size: 28px; font-weight: 800; margin: 10px 0; text-transform: uppercase; letter-spacing: 0.5px; }
-        p { font-size: 16px; color: #e2e8f0; margin-bottom: 30px; max-width: 280px; line-height: 1.4; }
+        p { font-size: 16px; color: #e2e8f0; margin-bottom: 25px; max-width: 280px; line-height: 1.4; }
         
-        .btn { background: #f59e0b; color: #000; padding: 14px 40px; border-radius: 30px; font-weight: 800; text-decoration: none; font-size: 18px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 15px rgba(245,158,11,0.4); z-index: 20; position: relative; }
+        .btn { background: #f59e0b; color: #000; padding: 14px 40px; border-radius: 30px; font-weight: 800; text-decoration: none; font-size: 18px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 4px 15px rgba(245,158,11,0.4); z-index: 120; position: relative; }
+        .site-btn { background: #10b981; color: #fff; font-size: 15px; padding: 12px 25px; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(16,185,129,0.3); }
         
         /* TOUCH ENGINE NAVIGATION */
-        .nav-zone { position: absolute; top: 0; height: 100%; width: 40%; z-index: 10; }
+        .nav-zone { position: absolute; top: 0; height: 100%; width: 30%; z-index: 10; }
         .left-zone { left: 0; }
-        .right-zone { right: 0; width: 60%; }
-        .hint-text { font-size: 12px; color: #a1a1aa; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: 40px; animation: pulse 1.5s infinite; }
+        .right-zone { right: 0; width: 70%; }
+        .hint-text { font-size: 12px; color: #a1a1aa; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: 25px; animation: pulse 1.5s infinite; }
         @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
     </style>
 </head>
@@ -51,12 +52,16 @@
         <div class="nav-zone left-zone" onclick="prevStory()"></div>
         <div class="nav-zone right-zone" onclick="nextStory()"></div>
 
-        <!-- Slide 1: Main Platform Info -->
+        <!-- Slide 1: Main Platform Info (With Full Website Link) -->
         <div class="slide active bg1" id="slide1">
             <img src="https://i.ibb.co/yBYVKhXR/file-000000002aa872089a44603a2278ac14.png" class="card-img">
             <h1>ProSafe Yono</h1>
             <p>Get Verified Clean Applications & Huge Bonuses Safely</p>
-            <span class="hint-text">Tap Right to Start ➡️</span>
+            
+            <!-- GREEN BUTTON TO VISIT MAIN SITE -->
+            <a href="https://prosafeyonogame2026.com/" class="btn site-btn">🌐 View All 45+ Games</a>
+            
+            <span class="hint-text">Or Tap Right for Offers ➡️</span>
         </div>
 
         <!-- Slide 2: Yono Rummy Offer -->
@@ -84,7 +89,6 @@
         function runEngine() {
             clearTimeout(storyTimeout);
             
-            // Sync progress lines look
             for(let i = 1; i <= totalSlides; i++) {
                 let fill = document.getElementById('fill' + i);
                 fill.className = 'progress-fill';
@@ -92,7 +96,6 @@
                 if(i === currentSlide) fill.classList.add('active');
             }
 
-            // Auto switch slide after 5 seconds
             storyTimeout = setTimeout(() => {
                 if(currentSlide < totalSlides) {
                     nextStory();
@@ -118,7 +121,6 @@
             }
         }
 
-        // Initialize script logic
         runEngine();
     </script>
 </body>
