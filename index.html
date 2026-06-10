@@ -231,15 +231,19 @@
 
     function goHome() { toggleMenu(false); scrollToTop(); }
 
-    function filterGames() {
+        function filterGames() {
         let s = document.getElementById('searchBox').value.toLowerCase();
         let cards = document.getElementsByClassName('list-game-card');
         for(let i=0; i<cards.length; i++) {
-            let name = cards[i].getElementsByClassName('scroll-name')[0].innerText.toLowerCase();
-            if(name.includes(s)) { cards[i].style.display = 'flex'; }
-            else { cards[i].style.display = 'none'; }
+            let nameElement = cards[i].getElementsByClassName('list-game-name')[0];
+            if (nameElement) {
+                let name = nameElement.innerText.toLowerCase();
+                if(name.includes(s)) { cards[i].style.display = 'flex'; }
+                else { cards[i].style.display = 'none'; }
+            }
         }
-    }
+        }
+    
 </script>
 
 </body>
