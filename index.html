@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ProSafe Yono Game - Best Apps Downloader</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProSafe Yono Game - Download New Yono Games & Yono 777</title>
+    <meta name="description" content="Get the ultimate verified download links for new Yono game apps, Yono 777, and trending rummy slots updates safely. Fast and malware-free secure repository.">
     <link rel="icon" type="image/png" href="https://i.ibb.co/yBYVKhXR/file-000000002aa872089a44603a2278ac14.png">
     <style>
         :root {
@@ -80,13 +81,15 @@
     </style>
 </head>
 <body>
-    <div class="wrapper" id="topContainer">
-        <nav class="navbar">
-            <div class="nav-left">
-                <span class="menu-icon" onclick="toggleMenu(true)">☰</span>
-                <img src="https://i.ibb.co/yBYVKhXR/file-000000002aa872089a44603a2278ac14.png" class="nav-logo-img" alt="Logo">
-                <span class="brand-logo">ProSafe Yono Game</span>
-            </div>
+    <main>
+<div class="wrapper" id="topContainer">
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="menu-icon" onclick="toggleMenu(true)">☰</span>
+            <img src="https://i.ibb.co/yBYVKhXR/file-000000002aa872089a44603a2278ac14.png" class="nav-logo-img" alt="ProSafe Yono Game Logo">
+            <span class="brand-logo">ProSafe Yono Game</span>
+        </div>
+        
         </nav>
         <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu(false)">
             <div class="menu-content" onclick="event.stopPropagation()">
@@ -183,57 +186,61 @@
     </div>
    <footer>&copy; 2026 ProSafe Yono Game. All Rights Reserved.</footer>
     </div>
-    
-    <div class="floating-sidebar">
-        <a href="https://t.me/prosafeyonogame" target="_blank" class="float-btn float-tg" title="Join Telegram">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
-        </a>
-        <button class="float-btn float-top" id="scrollTopBtn" onclick="scrollToTop()">
-            <span>▲</span><span style="font-size:8px;">TOP</span>
-        </button>
-    </div>
 
-    <script>
-        const gameNames = ["Yono Rummy", "Spin 777", "Spin Crush", "567 Slots", "IND Slots", "Slots Winner", "Neta VIP"];
-        const amounts = ["₹1,500", "₹3,200", "₹5,000", "₹8,700", "₹12,500"];
-        
-        function updateLiveWinner() {
-            let game = gameNames[Math.floor(Math.random() * gameNames.length)];
-            let amt = amounts[Math.floor(Math.random() * amounts.length)];
-            let msgBox = document.getElementById("winnerMessage");
-            if(msgBox) {
-                msgBox.style.opacity = 0;
-                setTimeout(() => {
-                    msgBox.innerText = `User${Math.floor(10+Math.random()*89)}** won ${amt} in ${game}`;
-                    msgBox.style.opacity = 1;
-                }, 300);
-            }
-        }
-        setInterval(updateLiveWinner, 4000);
+<div class="floating-sidebar">
+    <a href="https://t.me/prosafeyonogame" target="_blank" class="float-btn float-tg" title="Join Telegram">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+    </a>
+    <button class="float-btn float-top" id="scrollTopBtn" onclick="scrollToTop()">
+        <span>▲</span><span style="font-size:8px;">TOP</span>
+    </button>
+</div>
 
-        window.onscroll = function() {
-            let b = document.getElementById("scrollTopBtn");
-            if (b) b.style.display = (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180) ? "flex" : "none";
-        };
-        
-        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-        
-        function toggleMenu(show) {
-            let overlay = document.getElementById('menuOverlay');
-            if(show) { overlay.style.display = 'flex'; setTimeout(() => overlay.classList.add('active'), 10); } 
-            else { overlay.classList.remove('active'); setTimeout(() => overlay.style.display = 'none', 300); }
+</main> <!-- Google Landmark Fix: Main content yahan sahi se close ho gaya -->
+
+<script>
+    const gameNames = ["Yono Rummy", "Spin 777", "Spin Crush", "567 Slots", "IND Slots", "Slots Winner", "Neta VIP"];
+    const amounts = ["₹1,500", "₹3,200", "₹5,000", "₹8,700", "₹12,500"];
+
+    function updateLiveWinner() {
+        let game = gameNames[Math.floor(Math.random() * gameNames.length)];
+        let amt = amounts[Math.floor(Math.random() * amounts.length)];
+        let msgBox = document.getElementById("winnerMessage");
+        if(msgBox) {
+            msgBox.style.opacity = 0;
+            setTimeout(() => {
+                msgBox.innerText = `User${Math.floor(10+Math.random()*89)}** won ${amt} in ${game}`;
+                msgBox.style.opacity = 1;
+            }, 300);
         }
-        
-        function goHome() { toggleMenu(false); scrollToTop(); }
-        
-        function filterGames() {
-            let s = document.getElementById('searchBox').value.toLowerCase();
-            let cards = document.getElementsByClassName('list-game-card');
-            for (let i = 0; i < cards.length; i++) {
-                let n = cards[i].getElementsByClassName('list-game-name')[0].innerText.toLowerCase();
-                cards[i].style.display = n.includes(s) ? "flex" : "none";
-            }
+    }
+    setInterval(updateLiveWinner, 4000);
+
+    window.onscroll = function() {
+        let b = document.getElementById("scrollTopBtn");
+        if (b) b.style.display = (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180) ? "flex" : "none";
+    };
+
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+    function toggleMenu(show) {
+        let overlay = document.getElementById('menuOverlay');
+        if(show) { overlay.style.display = 'flex'; setTimeout(() => overlay.classList.add('active'), 10); }
+        else { overlay.classList.remove('active'); setTimeout(() => overlay.style.display = 'none', 300); }
+    }
+
+    function goHome() { toggleMenu(false); scrollToTop(); }
+
+    function filterGames() {
+        let s = document.getElementById('searchBox').value.toLowerCase();
+        let cards = document.getElementsByClassName('list-game-card');
+        for(let i=0; i<cards.length; i++) {
+            let name = cards[i].getElementsByClassName('scroll-name')[0].innerText.toLowerCase();
+            if(name.includes(s)) { cards[i].style.display = 'flex'; }
+            else { cards[i].style.display = 'none'; }
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
