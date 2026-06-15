@@ -9,14 +9,21 @@
     <style>
         /* Modern Premium Clean Reset */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        html, body { height: 100%; background-color: #ffffff; color: #2d3748; }
+        html, body { height: 100%; background-color: #ffffff; color: #2d3748; overflow-x: hidden; }
         body { display: flex; flex-direction: column; min-height: 100vh; padding-bottom: 60px; position: relative; }
         
-        /* Navigation Utility Bar */
+        /* Premium Header Utility Bar (prosafeyonogame2026 Branding) */
         .premium-nav-bar { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background-color: #1a1a1a; border-bottom: 3px solid #10b981; position: sticky; top: 0; z-index: 100; }
-        .branding-title { font-size: 18px; font-weight: 800; color: #ffffff; letter-spacing: 0.5px; }
+        .branding-title { font-size: 16px; font-weight: 800; color: #ffffff; letter-spacing: 0.3px; }
         .branding-title span { color: #10b981; }
-        .menu-bar-icon { background: none; border: none; color: #ffffff; font-size: 22px; cursor: pointer; }
+        .menu-bar-icon { background: none; border: none; color: #ffffff; font-size: 24px; cursor: pointer; display: flex; align-items: center; }
+
+        /* Clean Sidebar Menu Layout Container */
+        .side-navigation-overlay { position: fixed; top: 0; right: -260px; width: 260px; height: 100vh; background: #1a1a1a; border-left: 1px solid #333333; box-shadow: -4px 0 15px rgba(0,0,0,0.3); z-index: 200; transition: right 0.2s ease; padding: 20px; }
+        .side-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid #333333; padding-bottom: 10px; }
+        .side-menu-close { background: none; border: none; color: #ffffff; font-size: 26px; cursor: pointer; }
+        .side-menu-link { display: block; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none; padding: 12px 8px; border-radius: 6px; margin-bottom: 8px; }
+        .side-menu-link:active { background: #2d2d2d; color: #10b981; }
 
         /* End-to-End Responsive Container */
         .main-viewport-container { padding: 20px 16px; max-width: 550px; margin: 0 auto; width: 100%; flex: 1; }
@@ -51,7 +58,7 @@
         .rec-app-thumb { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; }
         .rec-app-title { font-size: 11px; font-weight: 700; color: #374151; margin-top: 6px; height: 28px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.3; }
 
-        /* Strict Structural Floating Stack Mechanics */
+        /* Strict Functional Floating Stack Mechanics */
         .fixed-utility-stack { position: fixed; bottom: 85px; right: 16px; display: flex; flex-direction: column; gap: 8px; z-index: 150; }
         .stack-anchor-trigger { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.12); text-decoration: none; border: none; cursor: pointer; color: white; font-size: 18px; }
         .stk-tg { background: #0284c7; border: 1px solid #38bdf8; }
@@ -66,8 +73,18 @@
 
     <!-- Header Panel Navigation -->
     <div class="premium-nav-bar">
-        <div class="branding-title">Games<span>Hub</span></div>
-        <button class="menu-bar-icon">≡</button>
+        <div class="branding-title">prosafeyonogame<span>2026</span></div>
+        <button class="menu-bar-icon" onclick="openMenuSystem()">☰</button>
+    </div>
+
+    <!-- Side Slide Sidebar Navigation System -->
+    <div class="side-navigation-overlay" id="sideNavOverlay">
+        <div class="side-menu-header">
+            <span style="font-size:15px; font-weight:700; color:#10b981;">Links Menu</span>
+            <button class="side-menu-close" onclick="closeMenuSystem()">&times;</button>
+        </div>
+        <a href="index.html" class="side-menu-link">🏡 Home Grid</a>
+        <a href="https://t.me/invitnew" target="_blank" class="side-menu-link">📢 Telegram Channel</a>
     </div>
 
     <!-- Main Viewport Layout -->
@@ -131,14 +148,16 @@
 
     <!-- Linear Static Floating Utility Stack -->
     <div class="fixed-utility-stack">
-        <a href="https://t.me/invitnew" target="_blank" class="stack-anchor-trigger stk-tg">🔹</a>
+        <a href="https://t.me/invitnew" target="_blank" class="stack-anchor-trigger stk-tg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </a>
         <button class="stack-anchor-trigger stk-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
         <a href="index.html" class="stack-anchor-trigger stk-home">🏠</a>
     </div>
 
     <!-- System Absolute Footer -->
     <footer class="absolute-system-footer">
-        <p>&copy; 2026 Games Hub Network. All Links Verified & Secure.</p>
+        <p>&copy; 2026 prosafeyonogame2026. All Links Verified & Secure.</p>
     </footer>
 
     <script>
@@ -146,6 +165,8 @@
             const btn = document.getElementById('scrollTopBtn');
             if(window.scrollY > 250) { btn.style.display = 'flex'; } else { btn.style.display = 'none'; }
         });
+        function openMenuSystem() { document.getElementById('sideNavOverlay').style.right = '0px'; }
+        function closeMenuSystem() { document.getElementById('sideNavOverlay').style.right = '-260px'; }
     </script>
 </body>
 </html>
