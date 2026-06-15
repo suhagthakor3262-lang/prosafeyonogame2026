@@ -3,98 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>IND Rummy APK Download - Latest 2026 Version</title>
+    <title>IND Rummy APK Download - Latest 2026 Official Version</title>
+    <meta name="description" content="IND Rummy APK Download: Welcome to the official secure portal for IND Rummy. Download the fully verified, anti-ban, and latest 2026 version of IND Rummy APK for Android devices.">
+    <meta name="keywords" content="ind rummy, ind rummy apk, ind rummy download, ind rummy 2026">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        html, body { height: 100%; background-color: #0b111e; color: #f1f5f9; }
-        body { display: flex; flex-direction: column; min-height: 100vh; padding-bottom: 70px; }
+        html, body { height: 100%; background-color: #ffffff; color: #2d3748; overflow-x: hidden; }
+        body { display: flex; flex-direction: column; min-height: 100vh; position: relative; }
         
-        .page-content-wrapper { flex: 1; padding: 16px; width: 100%; }
-        
-        .game-detail-card { background: #111827; border: 1px solid #1f2937; border-radius: 16px; padding: 20px; margin-bottom: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .detail-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
-        .detail-logo { width: 76px; height: 76px; border-radius: 16px; object-fit: cover; border: 1px solid #374151; }
-        .detail-title { font-size: 22px; font-weight: 700; color: #ffffff; margin-bottom: 4px; }
-        .detail-status-row { display: flex; align-items: center; gap: 8px; }
-        .rating-badge { color: #f59e0b; font-weight: 700; font-size: 13px; }
-        .safe-badge { background: #10b981; color: #ffffff; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; }
-        
-        .download-action-box { text-align: center; margin-top: 10px; }
-        .main-download-btn { display: block; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; font-weight: 700; padding: 14px; border-radius: 10px; font-size: 16px; text-transform: uppercase; text-decoration: none; box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
-        .info-text-node { font-size: 13px; color: #9ca3af; margin-top: 20px; line-height: 1.6; }
+        .premium-nav-bar { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background-color: #1a1a1a; border-bottom: 3px solid #10b981; position: sticky; top: 0; z-index: 100; }
+        .branding-title { font-size: 16px; font-weight: 800; color: #ffffff; }
+        .branding-title span { color: #10b981; }
+        .menu-bar-icon { background: none; border: none; color: #ffffff; font-size: 24px; cursor: pointer; display: flex; align-items: center; }
 
-        .section-divider-title { font-size: 15px; font-weight: 700; color: #38bdf8; text-transform: uppercase; margin-bottom: 12px; padding-left: 4px; border-left: 4px solid #38bdf8; }
-        .other-games-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
-        .sub-grid-card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 10px 6px; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: space-between; }
-        .sub-grid-logo { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; }
-        .sub-grid-name { font-size: 11px; font-weight: 600; color: #e5e7eb; margin-top: 6px; height: 28px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .side-navigation-overlay { position: fixed; top: 0; right: -260px; width: 260px; height: 100vh; background: #1a1a1a; border-left: 1px solid #333333; z-index: 200; transition: right 0.2s ease; padding: 20px; }
+        .side-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid #333333; padding-bottom: 10px; }
+        .side-menu-close { background: none; border: none; color: #ffffff; font-size: 26px; cursor: pointer; }
+        .side-menu-link { display: block; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none; padding: 12px 8px; border-radius: 6px; margin-bottom: 8px; }
+        .side-menu-link:active { background: #2d2d2d; color: #10b981; }
 
-        .absolute-system-footer { background: #111827; border-top: 1px solid #1f2937; text-align: center; padding: 16px; color: #4b5563; font-size: 12px; width: 100%; margin-top: auto; }
+        .main-viewport-container { padding: 20px 16px; max-width: 550px; margin: 0 auto; width: 100%; flex: 1; }
+        .display-hero-node { text-align: center; margin-bottom: 25px; }
+        .app-main-logo { width: 105px; height: 105px; border-radius: 22px; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; }
+        .app-main-title { font-size: 26px; font-weight: 800; color: #111827; margin-top: 12px; }
         
-        .sticky-footer-action-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: #111827; border-top: 1px solid #1f2937; padding: 10px; display: flex; justify-content: center; z-index: 100; }
-        .sticky-bar-btn { width: 90%; max-width: 400px; background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; border: none; padding: 12px; border-radius: 8px; font-size: 14px; font-weight: 700; text-transform: uppercase; text-align: center; text-decoration: none; }
+        .rating-metrics-wrapper { display: flex; flex-direction: column; gap: 8px; margin: 20px 0; background: #f9fafb; padding: 14px; border-radius: 12px; border: 1px solid #f3f4f6; }
+        .metric-row { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #4b5563; font-weight: 500; }
+        .badge-circle { width: 32px; height: 32px; border-radius: 50%; background: #f59e0b; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+        .badge-circle.green { background: #10b981; }
+        .badge-circle.blue { background: #3b82f6; }
+
+        .action-button-link { display: block; background: #10b981; color: #ffffff; text-align: center; padding: 15px; border-radius: 10px; font-weight: 700; text-decoration: none; font-size: 16px; text-transform: uppercase; box-shadow: 0 4px 14px rgba(16,185,129,0.25); margin-bottom: 12px; }
+        .action-button-link.telegram-blue { background: #0284c7; box-shadow: 0 4px 14px rgba(2,132,199,0.25); }
+        
+        .content-info-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 18px; margin-top: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.01); }
+        .card-header-label { font-size: 16px; font-weight: 700; color: #111827; margin-bottom: 10px; }
+        .card-body-text { font-size: 14px; color: #4b5563; line-height: 1.6; text-align: justify; }
+        .grid-section-divider { font-size: 15px; font-weight: 700; color: #111827; text-transform: uppercase; margin: 35px 0 14px 0; padding-left: 6px; border-left: 4px solid #10b981; }
+        .recommendation-viewport-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 30px; }
+        .recommendation-item-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 12px 4px; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.01); }
+        .rec-app-thumb { width: 58px; height: 58px; border-radius: 12px; object-fit: cover; }
+        .rec-app-title { font-size: 11px; font-weight: 700; color: #374151; margin-top: 8px; }
+
+        .fixed-utility-stack { position: fixed; bottom: 85px; right: 16px; display: flex; flex-direction: column; gap: 8px; z-index: 150; }
+        .stack-anchor-trigger { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15); text-decoration: none; border: none; cursor: pointer; color: white; font-size: 18px; }
+        .stk-tg { background: #0284c7; }
+        .stk-top { background: #4b5563; display: none; } /* Default hidden */
+        .stk-home { background: #10b981; }
+
+        .absolute-system-footer { background: #1a1a1a; border-top: 1px solid #333333; text-align: center; padding: 22px 16px; color: #888888; font-size: 12px; width: 100%; margin-top: auto; }
     </style>
 </head>
 <body>
+    <div class="premium-nav-bar">
+        <div class="branding-title">prosafeyonogame<span>2026</span></div>
+        <button class="menu-bar-icon" onclick="openMenuSystem()">☰</button>
+    </div>
 
-    <div class="page-content-wrapper">
+    <div class="side-navigation-overlay" id="sideNavOverlay">
+        <div class="side-menu-header">
+            <span style="font-size:15px; font-weight:700; color:#10b981;">Menu</span>
+            <button class="side-menu-close" onclick="closeMenuSystem()">&times;</button>
+        </div>
+        <a href="index.html" class="side-menu-link">🏡 Home</a>
+        <a href="https://t.me/invitnew" target="_blank" class="side-menu-link">📢 Telegram</a>
+    </div>
+
+    <div class="main-viewport-container">
+        <div class="display-hero-node">
+            <img src="https://i.ibb.co/39KDGPBr/Screenshot-2026-0524-122547.png" class="app-main-logo" alt="IND Rummy">
+            <h1 class="app-main-title">IND Rummy</h1>
+        </div>
+        <div class="rating-metrics-wrapper">
+            <div class="metric-row"><div class="badge-circle">9.8</div> <span>CasinoRank: <strong>Excellent</strong></span></div>
+        </div>
+        <a href="https://indrummyn.com/?code=XU7ZAHJBQM3&t=1780577729" class="action-button-link">📥 Download App</a>
+        <a href="https://t.me/invitnew" target="_blank" class="action-button-link telegram-blue">🚀 Telegram</a>
         
-        <div class="game-detail-card">
-            <div class="detail-header">
-                <img src="https://i.ibb.co/39KDGPBr/Screenshot-2026-0524-122547.png" class="detail-logo" alt="IND Rummy Logo">
-                <div>
-                    <h1 class="detail-title">IND Rummy</h1>
-                    <div class="detail-status-row">
-                        <span class="rating-badge">★ 10.0</span>
-                        <span class="safe-badge">Legal Server Mirror</span>
-                    </div>
-                </div>
+        <div class="content-info-card">
+            <div class="card-header-label">✨ Description</div>
+            <div class="card-body-text">
+                <p><strong>IND Rummy</strong> download available now. This <strong>IND Rummy</strong> version provides premium security and anti-ban gameplay.</p>
             </div>
-            <div class="download-action-box">
-                <a href="https://yonorummy043.com/?code=VIP3X1XWA3G&t=1780576965" class="main-download-btn">📥 Download APK Now</a>
-            </div>
-            <p class="info-text-node">
-                Get high-speed infrastructure access downloads for IND Rummy APK. Verified anti-ban algorithms active to provide continuous uninterrupted operational access.
-            </p>
         </div>
 
-        <h2 class="section-divider-title">Other Popular Games</h2>
-        <div class="other-games-grid">
-            <a href="inr-rummy.html" class="sub-grid-card">
-                <img src="https://i.ibb.co/dwJW89jT/IMG-20260526-094057-833.jpg" class="sub-grid-logo" alt="INR Rummy">
-                <div class="sub-grid-name">INR Rummy</div>
-            </a>
-            <a href="spin-crush.html" class="sub-grid-card">
-                <img src="https://i.ibb.co/mF600568/Screenshot-2026-0524-122402.png" class="sub-grid-logo" alt="Spin Crush">
-                <div class="sub-grid-name">Spin Crush</div>
-            </a>
-            <a href="789-jackpot.html" class="sub-grid-card">
-                <img src="https://i.ibb.co/LXHb3q9r/IMG-20260527-084105-646.jpg" class="sub-grid-logo" alt="789 Jackpot">
-                <div class="sub-grid-name">789 Jackpot</div>
-            </a>
-            <a href="neta-vip.html" class="sub-grid-card">
-                <img src="https://i.ibb.co/q3mdn5fK/IMG-20260601-134207-570.jpg" class="sub-grid-logo" alt="Neta VIP">
-                <div class="sub-grid-name">Neta VIP</div>
-            </a>
-            <a href="hi-rummy.html" class="sub-grid-card">
-                <img src="https://i.ibb.co/Y4QjvfRz/IMG-20260527-083518-645.jpg" class="sub-grid-logo" alt="Hi Rummy">
-                <div class="sub-grid-name">Hi Rummy</div>
-            </a>
-            <a href="jaiho-rummy.html" class="sub-grid-card">
-                <img src="https://i.ibb.co/S4Lbb73b/IMG-20260527-083816-794.jpg" class="sub-grid-logo" alt="Jaiho Rummy">
-                <div class="sub-grid-name">Jaiho Rummy</div>
-            </a>
+        <h2 class="grid-section-divider">Other Popular Games</h2>
+        <div class="recommendation-viewport-grid">
+            <a href="yono-rummy.html" class="recommendation-item-card"><img src="https://i.ibb.co/XxTS3tdZ/Screenshot-2026-0524-121950.png" class="rec-app-thumb"><div class="rec-app-title">Yono Rummy</div></a>
+            <a href="spin-777.html" class="recommendation-item-card"><img src="https://i.ibb.co/m5xd7qpZ/Screenshot-2026-0524-122312.png" class="rec-app-thumb"><div class="rec-app-title">Spin 777</div></a>
+            <a href="567-slots.html" class="recommendation-item-card"><img src="https://i.ibb.co/Q7Wr5bhm/IMG-20260604-173703-578.jpg" class="rec-app-thumb"><div class="rec-app-title">567 Slots</div></a>
         </div>
+    </div>
 
+    <div class="fixed-utility-stack">
+        <a href="https://t.me/invitnew" class="stack-anchor-trigger stk-tg">📢</a>
+        <button class="stack-anchor-trigger stk-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
+        <a href="index.html" class="stack-anchor-trigger stk-home">🏠</a>
     </div>
 
     <footer class="absolute-system-footer">
-        <p>&copy; 2026 ProSafe Yono Game Network. All Rights Reserved.</p>
+        <p>&copy; 2026 prosafeyonogame2026.</p>
     </footer>
 
-    <div class="sticky-footer-action-bar">
-        <a href="https://yonorummy043.com/?code=VIP3X1XWA3G&t=1780576965" target="_blank" class="sticky-bar-btn">Install Official Yono App</a>
-    </div>
-
+    <script>
+        window.onscroll = function() {
+            const btn = document.getElementById('scrollTopBtn');
+            if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        };
+        function openMenuSystem() { document.getElementById('sideNavOverlay').style.right = '0px'; }
+        function closeMenuSystem() { document.getElementById('sideNavOverlay').style.right = '-260px'; }
+    </script>
 </body>
 </html>
