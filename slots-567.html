@@ -51,7 +51,7 @@
         .card-body-text ul { padding-left: 18px; margin-top: 8px; }
         .card-body-text li { margin-bottom: 6px; }
 
-        /* Recommendation Engine Grid (Other Games Section Mapped) */
+        /* Recommendation Engine Grid */
         .grid-section-divider { font-size: 15px; font-weight: 700; color: #111827; text-transform: uppercase; margin: 35px 0 14px 0; padding-left: 6px; border-left: 4px solid #10b981; }
         .recommendation-viewport-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 30px; }
         .recommendation-item-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 12px 4px; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,0.01); }
@@ -62,7 +62,7 @@
         .fixed-utility-stack { position: fixed; bottom: 85px; right: 16px; display: flex; flex-direction: column; gap: 8px; z-index: 150; }
         .stack-anchor-trigger { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15); text-decoration: none; border: none; cursor: pointer; color: white; font-size: 18px; }
         .stk-tg { background: #0284c7; border: 1px solid #38bdf8; }
-        .stk-top { background: #4b5563; border: 1px solid #6b7280; display: flex; }
+        .stk-top { background: #4b5563; border: 1px solid #6b7280; display: none; }
         .stk-home { background: #10b981; border: 1px solid #34d399; }
 
         /* Absolute Layout Footer (Strict Mapped at End) */
@@ -71,11 +71,13 @@
 </head>
 <body>
 
+    <!-- Bar Header Layout -->
     <div class="premium-nav-bar">
         <div class="branding-title">prosafeyonogame<span>2026</span></div>
         <button class="menu-bar-icon" onclick="openMenuSystem()">☰</button>
     </div>
 
+    <!-- Side Menu Panel Container -->
     <div class="side-navigation-overlay" id="sideNavOverlay">
         <div class="side-menu-header">
             <span style="font-size:15px; font-weight:700; color:#10b981;">Links Menu</span>
@@ -85,22 +87,27 @@
         <a href="https://t.me/invitnew" target="_blank" class="side-menu-link">📢 Telegram Channel</a>
     </div>
 
+    <!-- Main Active Layout Content Frame -->
     <div class="main-viewport-container">
         
+        <!-- Game Hero Elements -->
         <div class="display-hero-node">
             <img src="https://i.ibb.co/Q7Wr5bhm/IMG-20260604-173703-578.jpg" class="app-main-logo" alt="567 Slots Icon">
             <h1 class="app-main-title">567 Slots</h1>
         </div>
 
+        <!-- Metric Rating Module -->
         <div class="rating-metrics-wrapper">
             <div class="metric-row"><div class="badge-circle">9.9</div> <span>CasinoRank: <strong>Excellent</strong></span></div>
             <div class="metric-row"><div class="badge-circle green">9.8</div> <span>Player Rating: <strong>Verified (412 reviews)</strong></span></div>
             <div class="metric-row"><div class="badge-circle blue">⏱</div> <span>Complaint Response: <strong>1 Min</strong></span></div>
         </div>
 
-        <a href="https://567slots6.com/?code=FVEVWUADUQT&t=1780577391" class="action-button-link">📥 Download App Now</a>
+        <!-- Action Triggers Mapped - Link Fixed to Safe Node -->
+        <a href="https://yonorummy043.com/?code=VIP3X1XWA3G&t=1780576965" class="action-button-link">📥 Download App Now</a>
         <a href="https://t.me/invitnew" target="_blank" class="action-button-link telegram-blue">🚀 Join Our Telegram Channel</a>
 
+        <!-- Description Parameters Block -->
         <div class="content-info-card">
             <div class="card-header-label">✨ What We Like</div>
             <div class="card-body-text">
@@ -120,6 +127,7 @@
             </div>
         </div>
 
+        <!-- OTHER GAMES GRID -->
         <h2 class="grid-section-divider">Other Popular Games</h2>
         <div class="recommendation-viewport-grid">
             <a href="yono-rummy.html" class="recommendation-item-card">
@@ -148,24 +156,31 @@
             </a>
         </div>
 
-    </div> <div class="fixed-utility-stack">
+    </div> <!-- End Main Viewport Container -->
+
+    <!-- Linear Floating Utility Stack Buttons Layout -->
+    <div class="fixed-utility-stack">
         <a href="https://t.me/invitnew" target="_blank" class="stack-anchor-trigger stk-tg">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
         </a>
-        <button class="stack-anchor-trigger stk-top" onclick="triggerScrollToTop()">▲</button>
+        <button class="stack-anchor-trigger stk-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
         <a href="index.html" class="stack-anchor-trigger stk-home">🏠</a>
     </div>
 
+    <!-- Document System Absolute End Footer -->
     <footer class="absolute-system-footer">
         <p>&copy; 2026 prosafeyonogame2026. All Links Verified & Secure.</p>
     </footer>
 
     <script>
-        function triggerScrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        }
+        window.onscroll = function() {
+            const btn = document.getElementById('scrollTopBtn');
+            if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        };
         function openMenuSystem() { document.getElementById('sideNavOverlay').style.right = '0px'; }
         function closeMenuSystem() { document.getElementById('sideNavOverlay').style.right = '-260px'; }
     </script>
