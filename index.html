@@ -7,65 +7,74 @@
     <meta name="description" content="All Yono Games App Download: Access secure portals for Yono Rummy Legend Pro, Spin 777, and more. Certified stable platforms for Android and iOS devices.">
     <meta name="keywords" content="yono 777, yono india, yono games app download, yono games apk download old version, yono 777 apk mp 2026, Yono Rummy Legend Pro">
     <style>
-        /* Premium Global Reset & Structure Configurations */
+        /* Full Clean White Theme Design Matrix */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        html, body { background-color: #0b0f19; color: #f3f4f6; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #f4f6f9; color: #1f2937; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
         
-        /* Rigid Top Header Layout */
-        header { background: linear-gradient(135deg, #111827 0%, #1f2937 100%); border-bottom: 2px solid #10b981; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        /* Rigid Top Header Layout - Pure White Design */
+        header { background: #ffffff; border-bottom: 2px solid #2563eb; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
         .nav-container { max-width: 600px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; }
-        .brand-logo-text { font-size: 20px; font-weight: 900; color: #ffffff; letter-spacing: 0.5px; text-transform: uppercase; }
-        .brand-logo-text span { color: #10b981; }
+        .brand-logo-text { font-size: 20px; font-weight: 900; color: #1e3a8a; letter-spacing: 0.5px; text-transform: uppercase; }
+        .brand-logo-text span { color: #2563eb; }
         
-        /* Premium Parallel Menu Trigger (|||) */
-        .menu-toggle-btn { background: none; border: none; color: #10b981; font-size: 22px; font-weight: 300; cursor: pointer; display: flex; align-items: center; letter-spacing: 2px; padding: 4px 8px; }
+        /* Parallel Menu Trigger (|||) - Pure White Theme Sync */
+        .menu-toggle-btn { background: none; border: none; color: #2563eb; font-size: 22px; font-weight: bold; cursor: pointer; display: flex; align-items: center; letter-spacing: 2px; padding: 4px 8px; }
 
         /* Slide Overlay Panel Layout */
-        .sidebar-panel { position: fixed; top: 0; right: -280px; width: 280px; height: 100vh; background: #111827; box-shadow: -10px 0 30px rgba(0,0,0,0.5); z-index: 200; transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 24px; border-left: 2px solid #10b981; }
-        .sidebar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 1px solid #374151; padding-bottom: 12px; }
-        .sidebar-title { font-size: 16px; font-weight: 700; color: #10b981; text-transform: uppercase; }
-        .sidebar-close { background: none; border: none; color: #ffffff; font-size: 28px; cursor: pointer; }
-        .sidebar-link { display: block; color: #e5e7eb; font-size: 15px; font-weight: 600; text-decoration: none; padding: 12px 14px; border-radius: 8px; margin-bottom: 10px; background: #1f2937; transition: all 0.2s; }
-        .sidebar-link:hover { background: #10b981; color: #ffffff; }
+        .sidebar-panel { position: fixed; top: 0; right: -280px; width: 280px; height: 100vh; background: #ffffff; box-shadow: -5px 0 25px rgba(0,0,0,0.1); z-index: 200; transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1); padding: 24px; border-left: 2px solid #2563eb; }
+        .sidebar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 1px solid #e5e7eb; padding-bottom: 12px; }
+        .sidebar-title { font-size: 16px; font-weight: 700; color: #1e3a8a; text-transform: uppercase; }
+        .sidebar-close { background: none; border: none; color: #1f2937; font-size: 28px; cursor: pointer; }
+        .sidebar-link { display: block; color: #374151; font-size: 15px; font-weight: 600; text-decoration: none; padding: 12px 14px; border-radius: 8px; margin-bottom: 10px; background: #f3f4f6; transition: all 0.2s; }
+        .sidebar-link:hover { background: #2563eb; color: #ffffff; }
 
         /* Main Wrapper Frame */
         main { flex: 1; width: 100%; max-width: 600px; margin: 0 auto; padding: 16px; }
 
-        /* High-Efficiency Input Field Component */
-        .search-box-wrapper { margin-bottom: 20px; position: relative; }
-        .search-input-field { width: 100%; padding: 14px 16px; background: #1f2937; border: 1px solid #374151; border-radius: 12px; color: #ffffff; font-size: 15px; font-weight: 500; outline: none; transition: border-color 0.2s; }
-        .search-input-field:focus { border-color: #10b981; box-shadow: 0 0 0 2px rgba(16,185,129,0.2); }
+        /* Search Bar Field Component */
+        .search-box-wrapper { margin-bottom: 18px; position: relative; }
+        .search-input-field { width: 100%; padding: 14px 16px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; color: #1f2937; font-size: 15px; font-weight: 500; outline: none; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: border-color 0.2s; }
+        .search-input-field:focus { border-color: #2563eb; box-shadow: 0 0 0 2px rgba(37,99,235,0.15); }
 
-        /* Dynamic High-End User Live Count Stats Widget Replace Box */
-        .live-statistics-container { background: #111827; border: 1px solid #1f2937; border-left: 4px solid #10b981; border-radius: 12px; padding: 14px; margin-bottom: 24px; display: flex; justify-content: space-around; text-align: center; }
-        .stat-item-box { display: flex; flex-direction: column; gap: 4px; }
-        .stat-value-node { font-size: 16px; font-weight: 800; color: #ffffff; }
+        /* Top Live User Count Stats Widget - White Accent Structure */
+        .live-statistics-container { background: #ffffff; border: 1px solid #e2e8f0; border-left: 4px solid #2563eb; border-radius: 12px; padding: 12px; margin-bottom: 20px; display: flex; justify-content: space-around; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+        .stat-item-box { display: flex; flex-direction: column; gap: 2px; }
+        .stat-value-node { font-size: 16px; font-weight: 800; color: #1e3a8a; }
         .stat-value-node span { color: #10b981; font-size: 12px; margin-left: 2px; }
-        .stat-label-text { font-size: 11px; color: #9ca3af; text-transform: uppercase; font-weight: 700; letter-spacing: 0.3px; }
+        .stat-label-text { font-size: 11px; color: #64748b; text-transform: uppercase; font-weight: 700; letter-spacing: 0.3px; }
 
-        /* Parallel Platform Link Shortcuts Module (1000171692.png Style Elements) */
-        .pill-links-wrapper { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 25px; }
-        .pill-link-item { background: #1f2937; border: 1px solid #374151; border-radius: 8px; color: #ffffff; text-align: center; text-decoration: none; padding: 10px 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-
-        /* Game Matrix Representation Structure Grid */
-        .game-display-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 30px; }
-        .game-card-node { background: #111827; border: 1px solid #1f2937; border-radius: 16px; padding: 12px 4px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; position: relative; box-shadow: 0 4px 6px rgba(0,0,0,0.15); transition: transform 0.2s; }
+        /* Game Matrix Structure Grid */
+        .game-display-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+        .game-card-node { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 12px 4px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-between; position: relative; box-shadow: 0 4px 8px rgba(0,0,0,0.04); transition: transform 0.2s; }
         .game-card-node:active { transform: scale(0.96); }
-        .game-app-icon { width: 68px; height: 68px; border-radius: 16px; object-fit: cover; border: 1px solid #374151; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .game-app-name { font-size: 12px; font-weight: 700; color: #ffffff; margin-top: 8px; height: 32px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.3; padding: 0 2px; }
+        .game-app-icon { width: 68px; height: 68px; border-radius: 16px; object-fit: cover; border: 1px solid #e2e8f0; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .game-app-name { font-size: 12px; font-weight: 700; color: #1f2937; margin-top: 8px; height: 32px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.3; padding: 0 2px; }
         
-        /* Premium Navigation Redirect Element (Instead of direct installer downloads) */
-        .game-download-btn { display: inline-block; width: 90%; background: #2563eb; color: #ffffff; font-size: 11px; font-weight: 800; text-transform: uppercase; text-decoration: none; padding: 7px 0; border-radius: 8px; margin-top: 8px; box-shadow: 0 2px 6px rgba(37,99,235,0.3); }
+        /* Premium Action Redirection Buttons */
+        .game-download-btn { display: inline-block; width: 90%; background: #2563eb; color: #ffffff; font-size: 11px; font-weight: 800; text-transform: uppercase; text-decoration: none; padding: 7px 0; border-radius: 8px; margin-top: 8px; box-shadow: 0 2px 6px rgba(37,99,235,0.2); }
 
-        /* Relocated Core Keyword Matrix Container Framework Layout */
-        .seo-paragraph-card { background: #ffffff; border-radius: 14px; padding: 20px; margin: 30px 0 15px 0; border: 1px solid #e5e7eb; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .seo-headline-text { font-size: 16px; font-weight: 800; color: #1e40af; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; border-left: 4px solid #2563eb; padding-left: 8px; }
-        .seo-matrix-prose { font-size: 13.5px; color: #374151; line-height: 1.62; text-align: justify; }
+        /* Moving Tags / Pill Links Section - Below the Games Grid */
+        .pill-links-wrapper { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 24px 0; }
+        .pill-link-item { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; color: #1e3a8a; text-align: center; text-decoration: none; padding: 10px 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; box-shadow: 0 2px 4px rgba(0,0,0,0.03); transition: background 0.2s; }
+        .pill-link-item:hover { background: #f8fafc; border-color: #2563eb; }
 
-        /* Floating Fixed Utility Anchor Layout */
-        .telegram-float-anchor { position: fixed; bottom: 25px; right: 20px; width: 54px; height: 54px; background: #0284c7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(2,132,199,0.4); border: 2px solid #38bdf8; z-index: 150; text-decoration: none; }
-        footer { background: #111827; border-top: 1px solid #1f2937; padding: 24px 16px; text-align: center; width: 100%; }
-        .footer-text { font-size: 13px; color: #e5e7eb; font-weight: 500; line-height: 1.6; }
+        /* Clean White Screen Informational Section (Pass-Pass Text Readability) */
+        .seo-paragraph-card { background: #ffffff; border-radius: 14px; padding: 18px; margin: 20px 0 15px 0; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .seo-headline-text { font-size: 16px; font-weight: 800; color: #1e40af; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; border-left: 4px solid #2563eb; padding-left: 8px; }
+        .seo-matrix-prose { font-size: 13.5px; color: #374151; line-height: 1.45; text-align: left; }
+        .seo-matrix-prose p { margin-bottom: 8px; }
+        .seo-matrix-prose p:last-child { margin-bottom: 0; }
+
+        /* Smooth Back To Top Trigger Button */
+        .back-to-top-btn { position: fixed; bottom: 85px; right: 20px; width: 44px; height: 44px; background: #ffffff; border: 2px solid #cbd5e1; border-radius: 50%; display: none; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.08); cursor: pointer; z-index: 150; transition: all 0.2s; }
+        .back-to-top-btn:hover { border-color: #2563eb; background: #f8fafc; }
+
+        /* Floating Action Channel Button Layout */
+        .telegram-float-anchor { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background: #0284c7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(2,132,199,0.3); border: 2px solid #38bdf8; z-index: 150; text-decoration: none; }
+        
+        footer { background: #ffffff; border-top: 1px solid #e2e8f0; padding: 20px 16px; text-align: center; width: 100%; }
+        .footer-text { font-size: 12.5px; color: #4b5563; font-weight: 500; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -92,7 +101,6 @@
             <input type="text" class="search-input-field" id="gameSearchInput" placeholder="Search premium games here..." onkeyup="filterGameGridList()">
         </div>
 
-        <!-- NEW OPTIMIZED LIVE COUNT STATUS CONTAINER WIDGET -->
         <section class="live-statistics-container" aria-label="Live Network Activity Streams">
             <div class="stat-item-box">
                 <div class="stat-value-node">45,180<span>🟢</span></div>
@@ -108,76 +116,56 @@
             </div>
         </section>
 
-        <!-- TOP PILL LINK MODULE SHOWN IN WHITE SCREENSHOT -->
-        <div class="pill-links-wrapper">
-            <a href="spin-101.html" class="pill-link-item">Spin 101 APK</a>
-            <a href="slots-567.html" class="pill-link-item">567 Slots APK</a>
-            <a href="mbm-bet.html" class="pill-link-item">MBM Bet APK</a>
-            <a href="gogo-rummy.html" class="pill-link-item">Gogo Rummy APK</a>
-            <a href="bet-213.html" class="pill-link-item">Bet 213 APK</a>
-            <a href="ok-rummy.html" class="pill-link-item">Ok Rummy APK</a>
-        </div>
-
-        <!-- Master Grid Modules Redirecting to Individual Sub-html Files -->
         <section class="game-display-grid" id="masterGameGrid" aria-label="Verified Application Download Row">
 
-            <!-- Game Card 01: Yono Rummy -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/XxTS3tdZ/Screenshot-2026-0524-121950.png" class="game-app-icon" alt="Yono Rummy Box Frame Icon">
                 <div class="game-app-name">Yono Rummy</div>
                 <a href="yono-rummy.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 02: Spin 777 -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/m5xd7qpZ/Screenshot-2026-0524-122312.png" class="game-app-icon" alt="Spin 777 Box Frame Icon">
                 <div class="game-app-name">Spin 777</div>
                 <a href="spin-777.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 03: Spin Crush -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/mF600568/Screenshot-2026-0524-122402.png" class="game-app-icon" alt="Spin Crush Box Frame Icon">
                 <div class="game-app-name">Spin Crush</div>
                 <a href="spin-crush.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 04: 567 Slots -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/Q7Wr5bhm/IMG-20260604-173703-578.jpg" class="game-app-icon" alt="567 Slots Box Frame Icon">
                 <div class="game-app-name">567 Slots</div>
                 <a href="slots-567.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 05: IND Rummy -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/39KDGPBr/Screenshot-2026-0524-122547.png" class="game-app-icon" alt="IND Rummy Box Frame Icon">
                 <div class="game-app-name">IND Rummy</div>
                 <a href="ind-rummy.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 06: INR Rummy -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/dwJW89jT/IMG-20260526-094057-833.jpg" class="game-app-icon" alt="INR Rummy Box Frame Icon">
                 <div class="game-app-name">INR Rummy</div>
                 <a href="inr-rummy.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 07: Jaiho 91 -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/N2kGxkGD/IMG-20260526-093823-947.jpg" class="game-app-icon" alt="Jaiho 91 Box Frame Icon">
                 <div class="game-app-name">Jaiho 91</div>
                 <a href="jaiho-91.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 08: Bingo 101 -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/S46hgCs6/Screenshot-2026-0524-214009.png" class="game-app-icon" alt="Bingo 101 Box Frame Icon">
                 <div class="game-app-name">Bingo 101</div>
                 <a href="bingo-101.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 09: 101Z -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/QF1qr0Xs/IMG-20260526-095252-042.jpg" class="game-app-icon" alt="101Z Box Frame Icon">
                 <div class="game-app-name">101Z</div>
@@ -236,187 +224,160 @@
                 <div class="game-app-name">Club INR</div>
                 <a href="club-inr.html" class="game-download-btn">Get APK</a>
             </div>
-                        <!-- Game Card 19: Game Rummy -->
-            <div class="game-card-node">
+                        <div class="game-card-node">
                 <img src="https://i.ibb.co/XfpncM77/IMG-20260527-082804-195.jpg" class="game-app-icon" alt="Game Rummy Box Frame Icon">
                 <div class="game-app-name">Game Rummy</div>
                 <a href="game-rummy.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 20: Rumble Rummy -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/6CWcJ9t/IMG-20260527-082552-806.jpg" class="game-app-icon" alt="Rumble Rummy Box Frame Icon">
                 <div class="game-app-name">Rumble Rummy</div>
                 <a href="rumble-rummy.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 21: Ok Rummy -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/VYBQzpwY/IMG-20260604-190041-410.jpg" class="game-app-icon" alt="Ok Rummy Box Frame Icon">
                 <div class="game-app-name">Ok Rummy</div>
                 <a href="ok-rummy.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 22: Spin Gold -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/932KxXnP/Screenshot-2026-0604-203451.png" class="game-app-icon" alt="Spin Gold Box Frame Icon">
                 <div class="game-app-name">Spin Gold</div>
                 <a href="spin-gold.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 23: Bet 213 -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/YsMHdC3/IMG-20260604-203944-171.jpg" class="game-app-icon" alt="Bet 213 Box Frame Icon">
                 <div class="game-app-name">Bet 213</div>
                 <a href="bet-213.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 24: Slots Winner -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/JRfZxJFz/IMG-20260601-134057-693.jpg" class="game-app-icon" alt="Slots Winner Box Frame Icon">
                 <div class="game-app-name">Slots Winner</div>
                 <a href="slots-winner.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 25: Neta VIP -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/q3mdn5fK/IMG-20260601-134207-570.jpg" class="game-app-icon" alt="Neta VIP Box Frame Icon">
                 <div class="game-app-name">Neta VIP</div>
                 <a href="neta-vip.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 26: MBM Bet -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/TxzVSnrm/IMG-20260601-134235-452.jpg" class="game-app-icon" alt="MBM Bet Box Frame Icon">
                 <div class="game-app-name">MBM Bet</div>
                 <a href="mbm-bet.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 27: Jaiho Win -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/zVGcGjrv/IMG-20260601-134303-975.jpg" class="game-app-icon" alt="Jaiho Win Box Frame Icon">
                 <div class="game-app-name">Jaiho Win</div>
                 <a href="jaiho-win.html" class="game-download-btn">Get APK</a>
             </div>
-                        <!-- Game Card 28: ABC Rummy -->
-            <div class="game-card-node">
+                        <div class="game-card-node">
                 <img src="https://i.ibb.co/PGKmgd81/IMG-20260601-134329-100.jpg" class="game-app-icon" alt="ABC Rummy Box Frame Icon">
                 <div class="game-app-name">ABC Rummy</div>
                 <a href="abc-rummy.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 29: Yono VIP -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/gLCMDkSM/IMG-20260601-134349-455.jpg" class="game-app-icon" alt="Yono VIP Box Frame Icon">
                 <div class="game-app-name">Yono VIP</div>
                 <a href="yono-vip.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 30: Rummy 77 -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/G4xVYT3V/IMG-20260529-085328-640.jpg" class="game-app-icon" alt="Rummy 77 Box Frame Icon">
                 <div class="game-app-name">Rummy 77</div>
                 <a href="rummy-77.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 31: EVER 777 -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/Q3C16fb8/IMG-20260529-085225-981.jpg" class="game-app-icon" alt="EVER 777 Box Frame Icon">
                 <div class="game-app-name">EVER 777</div>
                 <a href="ever-777.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 32: Slots Spin -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/Sw5jz8d4/IMG-20260529-085855-118.jpg" class="game-app-icon" alt="Slots Spin Box Frame Icon">
                 <div class="game-app-name">Slots Spin</div>
                 <a href="slots-spin.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 33: Jaiho Arcade -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/zT56hbGh/IMG-20260528-170118-181.jpg" class="game-app-icon" alt="Jaiho Arcade Box Frame Icon">
                 <div class="game-app-name">Jaiho Arcade</div>
                 <a href="jaiho-arcade.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 34: Jaiho Spin -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/mFtZ60Ft/IMG-20260528-170044-119.jpg" class="game-app-icon" alt="Jaiho Spin Box Frame Icon">
                 <div class="game-app-name">Jaiho Spin</div>
                 <a href="jaiho-spin.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 35: Rummy Ludo -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/gMxqcQCG/IMG-20260528-165950-648.jpg" class="game-app-icon" alt="Rummy Ludo Box Frame Icon">
                 <div class="game-app-name">Rummy Ludo</div>
                 <a href="rummy-ludo.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 36: Maha Game -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/kVhqgcBS/IMG-20260528-165912-402.jpg" class="game-app-icon" alt="Maha Game Box Frame Icon">
                 <div class="game-app-name">Maha Game</div>
                 <a href="maha-game.html" class="game-download-btn">Get APK</a>
             </div>
-                        <!-- Game Card 37: Yes Spin -->
-            <div class="game-card-node">
+                        <div class="game-card-node">
                 <img src="https://i.ibb.co/HpGCKDhf/IMG-20260528-165827-292.jpg" class="game-app-icon" alt="Yes Spin Box Frame Icon">
                 <div class="game-app-name">Yes Spin</div>
                 <a href="yes-spin.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 38: Yono Slots -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/W4RkkgnW/IMG-20260528-165717-352.jpg" class="game-app-icon" alt="Yono Slots Box Frame Icon">
                 <div class="game-app-name">Yono Slots</div>
                 <a href="yono-slots.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 39: Rummy 888 -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/wF6g121J/IMG-20260528-165432-914.jpg" class="game-app-icon" alt="Rummy 888 Box Frame Icon">
                 <div class="game-app-name">Rummy 888</div>
                 <a href="rummy-888.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 40: Jaiho Slots -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/wZBnk9sF/IMG-20260528-165407-231.jpg" class="game-app-icon" alt="Jaiho Slots Box Frame Icon">
                 <div class="game-app-name">Jaiho Slots</div>
                 <a href="jaiho-slots.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 41: Yono Games -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/GQ6GP2LS/Screenshot-2026-0528-165315.png" class="game-app-icon" alt="Yono Games Box Frame Icon">
                 <div class="game-app-name">Yono Games</div>
                 <a href="yono-games.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 42: Top Rummy -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/RGtvj6Dd/IMG-20260528-165052-353.jpg" class="game-app-icon" alt="Top Rummy Box Frame Icon">
                 <div class="game-app-name">Top Rummy</div>
                 <a href="top-rummy.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 43: Spin Winner -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/chcCTzLS/IMG-20260528-165212-428.jpg" class="game-app-icon" alt="Spin Winner Box Frame Icon">
                 <div class="game-app-name">Spin Winner</div>
                 <a href="spin-winner.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 44: Joy Rummy -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/xKNsWwb0/IMG-20260528-165017-074.jpg" class="game-app-icon" alt="Joy Rummy Box Frame Icon">
                 <div class="game-app-name">Joy Rummy</div>
                 <a href="joy-rummy.html" class="game-download-btn">Get APK</a>
             </div>
 
-            <!-- Game Card 45: Love Rummy -->
             <div class="game-card-node">
                 <img src="https://i.ibb.co/fVc44frd/IMG-20260528-164912-649.jpg" class="game-app-icon" alt="Love Rummy Box Frame Icon">
                 <div class="game-app-name">Love Rummy</div>
@@ -425,26 +386,34 @@
 
         </section>
 
-        <!-- HIGH SEO PERFORMANCE WHITE SCORE PARAGRAPH CARD BLOCK (FOOTER KE UPAR) -->
+        <div class="pill-links-wrapper">
+            <a href="spin-101.html" class="pill-link-item">Spin 101 APK</a>
+            <a href="slots-567.html" class="pill-link-item">567 Slots APK</a>
+            <a href="mbm-bet.html" class="pill-link-item">MBM Bet APK</a>
+            <a href="gogo-rummy.html" class="pill-link-item">Gogo Rummy APK</a>
+            <a href="bet-213.html" class="pill-link-item">Bet 213 APK</a>
+            <a href="ok-rummy.html" class="pill-link-item">Ok Rummy APK</a>
+        </div>
+
         <section class="seo-paragraph-card" aria-label="Official Yono Platform Documentation Hub">
             <h2 class="seo-headline-text">✨ Welcome to ProSafe Yono Game Platform (2026)</h2>
             <div class="seo-matrix-prose">
                 <p>Looking for the highest rewarding, secure, and <strong>new Yono game</strong> applications? You have arrived at the ultimate source destination! At ProSafe Yono Game, we maintain a continuously monitored repository of official redirection portals for all premium Rummy, Slots, and card challenges.</p>
-                <br>
                 <p>Our infrastructure optimizes search performance parameters for mobile servers actively crawling for high-authority index terms like <strong>yono 777</strong>, official <strong>yono india</strong> regional mirrors, and verified secure installation sources. Whether you are deep-diving into classic card setups via <strong>Yono Rummy Legend Pro</strong> or deploying a legacy <strong>yono games app download</strong>, our system manages clean operational pipelines.</p>
-                <br>
                 <p>Every sub-portal architecture undergoes comprehensive structural audits to defend consumer metadata. Access full variations including the secure <strong>yono games apk download old version</strong> setup or manage cross-platform deployments matching the stable <strong>yono 777 apk mp 2026</strong> specification instantly across modern network interfaces.</p>
             </div>
         </section>
 
     </main>
 
-    <!-- Accessibility Optimized Floating Action Trigger -->
+    <button class="back-to-top-btn" id="scrollToTopBtn" onclick="executeSmoothScrollToTop()" aria-label="Scroll smoothly back to the top header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+    </button>
+
     <a href="https://t.me/invitnew" target="_blank" class="telegram-float-anchor" id="telegramFloatAnchor" aria-label="Join our official Telegram channel for instant application updates and certified rewards">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
     </a>
 
-    <!-- High-Contrast High-Visibility Footer System -->
     <footer>
         <p class="footer-text">&copy; 2026 ProSafe Yono Game Network. All Rights Reserved. All Redirection Paths Verified & Secure.</p>
     </footer>
@@ -473,6 +442,20 @@
                     gameCards[i].style.display = 'none';
                 }
             }
+        }
+
+        // Smooth Scroll to Top Dynamic Script Monitor
+        const topButtonElement = document.getElementById("scrollToTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                topButtonElement.style.display = "flex";
+            } else {
+                topButtonElement.style.display = "none";
+            }
+        };
+
+        function executeSmoothScrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
