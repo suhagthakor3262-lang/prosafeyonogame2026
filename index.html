@@ -12,10 +12,12 @@
         html { scroll-behavior: smooth; }
         body { background-color: #f3f4f6; color: #111827; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
         
-        /* Navigation Bar Design with Logo Image Asset */
+        /* Navigation Bar Design with Logo and Site Name Text Inline */
         header { background: #ffffff; border-bottom: 2px solid #2563eb; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         .nav-container { max-width: 600px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 6px 14px; }
+        .nav-left-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
         .logo-frame-img { height: 38px; object-fit: contain; }
+        .site-brand-name { font-size: 16px; font-weight: 800; color: #1e3a8a; letter-spacing: -0.2px; }
         
         /* Menu Vector Toggle Line Icon (|||) */
         .menu-toggle-btn { background: none; border: none; color: #2563eb; font-size: 20px; font-weight: bold; cursor: pointer; display: flex; align-items: center; letter-spacing: 1px; padding: 4px; }
@@ -36,12 +38,19 @@
         .search-input-field { width: 100%; padding: 11px 14px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 10px; color: #111827; font-size: 14px; outline: none; }
         .search-input-field:focus { border-color: #2563eb; }
 
-        /* Mini Live Analytics Bar */
-        .live-statistics-container { background: #ffffff; border: 1px solid #e5e7eb; border-left: 4px solid #2563eb; border-radius: 10px; padding: 10px; margin-bottom: 14px; display: flex; justify-content: space-around; text-align: center; }
-        .stat-item-box { display: flex; flex-direction: column; }
-        .stat-value-node { font-size: 15px; font-weight: 800; color: #1e3a8a; }
-        .stat-value-node span { color: #10b981; font-size: 11px; }
-        .stat-label-text { font-size: 10px; color: #64748b; text-transform: uppercase; font-weight: 700; }
+        /* Max Rummy Special Spotlight Feature Card Layout */
+        .spotlight-launch-container { background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%); border: 2px solid #2563eb; border-radius: 14px; padding: 14px; margin-bottom: 14px; display: flex; align-items: center; gap: 14px; box-shadow: 0 4px 12px rgba(37,99,235,0.08); position: relative; overflow: hidden; }
+        .spotlight-icon-node { width: 68px; height: 68px; border-radius: 14px; object-fit: cover; border: 1px solid #bfdbfe; }
+        .spotlight-meta-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+        
+        /* Animated New Badge Styling */
+        .spotlight-badge-flex { display: flex; align-items: center; gap: 6px; }
+        .spotlight-new-badge { background: #ef4444; color: #ffffff; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; animation: pulseGlowEffect 1.4s infinite ease-in-out; }
+        @keyframes pulseGlowEffect { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,0.5); } 50% { transform: scale(1.05); box-shadow: 0 0 8px 2px rgba(239,68,68,0.3); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,0); } }
+        
+        .spotlight-launch-tag { color: #dc2626; font-size: 11px; font-weight: 800; letter-spacing: 0.3px; }
+        .spotlight-title-text { font-size: 17px; font-weight: 800; color: #1e3a8a; }
+        .spotlight-action-cta { background: #2563eb; color: #ffffff; font-size: 11.5px; font-weight: 800; text-transform: uppercase; text-decoration: none; padding: 8px 14px; border-radius: 8px; box-shadow: 0 3px 6px rgba(37,99,235,0.2); }
 
         /* Standard Game Presentation Box Matrix */
         .game-display-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
@@ -56,24 +65,6 @@
         .legal-close-btn { background: #ef4444; color: white; border: none; padding: 2px 8px; font-size: 11px; font-weight: 700; border-radius: 4px; cursor: pointer; }
         .legal-card-body { font-size: 13px; color: #374151; line-height: 1.5; text-align: justify; white-space: pre-line; }
 
-        /* Dynamic High-Conversion Promo Card Layout */
-        .promo-matrix-wrapper { display: flex; flex-direction: column; gap: 14px; margin-bottom: 16px; }
-        .promo-block-node { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 14px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-        .promo-header-flex { display: flex; align-items: center; gap: 12px; text-align: left; margin-bottom: 10px; }
-        .promo-app-icon { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; border: 1px solid #e5e7eb; }
-        .promo-meta-details { flex: 1; }
-        .promo-app-title { font-size: 15px; font-weight: 800; color: #1e3a8a; }
-        .promo-verified-tag { font-size: 11px; color: #059669; font-weight: 700; }
-        
-        .promo-dashed-box { background: #f8fafc; border: 1px dashed #2563eb; border-radius: 10px; padding: 10px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; }
-        .promo-code-string { font-size: 14px; font-weight: 700; color: #2563eb; text-transform: lowercase; letter-spacing: 0.5px; }
-        .promo-copy-btn { background: #ffffff; border: 1px solid #cbd5e1; color: #2563eb; padding: 5px 12px; font-size: 11px; font-weight: 700; border-radius: 6px; cursor: pointer; }
-
-        .promo-timer-row { display: flex; justify-content: center; gap: 6px; margin-bottom: 10px; align-items: center; }
-        .timer-label { font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase; margin-right: 4px; }
-        .timer-number-box { background: #6366f1; color: #ffffff; font-size: 12px; font-weight: 700; padding: 4px 8px; border-radius: 4px; min-width: 28px; }
-        .promo-download-cta { display: block; width: 100%; background: #0066cc; color: #ffffff; font-size: 13.5px; font-weight: 800; text-transform: uppercase; text-decoration: none; padding: 10px 0; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,102,204,0.2); }
-
         /* Global UI Containers */
         .pill-links-wrapper { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 16px 0 12px 0; }
         .pill-link-item { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; color: #1e3a8a; text-align: center; text-decoration: none; padding: 8px 4px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; }
@@ -85,13 +76,15 @@
         .footer-legal-nav { display: flex; justify-content: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
         .footer-legal-btn { background: none; border: none; color: #2563eb; font-size: 12px; font-weight: 700; cursor: pointer; text-decoration: underline; }
 
-        /* Live Activity Toast Container Layout */
+        /* Live Activity Toast Container Layout with Manual Dismiss Chokadi Trigger */
         #win-notification-toast { position: fixed; top: 75px; right: -320px; background: linear-gradient(90deg, #1e293b 0%, #1e3a8a 100%); color: #ffffff; padding: 10px 14px; border-radius: 12px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); z-index: 1000; transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(255,255,255,0.1); width: 280px; }
         .toast-game-avatar { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; border: 1.5px solid #fbbf24; }
-        .toast-meta-content { flex: 1; font-size: 12px; line-height: 1.4; }
+        .toast-meta-content { flex: 1; font-size: 12px; line-height: 1.4; position: relative; padding-right: 14px; }
         .toast-user-string { font-weight: 800; color: #fbbf24; }
         .toast-uid-string { color: #cbd5e1; font-size: 11px; }
         .toast-amount-string { color: #4ade80; font-weight: 800; font-size: 13px; }
+        .toast-dismiss-chokadi { position: absolute; top: -2px; right: -6px; background: none; border: none; color: #94a3b8; font-size: 14px; font-weight: 700; cursor: pointer; padding: 2px; line-height: 1; }
+        .toast-dismiss-chokadi:hover { color: #ffffff; }
 
         .back-to-top-btn { position: fixed; bottom: 80px; right: 16px; width: 40px; height: 40px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 50%; display: none; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); cursor: pointer; z-index: 150; }
         .telegram-float-anchor { position: fixed; bottom: 20px; right: 16px; width: 46px; height: 46px; background: #0284c7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(2,132,199,0.25); border: 1px solid #38bdf8; z-index: 150; text-decoration: none; }
@@ -103,12 +96,15 @@
 
     <header>
         <div class="nav-container">
-            <img src="https://i.ibb.co/fdZpJswb/file-000000002aa872089a44603a2278ac14.png" class="logo-frame-img" alt="ProSafe Official Portal Logo">
+            <a href="index.html" class="nav-left-brand">
+                <img src="https://i.ibb.co/fdZpJswb/file-000000002aa872089a44603a2278ac14.png" class="logo-frame-img" alt="ProSafe Logo">
+                <span class="site-brand-name">prosafeyonogame</span>
+            </a>
             <button class="menu-toggle-btn" onclick="toggleSidebarMenu()">|||</button>
         </div>
     </header>
 
-    <!-- Upgraded Sidebar Dashboard Panel with Legal Injections -->
+    <!-- Sidebar Dashboard Panel -->
     <nav class="sidebar-panel" id="sidebarPanel">
         <div class="sidebar-header">
             <span class="sidebar-title">Menu Options</span>
@@ -136,19 +132,17 @@
             <input type="text" class="search-input-field" id="gameSearchInput" placeholder="Search premium games here..." onkeyup="filterGameGridList()">
         </div>
 
-        <section class="live-statistics-container">
-            <div class="stat-item-box">
-                <div class="stat-value-node">48,650<span>🟢</span></div>
-                <div class="stat-label-text">Online Now</div>
+        <!-- Premium Max Rummy Just Launched Feature Spotlight Block -->
+        <section class="spotlight-launch-container">
+            <img src="https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" class="spotlight-icon-node" alt="Max Rummy Icon">
+            <div class="spotlight-meta-info">
+                <div class="spotlight-badge-flex">
+                    <span class="spotlight-new-badge">⚡ NEW</span>
+                    <span class="spotlight-launch-tag">🚀 JUST TODAY LAUNCHED</span>
+                </div>
+                <h1 class="spotlight-title-text">Max Rummy</h1>
             </div>
-            <div class="stat-item-box">
-                <div class="stat-value-node">1.5M+</div>
-                <div class="stat-label-text">Total Downloads</div>
-            </div>
-            <div class="stat-item-box">
-                <div class="stat-value-node">2 Mins</div>
-                <div class="stat-label-text">Avg Response</div>
-            </div>
+            <a href="max-rummy.html" class="spotlight-action-cta">GET APK</a>
         </section>
 
         <!-- Main Standard Grid (Games 1 to 9) -->
@@ -233,7 +227,7 @@
             </div>
             <!-- Game Card 14: Jaiho Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/S4Lbb73b/IMG-20270527-083816-794.jpg" class="game-app-icon" alt="Jaiho Rummy">
+                <img src="https://i.ibb.co/S4Lbb73b/IMG-20260527-083816-794.jpg" class="game-app-icon" alt="Jaiho Rummy">
                 <div class="game-app-name">Jaiho Rummy</div>
                 <a href="jaiho-rummy.html" class="game-download-btn">Get APK</a>
             </div>
@@ -430,30 +424,6 @@
                 <a href="max-rummy.html" class="game-download-btn">Get APK</a>
             </div>
         </section>
-
-        <!-- Upgraded Dynamic Promotional Matrix Framework -->
-        <section class="promo-matrix-wrapper" id="masterPromoSection">
-            <div class="promo-block-node">
-                <div class="promo-header-flex">
-                    <img src="https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" class="promo-app-icon" alt="Max Rummy Featured Premium Entry">
-                    <div class="promo-meta-details">
-                        <div class="promo-app-title">Max Rummy Promo</div>
-                        <div class="promo-verified-tag">🟢 Verified 2026 Exclusive Bonus Code</div>
-                    </div>
-                </div>
-                <div class="promo-dashed-box">
-                    <span class="promo-code-string" id="activePromoCodeText">maxbonus2026</span>
-                    <button class="promo-copy-btn" onclick="executePromoCodeCopy()">Copy</button>
-                </div>
-                <div class="promo-timer-row">
-                    <span class="timer-label">Code Expires In:</span>
-                    <div class="timer-number-box" id="timerMinutes">09</div>
-                    <div style="font-weight:bold; color:#6366f1;">:</div>
-                    <div class="timer-number-box" id="timerSeconds">54</div>
-                </div>
-                <a href="max-rummy.html" class="promo-download-cta">Claim ₹1500 Bonus APK</a>
-            </div>
-        </section>
             </main>
 
     <!-- Interactive Footer Navigation Zone with Document Pop-Up Links -->
@@ -474,10 +444,11 @@
         </svg>
     </a>
 
-    <!-- Master Inject Target for Live Winner Activity Notifications -->
+    <!-- Master Inject Target for Live Winner Activity Notifications with Manual Chokadi Close Trigger -->
     <div id="win-notification-toast" aria-hidden="true">
         <img src="https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" id="toast-icon-target" class="toast-game-avatar" alt="Winning Game Icon">
         <div class="toast-meta-content">
+            <button class="toast-dismiss-chokadi" onclick="dismissToastManually()" aria-label="Close Notification">✕</button>
             <span class="toast-user-string" id="toast-user-target">Abh***jit</span> 
             <span class="toast-uid-string">(UID:<span id="toast-uid-target">26746767</span>)</span><br>
             Win: <span class="toast-amount-string" id="toast-amount-target">3,000.00</span>
@@ -497,7 +468,7 @@
                 text: `Welcome to prosafeyonogame 2026. By accessing or using our website, you agree to comply with and be bound by the following terms and conditions. If you do not agree with these terms, please do not use our website.\n\nUse of the Website\nYou agree to use the website for lawful purposes only. You must not use the website in any way that may damage or impair the website or interfere with any other party’s use of the website.\n\nIntellectual Property\nAll content, trademarks, and other intellectual property on this website are the property of All Yono App or its licensors. You may not reproduce, distribute, or create derivative works from any content on our website without our prior written consent.\n\nLinks to Third-Party Websites\nOur website may contain links to third-party websites. We do not control these websites and are not responsible for their content or practices. We encourage you to review the terms and conditions and privacy policies of any third-party sites you visit.\n\nLimitation of Liability\nTo the fullest extent permitted by law, All Yono App shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising out of or in connection with your use of the website.\n\nChanges to These Terms\nWe may update these Terms and Conditions from time to time. We will notify you of any changes by posting the new terms on this page. Your continued use of the website after changes have been made constitutes your acceptance of the new Terms and Conditions.`
             },
             disclaimer: {
-                title: "🌐 Legal Liability Disclaimer",
+                title: "⚠️ Legal Liability Disclaimer",
                 text: `The information provided by prosafeyonogame 2026 is for general informational purposes only. All information on the website is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the site.\n\nFinancial Risk\nOur website may include links to third-party applications, and we do not endorse or guarantee the services provided by these applications. Please be aware that engaging in gaming and betting may involve financial risks. We strongly advise you to exercise caution and only use funds that you can afford to lose.\n\nNo Liability\nUnder no circumstances shall All Yono App be liable for any loss or damage of any kind incurred as a result of the use of our website or reliance on any information provided on the website. Your use of the website and reliance on any information is solely at your own risk.\n\nChanges to This Disclaimer\nWe may update this disclaimer from time to time. We will notify you of any changes by posting the new disclaimer on this page. Your continued use of the website after any changes to this disclaimer will constitute your acknowledgment of the changes and your consent to abide by and be bound by the modified disclaimer.`
             }
         };
@@ -510,6 +481,8 @@
             { name: "Ami***kumar", uid: "10394827", amount: "5,400.00", icon: "https://i.ibb.co/wZBnk9sF/IMG-20260528-165407-231.jpg" }, // Jaiho Slots
             { name: "Priy***anka", uid: "77294019", amount: "2,200.00", icon: "https://i.ibb.co/XxTS3tdZ/Screenshot-2026-0524-121950.png" } // Yono Rummy
         ];
+
+        let toastTimerTracker;
 
         // Sidebar Navigation Toggler
         function toggleSidebarMenu() {
@@ -553,26 +526,6 @@
             }
         }
 
-        // Copy Promotional Code Sequence
-        function executePromoCodeCopy() {
-            const codeText = document.getElementById('activePromoCodeText').innerText;
-            navigator.clipboard.writeText(codeText).then(() => {
-                alert("Promo Code Copied: " + codeText);
-            }).catch(() => {
-                alert("Failed to copy code. Please write manually.");
-            });
-        }
-
-        // Countdown Timer Clock Engine
-        let duration = 594; // 9 Minutes 54 Seconds Initial Duration
-        const clockInterval = setInterval(() => {
-            let minutes = Math.floor(duration / 60);
-            let seconds = duration % 60;
-            document.getElementById('timerMinutes').innerText = minutes < 10 ? '0' + minutes : minutes;
-            document.getElementById('timerSeconds').innerText = seconds < 10 ? '0' + seconds : seconds;
-            if (--duration < 0) duration = 594; // Reset array loop on expiration
-        }, 1000);
-
         // Scroll Tracking for Floating Top Action Button
         window.onscroll = function() {
             const scrollBtn = document.getElementById('scrollTopBtn');
@@ -594,7 +547,20 @@
             document.getElementById('toast-amount-target').innerText = activeData.amount;
             
             toastNode.style.right = "14px"; // Slide into screen view
-            setTimeout(() => { toastNode.style.right = "-320px"; }, 4000); // Auto Slide-out after 4 seconds
+            
+            // Clear previous timers to avoid overlap conflicts
+            clearTimeout(toastTimerTracker);
+            
+            toastTimerTracker = setTimeout(() => { 
+                toastNode.style.right = "-320px"; 
+            }, 4000); // Auto Slide-out after 4 seconds
+        }
+
+        // Manual Close Function for User via Chokadi Icon Click
+        function dismissToastManually() {
+            const toastNode = document.getElementById('win-notification-toast');
+            clearTimeout(toastTimerTracker);
+            toastNode.style.right = "-320px"; // Immediately slide out
         }
 
         // Global loop hook initialization (Runs every 10 seconds smoothly)
