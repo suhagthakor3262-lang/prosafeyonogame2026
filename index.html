@@ -16,7 +16,7 @@
         header { background: #ffffff; border-bottom: 2px solid #2563eb; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         .nav-container { max-width: 600px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 6px 14px; }
         .nav-left-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-        .logo-frame-img { height: 38px; object-fit: contain; }
+        .logo-frame-img { height: 38px; width: auto; object-fit: contain; }
         .site-brand-name { font-size: 16px; font-weight: 800; color: #1e3a8a; letter-spacing: -0.2px; }
         
         /* Menu Vector Toggle Line Icon (|||) */
@@ -38,17 +38,17 @@
         .search-input-field { width: 100%; padding: 11px 14px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 10px; color: #111827; font-size: 14px; outline: none; }
         .search-input-field:focus { border-color: #2563eb; }
 
-        /* Max Rummy Special Spotlight Feature Card Layout */
+        /* Max Rummy Special Spotlight Feature Card Layout with Enhanced Contrast */
         .spotlight-launch-container { background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%); border: 2px solid #2563eb; border-radius: 14px; padding: 14px; margin-bottom: 14px; display: flex; align-items: center; gap: 14px; box-shadow: 0 4px 12px rgba(37,99,235,0.08); position: relative; overflow: hidden; }
         .spotlight-icon-node { width: 68px; height: 68px; border-radius: 14px; object-fit: cover; border: 1px solid #bfdbfe; }
         .spotlight-meta-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
         
-        /* Animated New Badge Styling */
+        /* High Contrast AAA Compliant New Badge Styling */
         .spotlight-badge-flex { display: flex; align-items: center; gap: 6px; }
-        .spotlight-new-badge { background: #ef4444; color: #ffffff; font-size: 10px; font-weight: 800; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; animation: pulseGlowEffect 1.4s infinite ease-in-out; }
-        @keyframes pulseGlowEffect { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,0.5); } 50% { transform: scale(1.05); box-shadow: 0 0 8px 2px rgba(239,68,68,0.3); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,0); } }
+        .spotlight-new-badge { background: #990000; color: #ffffff; font-size: 11px; font-weight: 900; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; animation: pulseGlowEffect 1.4s infinite ease-in-out; }
+        @keyframes pulseGlowEffect { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(153,0,0,0.5); } 50% { transform: scale(1.03); box-shadow: 0 0 8px 2px rgba(153,0,0,0.3); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(153,0,0,0); } }
         
-        .spotlight-launch-tag { color: #dc2626; font-size: 11px; font-weight: 800; letter-spacing: 0.3px; }
+        .spotlight-launch-tag { color: #b91c1c; font-size: 11px; font-weight: 800; letter-spacing: 0.3px; }
         .spotlight-title-text { font-size: 17px; font-weight: 800; color: #1e3a8a; }
         .spotlight-action-cta { background: #2563eb; color: #ffffff; font-size: 11.5px; font-weight: 800; text-transform: uppercase; text-decoration: none; padding: 8px 14px; border-radius: 8px; box-shadow: 0 3px 6px rgba(37,99,235,0.2); }
 
@@ -65,25 +65,18 @@
         .legal-close-btn { background: #ef4444; color: white; border: none; padding: 2px 8px; font-size: 11px; font-weight: 700; border-radius: 4px; cursor: pointer; }
         .legal-card-body { font-size: 13px; color: #374151; line-height: 1.5; text-align: justify; white-space: pre-line; }
 
-        /* Global UI Containers */
-        .pill-links-wrapper { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin: 16px 0 12px 0; }
-        .pill-link-item { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; color: #1e3a8a; text-align: center; text-decoration: none; padding: 8px 4px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; }
-        .seo-paragraph-card { background: #ffffff; border-radius: 12px; padding: 14px; margin: 12px 0; border: 1px solid #e5e7eb; }
-        .seo-headline-text { font-size: 14.5px; font-weight: 800; color: #1e40af; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; border-left: 3px solid #2563eb; padding-left: 6px; }
-        .seo-matrix-prose { font-size: 12.5px; color: #374151; line-height: 1.4; text-align: justify; }
-        
         /* Interactive Footer Link Bar Layout */
         .footer-legal-nav { display: flex; justify-content: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
         .footer-legal-btn { background: none; border: none; color: #2563eb; font-size: 12px; font-weight: 700; cursor: pointer; text-decoration: underline; }
 
-        /* Live Activity Toast Container Layout with Manual Dismiss Chokadi Trigger */
+        /* Live Activity Toast Layout - Accessibility Compliant Structure (Removed aria-hidden) */
         #win-notification-toast { position: fixed; top: 75px; right: -320px; background: linear-gradient(90deg, #1e293b 0%, #1e3a8a 100%); color: #ffffff; padding: 10px 14px; border-radius: 12px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); z-index: 1000; transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(255,255,255,0.1); width: 280px; }
         .toast-game-avatar { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; border: 1.5px solid #fbbf24; }
         .toast-meta-content { flex: 1; font-size: 12px; line-height: 1.4; position: relative; padding-right: 14px; }
         .toast-user-string { font-weight: 800; color: #fbbf24; }
         .toast-uid-string { color: #cbd5e1; font-size: 11px; }
         .toast-amount-string { color: #4ade80; font-weight: 800; font-size: 13px; }
-        .toast-dismiss-chokadi { position: absolute; top: -2px; right: -6px; background: none; border: none; color: #94a3b8; font-size: 14px; font-weight: 700; cursor: pointer; padding: 2px; line-height: 1; }
+        .toast-dismiss-chokadi { position: absolute; top: -2px; right: -6px; background: none; border: none; color: #cbd5e1; font-size: 14px; font-weight: 700; cursor: pointer; padding: 2px; line-height: 1; }
         .toast-dismiss-chokadi:hover { color: #ffffff; }
 
         .back-to-top-btn { position: fixed; bottom: 80px; right: 16px; width: 40px; height: 40px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 50%; display: none; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); cursor: pointer; z-index: 150; }
@@ -97,7 +90,7 @@
     <header>
         <div class="nav-container">
             <a href="index.html" class="nav-left-brand">
-                <img src="https://i.ibb.co/fdZpJswb/file-000000002aa872089a44603a2278ac14.png" class="logo-frame-img" alt="ProSafe Logo">
+                <img src="https://i.ibb.co/fdZpJswb/file-000000002aa872089a44603a2278ac14.png" class="logo-frame-img" width="38" height="38" alt="ProSafe Logo">
                 <span class="site-brand-name">prosafeyonogame</span>
             </a>
             <button class="menu-toggle-btn" onclick="toggleSidebarMenu()">|||</button>
@@ -134,13 +127,13 @@
 
         <!-- Premium Max Rummy Just Launched Feature Spotlight Block -->
         <section class="spotlight-launch-container">
-            <img src="https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" class="spotlight-icon-node" alt="Max Rummy Icon">
+            <img src="https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" class="spotlight-icon-node" width="68" height="68" alt="Max Rummy Icon">
             <div class="spotlight-meta-info">
                 <div class="spotlight-badge-flex">
                     <span class="spotlight-new-badge">⚡ NEW</span>
                     <span class="spotlight-launch-tag">🚀 JUST TODAY LAUNCHED</span>
                 </div>
-                <h1 class="spotlight-title-text">Max Rummy</h1>
+                <h1 class="spotlight-title-text" style="font-size: 17px; font-weight: 800; color: #1e3a8a;">Max Rummy</h1>
             </div>
             <a href="max-rummy.html" class="spotlight-action-cta">GET APK</a>
         </section>
@@ -149,277 +142,277 @@
         <section class="game-display-grid" id="masterGameGrid">
             <!-- Game Card 01: Yono Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/XxTS3tdZ/Screenshot-2026-0524-121950.png" class="game-app-icon" alt="Yono Rummy">
+                <img src="https://i.ibb.co/XxTS3tdZ/Screenshot-2026-0524-121950.png" class="game-app-icon" width="64" height="64" alt="Yono Rummy">
                 <div class="game-app-name">Yono Rummy</div>
                 <a href="yono-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 02: Spin 777 -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/m5xd7qpZ/Screenshot-2026-0524-122312.png" class="game-app-icon" alt="Spin 777">
+                <img src="https://i.ibb.co/m5xd7qpZ/Screenshot-2026-0524-122312.png" class="game-app-icon" width="64" height="64" alt="Spin 777">
                 <div class="game-app-name">Spin 777</div>
                 <a href="spin-777.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 03: Spin Crush -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/mF600568/Screenshot-2026-0524-122402.png" class="game-app-icon" alt="Spin Crush">
+                <img src="https://i.ibb.co/mF600568/Screenshot-2026-0524-122402.png" class="game-app-icon" width="64" height="64" alt="Spin Crush">
                 <div class="game-app-name">Spin Crush</div>
                 <a href="spin-crush.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 04: 567 Slots -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/Q7Wr5bhm/IMG-20260604-173703-578.jpg" class="game-app-icon" alt="567 Slots">
+                <img src="https://i.ibb.co/Q7Wr5bhm/IMG-20260604-173703-578.jpg" class="game-app-icon" width="64" height="64" alt="567 Slots">
                 <div class="game-app-name">567 Slots</div>
                 <a href="slots-567.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 05: IND Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/39KDGPBr/Screenshot-2026-0524-122547.png" class="game-app-icon" alt="IND Rummy">
+                <img src="https://i.ibb.co/39KDGPBr/Screenshot-2026-0524-122547.png" class="game-app-icon" width="64" height="64" alt="IND Rummy">
                 <div class="game-app-name">IND Rummy</div>
                 <a href="ind-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 06: INR Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/dwJW89jT/IMG-20260526-094057-833.jpg" class="game-app-icon" alt="INR Rummy">
+                <img src="https://i.ibb.co/dwJW89jT/IMG-20260526-094057-833.jpg" class="game-app-icon" width="64" height="64" alt="INR Rummy">
                 <div class="game-app-name">INR Rummy</div>
                 <a href="inr-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 07: Jaiho 91 -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/N2kGxkGD/IMG-20260526-093823-947.jpg" class="game-app-icon" alt="Jaiho 91">
+                <img src="https://i.ibb.co/N2kGxkGD/IMG-20260526-093823-947.jpg" class="game-app-icon" width="64" height="64" alt="Jaiho 91">
                 <div class="game-app-name">Jaiho 91</div>
                 <a href="jaiho-91.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 08: Bingo 101 -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/S46hgCs6/Screenshot-2026-0524-214009.png" class="game-app-icon" alt="Bingo 101">
+                <img src="https://i.ibb.co/S46hgCs6/Screenshot-2026-0524-214009.png" class="game-app-icon" width="64" height="64" alt="Bingo 101">
                 <div class="game-app-name">Bingo 101</div>
                 <a href="bingo-101.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 09: 101Z -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/QF1qr0Xs/IMG-20260526-095252-042.jpg" class="game-app-icon" alt="101Z">
+                <img src="https://i.ibb.co/QF1qr0Xs/IMG-20260526-095252-042.jpg" class="game-app-icon" width="64" height="64" alt="101Z">
                 <div class="game-app-name">101Z</div>
                 <a href="game-101z.html" class="game-download-btn">Get APK</a>
             </div>
                         <!-- Game Card 10: IND Slots -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/qYX8344d/IMG-20260526-095508-315.jpg" class="game-app-icon" alt="IND Slots">
+                <img src="https://i.ibb.co/qYX8344d/IMG-20260526-095508-315.jpg" class="game-app-icon" width="64" height="64" alt="IND Slots">
                 <div class="game-app-name">IND Slots</div>
                 <a href="ind-slots.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 11: Spin 101 -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/Tq72gZFq/IMG-20260527-084621-601.jpg" class="game-app-icon" alt="Spin 101">
+                <img src="https://i.ibb.co/Tq72gZFq/IMG-20260527-084621-601.jpg" class="game-app-icon" width="64" height="64" alt="Spin 101">
                 <div class="game-app-name">Spin 101</div>
                 <a href="spin-101.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 12: Ind Club -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/Df1Ckfb6/IMG-20260527-084343-458.jpg" class="game-app-icon" alt="Ind Club">
+                <img src="https://i.ibb.co/Df1Ckfb6/IMG-20260527-084343-458.jpg" class="game-app-icon" width="64" height="64" alt="Ind Club">
                 <div class="game-app-name">Ind Club</div>
                 <a href="ind-club.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 13: 789 Jackpot -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/LXHb3q9r/IMG-20260527-084105-646.jpg" class="game-app-icon" alt="789 Jackpot">
+                <img src="https://i.ibb.co/LXHb3q9r/IMG-20260527-084105-646.jpg" class="game-app-icon" width="64" height="64" alt="789 Jackpot">
                 <div class="game-app-name">789 Jackpot</div>
                 <a href="jackpot-789.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 14: Jaiho Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/S4Lbb73b/IMG-20260527-083816-794.jpg" class="game-app-icon" alt="Jaiho Rummy">
+                <img src="https://i.ibb.co/S4Lbb73b/IMG-20260527-083816-794.jpg" class="game-app-icon" width="64" height="64" alt="Jaiho Rummy">
                 <div class="game-app-name">Jaiho Rummy</div>
                 <a href="jaiho-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 15: Hi Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/Y4QjvfRz/IMG-20260527-083518-645.jpg" class="game-app-icon" alt="Hi Rummy">
+                <img src="https://i.ibb.co/Y4QjvfRz/IMG-20260527-083518-645.jpg" class="game-app-icon" width="64" height="64" alt="Hi Rummy">
                 <div class="game-app-name">Hi Rummy</div>
                 <a href="hi-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 16: Gogo Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/5xFTSv8P/IMG-20260527-083320-198.jpg" class="game-app-icon" alt="Gogo Rummy">
+                <img src="https://i.ibb.co/5xFTSv8P/IMG-20260527-083320-198.jpg" class="game-app-icon" width="64" height="64" alt="Gogo Rummy">
                 <div class="game-app-name">Gogo Rummy</div>
                 <a href="gogo-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 17: Boss Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/RpFWTsC2/IMG-20260527-083035-119.jpg" class="game-app-icon" alt="Boss Rummy">
+                <img src="https://i.ibb.co/RpFWTsC2/IMG-20260527-083035-119.jpg" class="game-app-icon" width="64" height="64" alt="Boss Rummy">
                 <div class="game-app-name">Boss Rummy</div>
                 <a href="boss-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 18: Club INR -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/mCGfLWTQ/IMG-20260527-082911-954.jpg" class="game-app-icon" alt="Club INR">
+                <img src="https://i.ibb.co/mCGfLWTQ/IMG-20260527-082911-954.jpg" class="game-app-icon" width="64" height="64" alt="Club INR">
                 <div class="game-app-name">Club INR</div>
                 <a href="club-inr.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 19: Game Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/XfpncM77/IMG-20260527-082804-195.jpg" class="game-app-icon" alt="Game Rummy">
+                <img src="https://i.ibb.co/XfpncM77/IMG-20260527-082804-195.jpg" class="game-app-icon" width="64" height="64" alt="Game Rummy">
                 <div class="game-app-name">Game Rummy</div>
                 <a href="game-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 20: Rumble Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/6CWcJ9t/IMG-20260527-082552-806.jpg" class="game-app-icon" alt="Rumble Rummy">
+                <img src="https://i.ibb.co/6CWcJ9t/IMG-20260527-082552-806.jpg" class="game-app-icon" width="64" height="64" alt="Rumble Rummy">
                 <div class="game-app-name">Rumble Rummy</div>
                 <a href="rumble-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 21: OK Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/VYBQzpwY/IMG-20260604-190041-410.jpg" class="game-app-icon" alt="OK Rummy">
+                <img src="https://i.ibb.co/VYBQzpwY/IMG-20260604-190041-410.jpg" class="game-app-icon" width="64" height="64" alt="OK Rummy">
                 <div class="game-app-name">OK Rummy</div>
                 <a href="ok-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 22: Spin Gold -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/932KxXnP/Screenshot-2026-0604-203451.png" class="game-app-icon" alt="Spin Gold">
+                <img src="https://i.ibb.co/932KxXnP/Screenshot-2026-0604-203451.png" class="game-app-icon" width="64" height="64" alt="Spin Gold">
                 <div class="game-app-name">Spin Gold</div>
                 <a href="spin-gold.html" class="game-download-btn">Get APK</a>
             </div>
                         <!-- Game Card 23: Bet 213 -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/YsMHdC3/IMG-20260604-203944-171.jpg" class="game-app-icon" alt="Bet 213">
+                <img src="https://i.ibb.co/YsMHdC3/IMG-20260604-203944-171.jpg" class="game-app-icon" width="64" height="64" alt="Bet 213">
                 <div class="game-app-name">Bet 213</div>
                 <a href="bet-213.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 24: Slots Winner -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/JRfZxJFz/IMG-20260601-134057-693.jpg" class="game-app-icon" alt="Slots Winner">
+                <img src="https://i.ibb.co/JRfZxJFz/IMG-20260601-134057-693.jpg" class="game-app-icon" width="64" height="64" alt="Slots Winner">
                 <div class="game-app-name">Slots Winner</div>
                 <a href="slots-winner.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 25: Neta VIP -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/q3mdn5fK/IMG-20260601-134207-570.jpg" class="game-app-icon" alt="Neta VIP">
+                <img src="https://i.ibb.co/q3mdn5fK/IMG-20260601-134207-570.jpg" class="game-app-icon" width="64" height="64" alt="Neta VIP">
                 <div class="game-app-name">Neta VIP</div>
                 <a href="neta-vip.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 26: MBM Bet -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/TxzVSnrm/IMG-20260601-134235-452.jpg" class="game-app-icon" alt="MBM Bet">
+                <img src="https://i.ibb.co/TxzVSnrm/IMG-20260601-134235-452.jpg" class="game-app-icon" width="64" height="64" alt="MBM Bet">
                 <div class="game-app-name">MBM Bet</div>
                 <a href="mbm-bet.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 27: Jaiho Win -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/zVGcGjrv/IMG-20260601-134303-975.jpg" class="game-app-icon" alt="Jaiho Win">
+                <img src="https://i.ibb.co/zVGcGjrv/IMG-20260601-134303-975.jpg" class="game-app-icon" width="64" height="64" alt="Jaiho Win">
                 <div class="game-app-name">Jaiho Win</div>
                 <a href="jaiho-win.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 28: ABC Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/PGKmgd81/IMG-20260601-134329-100.jpg" class="game-app-icon" alt="ABC Rummy">
+                <img src="https://i.ibb.co/PGKmgd81/IMG-20260601-134329-100.jpg" class="game-app-icon" width="64" height="64" alt="ABC Rummy">
                 <div class="game-app-name">ABC Rummy</div>
                 <a href="abc-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 29: Yono VIP -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/gLCMDkSM/IMG-20260601-134349-455.jpg" class="game-app-icon" alt="Yono VIP">
+                <img src="https://i.ibb.co/gLCMDkSM/IMG-20260601-134349-455.jpg" class="game-app-icon" width="64" height="64" alt="Yono VIP">
                 <div class="game-app-name">Yono VIP</div>
                 <a href="yono-vip.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 30: Rummy 77 -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/G4xVYT3V/IMG-20260529-085328-640.jpg" class="game-app-icon" alt="Rummy 77">
+                <img src="https://i.ibb.co/G4xVYT3V/IMG-20260529-085328-640.jpg" class="game-app-icon" width="64" height="64" alt="Rummy 77">
                 <div class="game-app-name">Rummy 77</div>
                 <a href="rummy-77.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 31: EVER 777 -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/Q3C16fb8/IMG-20260529-085225-981.jpg" class="game-app-icon" alt="EVER 777">
+                <img src="https://i.ibb.co/Q3C16fb8/IMG-20260529-085225-981.jpg" class="game-app-icon" width="64" height="64" alt="EVER 777">
                 <div class="game-app-name">EVER 777</div>
                 <a href="ever-777.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 32: Slots Spin -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/Sw5jz8d4/IMG-20260529-085855-118.jpg" class="game-app-icon" alt="Slots Spin">
+                <img src="https://i.ibb.co/Sw5jz8d4/IMG-20260529-085855-118.jpg" class="game-app-icon" width="64" height="64" alt="Slots Spin">
                 <div class="game-app-name">Slots Spin</div>
                 <a href="slots-spin.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 33: Jaiho Arcade -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/zT56hbGh/IMG-20260528-170118-181.jpg" class="game-app-icon" alt="Jaiho Arcade">
+                <img src="https://i.ibb.co/zT56hbGh/IMG-20260528-170118-181.jpg" class="game-app-icon" width="64" height="64" alt="Jaiho Arcade">
                 <div class="game-app-name">Jaiho Arcade</div>
                 <a href="jaiho-arcade.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 34: Jaiho Spin -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/mFtZ60Ft/IMG-20260528-170044-119.jpg" class="game-app-icon" alt="Jaiho Spin">
+                <img src="https://i.ibb.co/mFtZ60Ft/IMG-20260528-170044-119.jpg" class="game-app-icon" width="64" height="64" alt="Jaiho Spin">
                 <div class="game-app-name">Jaiho Spin</div>
                 <a href="jaiho-spin.html" class="game-download-btn">Get APK</a>
             </div>
                         <!-- Game Card 35: Rummy Ludo -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/gMxqcQCG/IMG-20260528-165950-648.jpg" class="game-app-icon" alt="Rummy Ludo">
+                <img src="https://i.ibb.co/gMxqcQCG/IMG-20260528-165950-648.jpg" class="game-app-icon" width="64" height="64" alt="Rummy Ludo">
                 <div class="game-app-name">Rummy Ludo</div>
                 <a href="rummy-ludo.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 36: Maha Game -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/kVhqgcBS/IMG-20260528-165912-402.jpg" class="game-app-icon" alt="Maha Game">
+                <img src="https://i.ibb.co/kVhqgcBS/IMG-20260528-165912-402.jpg" class="game-app-icon" width="64" height="64" alt="Maha Game">
                 <div class="game-app-name">Maha Game</div>
                 <a href="maha-game.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 37: Yes Spin -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/HpGCKDhf/IMG-20260528-165827-292.jpg" class="game-app-icon" alt="Yes Spin">
+                <img src="https://i.ibb.co/HpGCKDhf/IMG-20260528-165827-292.jpg" class="game-app-icon" width="64" height="64" alt="Yes Spin">
                 <div class="game-app-name">Yes Spin</div>
                 <a href="yes-spin.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 38: Yono Slots -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/W4RkkgnW/IMG-20260528-165717-352.jpg" class="game-app-icon" alt="Yono Slots">
+                <img src="https://i.ibb.co/W4RkkgnW/IMG-20260528-165717-352.jpg" class="game-app-icon" width="64" height="64" alt="Yono Slots">
                 <div class="game-app-name">Yono Slots</div>
                 <a href="yono-slots-game.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 39: Rummy 888 -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/wF6g121J/IMG-20260528-165432-914.jpg" class="game-app-icon" alt="Rummy 888">
+                <img src="https://i.ibb.co/wF6g121J/IMG-20260528-165432-914.jpg" class="game-app-icon" width="64" height="64" alt="Rummy 888">
                 <div class="game-app-name">Rummy 888</div>
                 <a href="rummy-888.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 40: Jaiho Slots -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/wZBnk9sF/IMG-20260528-165407-231.jpg" class="game-app-icon" alt="Jaiho Slots">
+                <img src="https://i.ibb.co/wZBnk9sF/IMG-20260528-165407-231.jpg" class="game-app-icon" width="64" height="64" alt="Jaiho Slots">
                 <div class="game-app-name">Jaiho Slots</div>
                 <a href="jaiho-slots-game.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 41: Yono Games -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/GQ6GP2LS/Screenshot-2026-0528-165315.png" class="game-app-icon" alt="Yono Games">
+                <img src="https://i.ibb.co/GQ6GP2LS/Screenshot-2026-0528-165315.png" class="game-app-icon" width="64" height="64" alt="Yono Games">
                 <div class="game-app-name">Yono Games</div>
                 <a href="yono-games-app.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 42: Top Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/RGtvj6Dd/IMG-20260528-165052-353.jpg" class="game-app-icon" alt="Top Rummy">
+                <img src="https://i.ibb.co/RGtvj6Dd/IMG-20260528-165052-353.jpg" class="game-app-icon" width="64" height="64" alt="Top Rummy">
                 <div class="game-app-name">Top Rummy</div>
                 <a href="top-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 43: Spin Winner -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/chcCTzLS/IMG-20260528-165212-428.jpg" class="game-app-icon" alt="Spin Winner">
+                <img src="https://i.ibb.co/chcCTzLS/IMG-20260528-165212-428.jpg" class="game-app-icon" width="64" height="64" alt="Spin Winner">
                 <div class="game-app-name">Spin Winner</div>
                 <a href="spin-winner.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 44: Joy Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/xKNsWwb0/IMG-20260528-165017-074.jpg" class="game-app-icon" alt="Joy Rummy">
+                <img src="https://i.ibb.co/xKNsWwb0/IMG-20260528-165017-074.jpg" class="game-app-icon" width="64" height="64" alt="Joy Rummy">
                 <div class="game-app-name">Joy Rummy</div>
                 <a href="joy-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 45: Love Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/fVc44frd/IMG-20260528-164912-649.jpg" class="game-app-icon" alt="Love Rummy">
+                <img src="https://i.ibb.co/fVc44frd/IMG-20260528-164912-649.jpg" class="game-app-icon" width="64" height="64" alt="Love Rummy">
                 <div class="game-app-name">Love Rummy</div>
                 <a href="love-rummy.html" class="game-download-btn">Get APK</a>
             </div>
             <!-- Game Card 46: Max Rummy -->
             <div class="game-card-node">
-                <img src="https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" class="game-app-icon" alt="Max Rummy">
+                <img src="https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" class="game-app-icon" width="64" height="64" alt="Max Rummy">
                 <div class="game-app-name">Max Rummy</div>
                 <a href="max-rummy.html" class="game-download-btn">Get APK</a>
             </div>
@@ -444,9 +437,9 @@
         </svg>
     </a>
 
-    <!-- Master Inject Target for Live Winner Activity Notifications with Manual Chokadi Close Trigger -->
-    <div id="win-notification-toast" aria-hidden="true">
-        <img src="https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" id="toast-icon-target" class="toast-game-avatar" alt="Winning Game Icon">
+    <!-- Master Inject Target for Live Winner Activity Notifications (Accessibility Fixed: No aria-hidden) -->
+    <div id="win-notification-toast">
+        <img src="https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" id="toast-icon-target" class="toast-game-avatar" width="44" height="44" alt="Winning Game Icon">
         <div class="toast-meta-content">
             <button class="toast-dismiss-chokadi" onclick="dismissToastManually()" aria-label="Close Notification">✕</button>
             <span class="toast-user-string" id="toast-user-target">Abh***jit</span> 
@@ -473,13 +466,13 @@
             }
         };
 
-        // Complete Real Database Array of Your Real App Icons for Live Toast Popups
+        // Real Database Array of App Icons for Live Toast Popups (With Explicit Dimensions Map)
         const livePlatformWinnersPool = [
-            { name: "Abh***jit", uid: "26746767", amount: "3,000.00", icon: "https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" }, // Max Rummy
-            { name: "Raj***esh", uid: "84920481", amount: "1,500.00", icon: "https://i.ibb.co/Q7Wr5bhm/IMG-20260604-173703-578.jpg" }, // 567 Slots
-            { name: "Vik***as", uid: "55610293", amount: "4,800.00", icon: "https://i.ibb.co/W4RkkgnW/IMG-20260528-165717-352.jpg" }, // Yono Slots
-            { name: "Ami***kumar", uid: "10394827", amount: "5,400.00", icon: "https://i.ibb.co/wZBnk9sF/IMG-20260528-165407-231.jpg" }, // Jaiho Slots
-            { name: "Priy***anka", uid: "77294019", amount: "2,200.00", icon: "https://i.ibb.co/XxTS3tdZ/Screenshot-2026-0524-121950.png" } // Yono Rummy
+            { name: "Abh***jit", uid: "26746767", amount: "3,000.00", icon: "https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" }, 
+            { name: "Raj***esh", uid: "84920481", amount: "1,500.00", icon: "https://i.ibb.co/Q7Wr5bhm/IMG-20260604-173703-578.jpg" }, 
+            { name: "Vik***as", uid: "55610293", amount: "4,800.00", icon: "https://i.ibb.co/W4RkkgnW/IMG-20260528-165717-352.jpg" }, 
+            { name: "Ami***kumar", uid: "10394827", amount: "5,400.00", icon: "https://i.ibb.co/wZBnk9sF/IMG-20260528-165407-231.jpg" }, 
+            { name: "Priy***anka", uid: "77294019", amount: "2,200.00", icon: "https://i.ibb.co/XxTS3tdZ/Screenshot-2026-0524-121950.png" }
         ];
 
         let toastTimerTracker;
@@ -548,7 +541,6 @@
             
             toastNode.style.right = "14px"; // Slide into screen view
             
-            // Clear previous timers to avoid overlap conflicts
             clearTimeout(toastTimerTracker);
             
             toastTimerTracker = setTimeout(() => { 
