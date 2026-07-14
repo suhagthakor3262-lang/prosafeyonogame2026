@@ -1,16 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Main Home Page -->
+  <url>
+    <loc>https://prosafeyonogame2026.com/</loc>
+    <priority>1.00</priority>
+  </url>
 
+  <!-- Spin Crush -->
+  <url>
+    <loc>https://prosafeyonogame2026.com/spin-crush.html</loc>
+    <priority>0.80</priority>
+  </url>
 
-<url>
-  <loc>https://prosafeyonogame2026.com/</loc>
-  <lastmod>2026-06-02T04:50:44+00:00</lastmod>
-</url>
+  <!-- Yono Rummy -->
+  <url>
+    <loc>https://prosafeyonogame2026.com/yono-rummy.html</loc>
+    <priority>0.80</priority>
+  </url>
 
+  <!-- 567 Slots -->
+  <url>
+    <loc>https://prosafeyonogame2026.com/slots-567.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Spin 777 -->
+  <url>
+    <loc>https://prosafeyonogame2026.com/spin-777.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- IND Rummy -->
+  <url>
+    <loc>https://prosafeyonogame2026.com/ind-rummy.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- ABC Rummy -->
+  <url>
+    <loc>https://prosafeyonogame2026.com/abc-rummy.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Yono Slots -->
+  <url>
+    <loc>https://prosafeyonogame2026.com/yono-slots.html</loc>
+    <priority>0.80</priority>
+  </url>
 
 </urlset>
