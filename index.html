@@ -16,7 +16,18 @@
     <meta name="description" content="All Yono Games App Download: Access secure portals with live countdown promo codes. Verified stable platforms for Android and iOS devices. Get instant withdrawal casino India options, Aviator game online updates, and Teen Patti Yono promo setups.">
     <meta name="keywords" content="yono 777, yono india, yono games app download, rummy ludo promo code, maha game code 2026, max rummy, yono slots, teen patti yono, yono arcade, yono vip, yono master, yono spin, yono games apk download, new yono games, yono games bonus, yono real money game, online casino real money, best online casino, casino app real money, instant withdrawal casino, trusted online casino, poker online, crazy time, online slots real money, no deposit bonus casino, free spins no deposit, casino welcome bonus, bitcoin casino, aviator game online, andar bahar online casino, online casino upi withdrawal, instant withdrawal casino india, online casino promo code, new yono app, all yono games promo code, daily free promo code, hindi 777, spin 777, 777slots, old yono app download">
     <style>
-        /* Pure White Theme Layout - Tight Spacing Controls */
+        /* Persistent Global Countdown Container */
+.vip-countdown-box { background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%); border-radius: 14px; padding: 16px 10px; margin: 12px; text-align: center; box-shadow: 0 4px 12px rgba(255,87,34,0.2); }
+.vip-countdown-title { color: #ffffff; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+.vip-timer-display { display: flex; justify-content: center; gap: 8px; }
+.vip-timer-segment { background: rgba(0, 0, 0, 0.2); color: #ffffff; font-size: 22px; font-weight: 900; padding: 8px 12px; border-radius: 8px; min-width: 44px; text-align: center; }
+.vip-timer-label { font-size: 9px; color: rgba(255,255,255,0.85); display: block; margin-top: 2px; font-weight: 700; text-transform: uppercase; }
+
+/* Dynamic APK Reveal Structure */
+#winRummyCtaBlock { display: none; margin: 12px; animation: popIn 0.3s ease-out; }
+@keyframes popIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+     
+     /* Pure White Theme Layout - Tight Spacing Controls */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         html { scroll-behavior: smooth; }
         body { background-color: #f3f4f6; color: #111827; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; }
@@ -133,7 +144,28 @@
         <div class="search-box-wrapper">
             <input type="text" class="search-input-field" id="gameSearchInput" placeholder="Search premium games here..." onkeyup="filterGameGridList()">
         </div>
+       <!-- Live Background 4-Segment Timer Widget -->
+<div class="vip-countdown-box" id="winRummyTimerWidget">
+    <div class="vip-countdown-title">🔥 Win Rummy Launching Soon!</div>
+    <div class="vip-timer-display">
+        <div><span class="vip-timer-segment" id="timer-days">00</span><span class="vip-timer-label">Days</span></div>
+        <div><span class="vip-timer-segment" id="timer-hours">00</span><span class="vip-timer-label">Hrs</span></div>
+        <div><span class="vip-timer-segment" id="timer-mins">00</span><span class="vip-timer-label">Min</span></div>
+        <div><span class="vip-timer-segment" id="timer-secs">00</span><span class="vip-timer-label">Sec</span></div>
+    </div>
+</div>
 
+<!-- Auto Reveal GET APK Strip (Hidden until timer ends) -->
+<div class="vip-promo-strip search-item" id="winRummyCtaBlock" data-name="win rummy">
+    <div class="vip-strip-left">
+        <img src="https://i.ibb.co/bgv4zSGT/IMG-20260714-213227.png" class="vip-strip-thumb" width="38" height="38" alt="Win Rummy Icon">
+        <div class="vip-strip-meta">
+            <span class="vip-strip-title" style="color:#1e3a8a; font-weight:800;">Win Rummy</span>
+            <span class="vip-strip-subtext" style="color:#10b981;">⚡ APK LIVE NOW</span>
+        </div>
+    </div>
+    <a href="https://www.abcrummy888.com/?code=75CWNMC8FQE" class="vip-strip-cta" style="background:#10b981;">GET APK</a>
+</div>
         <!-- Premium Max Rummy Just Launched Feature Spotlight Block -->
         <section class="spotlight-launch-container">
             <img src="https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" class="spotlight-icon-node" width="68" height="68" alt="Max Rummy Icon">
@@ -567,5 +599,40 @@
         // Global loop hook initialization (Runs every 10 seconds smoothly)
         setInterval(executeLiveNotificationCycle, 10000);
     </script>
+// Persistent 13 Days Background Core Logic
+(function() {
+    var duration = (13 * 24 * 60 * 60) + (18 * 60 * 60) + (41 * 60); 
+    var storageKey = "winRummyTargetTimeV2";
+    var targetTime = localStorage.getItem(storageKey);
+
+    if (!targetTime) {
+        targetTime = new Date().getTime() + (duration * 1000);
+        localStorage.setItem(storageKey, targetTime);
+    } else {
+        targetTime = parseInt(targetTime, 10);
+    }
+
+    var timerInterval = setInterval(function() {
+        var now = new Date().getTime();
+        var timeRemaining = targetTime - now;
+
+        if (timeRemaining <= 0) {
+            clearInterval(timerInterval);
+            document.getElementById("winRummyTimerWidget").style.display = "none";
+            document.getElementById("winRummyCtaBlock").style.display = "flex";
+            return;
+        }
+
+        var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        document.getElementById("timer-days").innerText = String(days).padStart(2, '0');
+        document.getElementById("timer-hours").innerText = String(hours).padStart(2, '0');
+        document.getElementById("timer-mins").innerText = String(minutes).padStart(2, '0');
+        document.getElementById("timer-secs").innerText = String(seconds).padStart(2, '0');
+    }, 1000);
+})(); 
 </body>
 </html>
