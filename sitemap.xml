@@ -84,5 +84,22 @@
     <loc>https://prosafeyonogame2026.com/inr-rummy.html</loc>
     <priority>0.80</priority>
   </url>
+  <!-- Max Rummy (New) -->
+  <url>
+    <loc>https://prosafeyonogame2026.com/max-rummy.html</loc>
+    <priority>0.80</priority>
+  </url>
 
+  <!-- Dhan Game (New) -->
+  <url>
+    <loc>https://prosafeyonogame2026.com/dhan-game.html</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Win Rummy (New) -->
+  <url>
+    <loc>https://prosafeyonogame2026.com/win-rummy.html</loc>
+    <priority>0.80</priority>
+  </url>
+  
 </urlset>
