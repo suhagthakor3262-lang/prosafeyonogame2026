@@ -479,8 +479,206 @@
                 <a href="max-rummy.html" class="game-download-btn">Get APK</a>
             </div>
         </section>
-    </main>
+       
+ <!-- ========================================== -->
+<!-- START: NEW PLAYER GUIDE & DISCLAIMER SECTION -->
+<!-- ========================================== -->
+<style>
+    /* Guide & Disclaimer Styling Matched to Site Theme */
+    .custom-guide-section {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        padding: 20px 16px;
+        margin: 20px 0 16px 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        text-align: center;
+    }
+    .guide-badge {
+        display: inline-block;
+        background: #eff6ff;
+        color: #2563eb;
+        font-size: 11px;
+        font-weight: 800;
+        padding: 4px 12px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        border: 1px solid #bfdbfe;
+        margin-bottom: 8px;
+    }
+    .guide-title {
+        font-size: 20px;
+        font-weight: 800;
+        color: #1e3a8a;
+        margin-bottom: 6px;
+        line-height: 1.3;
+    }
+    .guide-subtitle {
+        font-size: 13px;
+        color: #4b5563;
+        margin-bottom: 18px;
+        line-height: 1.4;
+    }
+    .guide-card-box {
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 14px;
+        padding: 16px;
+        text-align: left;
+    }
+    /* Scrollable Tab Buttons Bar */
+    .guide-tabs-container {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        margin-bottom: 12px;
+        scrollbar-width: none; /* Firefox */
+    }
+    .guide-tabs-container::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+    .guide-tab-btn {
+        background: #ffffff;
+        color: #334155;
+        border: 1px solid #cbd5e1;
+        padding: 8px 14px;
+        border-radius: 10px;
+        font-size: 12.5px;
+        font-weight: 700;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+    }
+    .guide-tab-btn.active {
+        background: #2563eb;
+        color: #ffffff;
+        border-color: #2563eb;
+        box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+    }
+    .guide-tab-content {
+        display: none;
+        font-size: 13px;
+        color: #334155;
+        line-height: 1.6;
+    }
+    .guide-tab-content.active {
+        display: block;
+    }
+    .guide-tab-content strong {
+        color: #0f172a;
+    }
 
+    /* Disclaimer Box Styling */
+    .custom-disclaimer-box {
+        background: #ffffff;
+        border: 1.5px solid #2563eb;
+        border-radius: 14px;
+        padding: 16px;
+        margin: 16px 0 20px 0;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+    }
+    .disclaimer-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        font-weight: 800;
+        color: #1e3a8a;
+        margin-bottom: 8px;
+    }
+    .disclaimer-icon-frame {
+        background: #2563eb;
+        color: #ffffff;
+        width: 22px;
+        height: 22px;
+        border-radius: 6px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+    }
+    .disclaimer-text {
+        font-size: 12.5px;
+        color: #475569;
+        line-height: 1.55;
+        text-align: left;
+    }
+    .disclaimer-text strong {
+        color: #1e3a8a;
+    }
+</style>
+
+<!-- 1. Player Guide Feature Section -->
+<section class="custom-guide-section">
+    <span class="guide-badge">PLAYER GUIDE</span>
+    <h2 class="guide-title">Start Smart: Tips for New Players</h2>
+    <p class="guide-subtitle">Getting started is simple. Tap through our quick pointers to make your experience smoother and more enjoyable.</p>
+
+    <div class="guide-card-box">
+        <!-- Interactive Tabs Nav Bar -->
+        <div class="guide-tabs-container">
+            <button class="guide-tab-btn active" onclick="switchGuideTab(event, 'tab-1')">1. Simpler Games</button>
+            <button class="guide-tab-btn" onclick="switchGuideTab(event, 'tab-2')">2. Yono App</button>
+            <button class="guide-tab-btn" onclick="switchGuideTab(event, 'tab-3')">3. Check Reviews</button>
+            <button class="guide-tab-btn" onclick="switchGuideTab(event, 'tab-4')">4. Pace Yourself</button>
+        </div>
+
+        <!-- Tab 1 Content -->
+        <div id="tab-1" class="guide-tab-content active">
+            <strong>Begin with Simpler Games:</strong> If you’re new here, start with games that are easy to pick up. Titles like Yono Rummy and card classics have clear instructions and familiar rules. Once you feel comfortable, you can branch out into premium games that offer more depth and variety.
+        </div>
+
+        <!-- Tab 2 Content -->
+        <div id="tab-2" class="guide-tab-content">
+            <strong>Use the New Yono App:</strong> The New Yono App is the quickest way to download your favorites and manage your collection. Many players find it helpful to access games on the go easily without searching through long lists.
+        </div>
+
+        <!-- Tab 3 Content -->
+        <div id="tab-3" class="guide-tab-content">
+            <strong>Check Reviews Before You Play:</strong> Every game page has reviews and ratings from other players. Reading these can give you a sense of what to expect, especially if you’re unsure which game to try first. Reviews often highlight small details you might miss on your own.
+        </div>
+
+        <!-- Tab 4 Content -->
+        <div id="tab-4" class="guide-tab-content">
+            <strong>Don’t Play Continuously:</strong> Gaming is more fun when you pace yourself. Short breaks keep your mind fresh and help you enjoy each session without feeling tired or distracted. A quick walk or a few minutes away from the screen can make a big difference.
+        </div>
+    </div>
+</section>
+
+<!-- 2. Platform Disclaimer Feature Box -->
+<div class="custom-disclaimer-box">
+    <div class="disclaimer-header">
+        <span class="disclaimer-icon-frame">ℹ️</span>
+        <span>Platform Disclaimer</span>
+    </div>
+    <p class="disclaimer-text">
+        <strong>PROSAFEYONOGAME2026.com</strong> is an independent platform. We don't own, manage, or operate any listed apps. Rummy apps carry financial risks and can be addictive. Please play responsibly, set limits, and stay aware of your habits.
+    </p>
+</div>
+
+<!-- Interactive JavaScript Tab Switcher -->
+<script>
+    function switchGuideTab(event, tabId) {
+        // Hide all tab contents
+        const contents = document.querySelectorAll('.guide-tab-content');
+        contents.forEach(content => content.classList.remove('active'));
+
+        // Remove active class from all tab buttons
+        const buttons = document.querySelectorAll('.guide-tab-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        // Show current tab and set button as active
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+</script>
+<!-- ========================================== -->
+<!-- END: NEW PLAYER GUIDE & DISCLAIMER SECTION -->
+<!-- ========================================== -->
+</main>
     <!-- Interactive Footer Navigation Zone with Document Pop-Up Links -->
     <footer>
         <nav class="footer-legal-nav" aria-label="Legal Redirection Node">
