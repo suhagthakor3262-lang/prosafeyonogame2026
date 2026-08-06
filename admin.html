@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firebase Admin Panel</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 500px; margin: auto; background: #f4f6f8; }
+    .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    input, textarea, button { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+    button { background: #007bff; color: white; font-weight: bold; cursor: pointer; border: none; }
+    button:hover { background: #0056b3; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Admin Panel</h2>
+    
+    <!-- Login Section -->
+    <div id="login-section">
+      <p>Log in to manage game posts.</p>
+      <button onclick="loginWithGoogle()">Sign in with Google</button>
+    </div>
+
+    <!-- Admin Form Section -->
+    <div id="admin-section" class="hidden">
+      <p id="user-info"></p>
+      <hr>
+      <h3>Add New Game</h3>
+      <input type="text" id="gameTitle" placeholder="Game Title (e.g. Yono Rummy)">
+      <input type="text" id="gameIcon" placeholder="Icon Image URL">
+      <input type="text" id="downloadUrl" placeholder="APK Download Link">
+      <input type="text" id="apkSize" placeholder="APK Size (e.g. 45 MB)">
+      <textarea id="gameDesc" placeholder="Game Description"></textarea>
+      <button onclick="addGame()">Publish Game</button>
+      <button onclick="logout()" style="background: #dc3545; margin-top: 15px;">Logout</button>
+    </div>
+  </div>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+  <script>
+    // Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyDSNNC9JyNnRN06E6Nq2RJ",
+      authDomain: "prosafe-yono-game.firebaseapp.com",
+      projectId: "prosafe-yono-game",
+      storageBucket: "prosafe-yono-game.firebasestorage.app",
+      messagingSenderId: "403090633471",
+      appId: "1:403090633471:web:4da0461124"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // Check Auth State
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        document.getElementById('login-section').classList.add('hidden');
+        document.getElementById('admin-section').classList.remove('hidden');
+        document.getElementById('user-info').innerText = "Logged in as: " + user.email;
+      } else {
+        document.getElementById('login-section').classList.remove('hidden');
+        document.getElementById('admin-section').classList.add('hidden');
+      }
+    });
+
+    // Login with Google
+    function loginWithGoogle() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      auth.signInWithPopup(provider).catch(err => alert("Login Error: " + err.message));
+    }
+
+    // Logout
+    function logout() {
+      auth.signOut();
+    }
+
+    // Add Game Post to Firestore
+    function addGame() {
+      const title = document.getElementById('gameTitle').value;
+      const icon = document.getElementById('gameIcon').value;
+      const download = document.getElementById('downloadUrl').value;
+      const size = document.getElementById('apkSize').value;
+      const desc = document.getElementById('gameDesc').value;
+
+      if (!title || !download) {
+        alert("Please fill in required fields (Title & Download Link)");
+        return;
+      }
+
+      db.collection('games').add({
+        title: title,
+        icon: icon,
+        downloadUrl: download,
+        size: size,
+        description: desc,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      }).then(() => {
+        alert("Game added successfully!");
+        document.getElementById('gameTitle').value = '';
+        document.getElementById('gameIcon').value = '';
+        document.getElementById('downloadUrl').value = '';
+        document.getElementById('apkSize').value = '';
+        document.getElementById('gameDesc').value = '';
+      }).catch(err => {
+        alert("Error adding game: " + err.message);
+      });
+    }
+  </script>
+</body>
+</html>
