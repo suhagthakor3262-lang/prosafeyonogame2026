@@ -21,7 +21,7 @@
     <!-- Login Section -->
     <div id="login-section">
       <p>Log in to manage game posts.</p>
-      <button onclick="loginWithGoogle()">Sign in with Google</button>
+      <button id="login-btn" onclick="loginWithGoogle()">Sign in with Google</button>
     </div>
 
     <!-- Admin Form Section -->
@@ -39,13 +39,12 @@
     </div>
   </div>
 
-  <!-- Firebase Scripts -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <!-- Firebase Scripts (v8 Stable CDN) -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
   <script>
-    // Correct & Complete Firebase Config
     const firebaseConfig = {
       apiKey: "AIzaSyDSNNC9JyNnRN06E6Nq2RJt6HwMKtRWHY",
       authDomain: "prosafe-yono-game.firebaseapp.com",
@@ -56,12 +55,16 @@
       measurementId: "G-F2PYRG1P5M"
     };
 
-    firebase.initializeApp(firebaseConfig);
+    // Firebase Init
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+
     const auth = firebase.auth();
     const db = firebase.firestore();
 
-    // Check Auth State
-    auth.onAuthStateChanged(user => {
+    // Check Login Status
+    auth.onAuthStateChanged(function(user) {
       if (user) {
         document.getElementById('login-section').classList.add('hidden');
         document.getElementById('admin-section').classList.remove('hidden');
@@ -72,36 +75,32 @@
       }
     });
 
-    // Login with Google (Redirect method for Mobile)
+    // Google Login Function
     function loginWithGoogle() {
-      const provider = new firebase.auth.GoogleAuthProvider();
+      var provider = new firebase.auth.GoogleAuthProvider();
       auth.signInWithRedirect(provider);
     }
 
-    // Handle Redirect Result
-    auth.getRedirectResult().then(result => {
-      if (result && result.user) {
-        console.log("Logged in successfully");
-      }
-    }).catch(err => {
-      if(err && err.code) alert("Login Error: " + err.message);
+    // Redirect Handler
+    auth.getRedirectResult().catch(function(error) {
+      alert("Login Error: " + error.message);
     });
 
-    // Logout
+    // Logout Function
     function logout() {
       auth.signOut();
     }
 
-    // Add Game Post to Firestore
+    // Add Game Function
     function addGame() {
-      const title = document.getElementById('gameTitle').value;
-      const icon = document.getElementById('gameIcon').value;
-      const download = document.getElementById('downloadUrl').value;
-      const size = document.getElementById('apkSize').value;
-      const desc = document.getElementById('gameDesc').value;
+      var title = document.getElementById('gameTitle').value;
+      var icon = document.getElementById('gameIcon').value;
+      var download = document.getElementById('downloadUrl').value;
+      var size = document.getElementById('apkSize').value;
+      var desc = document.getElementById('gameDesc').value;
 
       if (!title || !download) {
-        alert("Please fill in required fields (Title & Download Link)");
+        alert("Please fill required fields (Title & Download Link)");
         return;
       }
 
@@ -112,14 +111,14 @@
         size: size,
         description: desc,
         createdAt: firebase.firestore.FieldValue.serverTimestamp()
-      }).then(() => {
+      }).then(function() {
         alert("Game added successfully!");
         document.getElementById('gameTitle').value = '';
         document.getElementById('gameIcon').value = '';
         document.getElementById('downloadUrl').value = '';
         document.getElementById('apkSize').value = '';
         document.getElementById('gameDesc').value = '';
-      }).catch(err => {
+      }).catch(function(err) {
         alert("Error adding game: " + err.message);
       });
     }
