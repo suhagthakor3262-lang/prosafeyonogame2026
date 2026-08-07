@@ -132,10 +132,61 @@
             </div>
             <div class="legal-card-body" id="legalTabBody">Content dynamic text stream loading here...</div>
         </div>
-
+           <!-- 1. Gradient Heading Above Search Bar -->
+        <style>
+            .welcome-gradient-heading {
+                text-align: center;
+                font-size: 17px;
+                font-weight: 900;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin: 6px 0 10px 0;
+                background: linear-gradient(180deg, #0284c7 0%, #1e3a8a 60%, #0369a1 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                filter: drop-shadow(0px 2px 3px rgba(37, 99, 235, 0.25));
+            }
+        </style>
+        <h2 class="welcome-gradient-heading">WELCOME TO PROSAFEYONOGAME</h2>
+       
         <div class="search-box-wrapper">
             <input type="text" class="search-input-field" id="gameSearchInput" placeholder="Search premium games here..." onkeyup="filterGameGridList()">
         </div>
+               <!-- 2. Hero Promo Code Strip -->
+        <style>
+            .hero-promo-strip {
+                background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #1d4ed8 100%);
+                border: 1.5px solid #3b82f6;
+                border-radius: 12px;
+                padding: 10px 12px;
+                margin: 10px 0 14px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
+                box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+                position: relative;
+                overflow: hidden;
+            }
+            .promo-left-flex { display: flex; align-items: center; gap: 10px; z-index: 1; }
+            .promo-gift-badge { background: #ffffff; color: #2563eb; font-size: 16px; width: 32px; height: 32px; border-radius: 9px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(0,0,0,0.15); flex-shrink: 0; }
+            .promo-text-wrap { display: flex; flex-direction: column; text-align: left; }
+            .promo-main-title { font-size: 12.5px; font-weight: 800; color: #ffffff; line-height: 1.2; }
+            .promo-sub-title { font-size: 10px; color: #bfdbfe; font-weight: 600; }
+            .promo-get-btn { background: #ffffff; color: #2563eb; font-size: 11px; font-weight: 900; padding: 7px 12px; border-radius: 8px; text-decoration: none; text-transform: uppercase; white-space: nowrap; box-shadow: 0 3px 8px rgba(0,0,0,0.2); z-index: 1; }
+        </style>
+
+        <div class="hero-promo-strip">
+            <div class="promo-left-flex">
+                <div class="promo-gift-badge">🎁</div>
+                <div class="promo-text-wrap">
+                    <span class="promo-main-title">Daily Fresh Promo Codes</span>
+                    <span class="promo-sub-title">Claim today's active bonus code</span>
+                </div>
+            </div>
+            <a href="promo-code.html" class="promo-get-btn">GET CODE</a>
+        </div>
+       
        <!-- START: SITE NOTICE BANNER SECTION -->
 <style>
     .site-notice-banner {
