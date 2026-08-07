@@ -3,116 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Promo Codes - PROSAFEYONOGAME2026</title>
+    <title>Daily Active Promo Codes - PROSAFEYONOGAME2026</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: #f3f4f6; color: #111827; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; }
-        
+        body { background-color: #f3f4f6; color: #111827; min-height: 100vh; padding-bottom: 20px; }
+
+        /* Navigation Header Bar */
+        header { background: #ffffff; border-bottom: 2px solid #2563eb; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .nav-container { max-width: 600px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; }
+        .site-brand-name { font-size: 16px; font-weight: 800; color: #1e3a8a; text-decoration: none; letter-spacing: -0.2px; }
+        .back-home-link { background: #2563eb; color: #ffffff; text-decoration: none; font-size: 11px; font-weight: 800; padding: 6px 12px; border-radius: 6px; box-shadow: 0 2px 6px rgba(37,99,235,0.2); }
+
+        /* Main Container */
+        .promo-container { max-width: 600px; margin: 0 auto; padding: 12px; }
+
+        /* Global 24h Auto Countdown Timer Box */
+        .global-timer-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            border-radius: 14px;
+            padding: 14px;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            border: 1px solid #3b82f6;
+        }
+        .timer-title { font-size: 12px; font-weight: 700; color: #bfdbfe; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .timer-display { display: flex; justify-content: center; align-items: center; gap: 8px; font-size: 20px; font-weight: 900; }
+        .timer-unit { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); padding: 4px 10px; border-radius: 8px; min-width: 42px; backdrop-filter: blur(4px); }
+
+        /* 2-Column Responsive Card Grid Structure */
+        .promo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+
+        /* Individual Game Card Item */
         .promo-card {
             background: #ffffff;
-            border: 2px solid #2563eb;
-            border-radius: 18px;
-            max-width: 480px;
-            width: 100%;
-            padding: 30px 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 12px 8px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
-        }
-
-        .promo-icon-box {
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            margin: 0 auto 16px auto;
+            justify-content: space-between;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            position: relative;
         }
 
-        .promo-badge {
-            display: inline-block;
-            background: #dc2626;
-            color: #ffffff;
-            font-size: 11px;
-            font-weight: 800;
-            padding: 4px 12px;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-bottom: 12px;
-            animation: pulseGlow 1.5s infinite ease-in-out;
-        }
+        .game-icon { width: 60px; height: 60px; border-radius: 12px; object-fit: cover; border: 1px solid #e5e7eb; margin-bottom: 6px; }
+        .game-title { font-size: 12px; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 8px; height: 28px; display: flex; align-items: center; justify-content: center; line-height: 1.2; }
 
-        @keyframes pulseGlow {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .promo-heading {
-            font-size: 22px;
-            font-weight: 800;
-            color: #1e3a8a;
-            margin-bottom: 8px;
-        }
-
-        .promo-subtext {
-            font-size: 13.5px;
-            color: #4b5563;
-            line-height: 1.5;
-            margin-bottom: 24px;
-        }
-
-        .code-preview-box {
-            background: #f8fafc;
-            border: 1.5px dashed #2563eb;
-            border-radius: 12px;
-            padding: 14px;
-            font-size: 16px;
-            font-weight: 800;
+        /* Dash Border Code Display Box */
+        .code-box-wrapper { background: #eff6ff; border: 1.5px dashed #2563eb; border-radius: 8px; padding: 6px 4px; width: 100%; margin-bottom: 8px; }
+        .code-text { font-size: 10.5px; font-weight: 800; color: #2563eb; word-break: break-all; letter-spacing: 0.2px; margin-bottom: 4px; display: block; }
+        
+        .copy-btn {
+            background: #ffffff;
             color: #2563eb;
-            letter-spacing: 2px;
-            margin-bottom: 24px;
+            border: 1px solid #2563eb;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 5px 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s;
+            text-transform: uppercase;
         }
+        .copy-btn.copied { background: #16a34a; color: #ffffff; border-color: #16a34a; }
 
-        .back-home-btn {
-            display: inline-block;
+        /* Download APK Direct Button */
+        .download-btn {
+            display: block;
             width: 100%;
             background: #2563eb;
             color: #ffffff;
-            font-size: 13px;
+            font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
             text-decoration: none;
-            padding: 12px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
-            transition: background 0.2s;
+            padding: 8px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+            margin-top: 4px;
         }
 
-        .back-home-btn:hover {
-            background: #1d4ed8;
+        /* How To Claim Promo Code Guide Container */
+        .guide-section-box {
+            background: #ffffff;
+            border: 1.5px solid #2563eb;
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
+        .guide-main-heading { font-size: 16px; font-weight: 900; color: #1e3a8a; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .guide-banner-img { width: 100%; height: auto; border-radius: 12px; border: 1px solid #cbd5e1; display: block; }
+
+        /* Premium Telegram Portal Promotion Strip */
+        .telegram-promo-card {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            border: 1.5px solid #38bdf8;
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+        }
+        .tg-card-title { font-size: 15px; font-weight: 900; margin-bottom: 4px; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+        .tg-card-subtitle { font-size: 11.5px; color: #e0f2fe; margin-bottom: 12px; font-weight: 500; }
+        .tg-join-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #ffffff;
+            color: #0284c7;
+            font-size: 12px;
+            font-weight: 900;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+
+        /* Footer Layer */
+        footer { background: #ffffff; border-top: 1px solid #e5e7eb; padding: 16px 14px; text-align: center; width: 100%; border-radius: 12px; }
+        .footer-text { font-size: 11.5px; color: #4b5563; font-weight: 500; }
     </style>
 </head>
 <body>
 
-    <div class="promo-card">
-        <div class="promo-icon-box">🎁</div>
-        <span class="promo-badge">COMING SOON</span>
-        <h1 class="promo-heading">Daily Fresh Promo Codes</h1>
-        <p class="promo-subtext">We are preparing today's active bonus promo codes for you. Check back shortly to claim your free reward!</p>
-        
-        <div class="code-preview-box">
-            PROMO-CODE-2026-XXXX
+    <!-- Header Interface -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="site-brand-name">PROSAFEYONOGAME</a>
+            <a href="index.html" class="back-home-link">🏡 HOME</a>
+        </div>
+    </header>
+
+    <div class="promo-container">
+
+        <!-- Global 24 Hours Countdown Timer Header -->
+        <div class="global-timer-card">
+            <div class="timer-title">⏳ ALL PROMO CODES EXPIRE IN</div>
+            <div class="timer-display">
+                <span class="timer-unit" id="hours">23</span> :
+                <span class="timer-unit" id="minutes">59</span> :
+                <span class="timer-unit" id="seconds">59</span>
+            </div>
         </div>
 
-        <a href="index.html" class="back-home-btn">🏡 Return To Home</a>
+        <!-- 2-Column Responsive Promo Code Grid -->
+        <div class="promo-grid">
+
+            <!-- Card 1: OK Rummy -->
+            <div class="promo-card">
+                <img src="https://i.ibb.co/k24ywmMv/IMG-20260604-190041-410.jpg" class="game-icon" alt="OK Rummy">
+                <div class="game-title">OK Rummy</div>
+                <div class="code-box-wrapper">
+                    <span class="code-text" id="code1">okrummy.com</span>
+                    <button class="copy-btn" onclick="copyCode('code1', this)">Click to Copy</button>
+                </div>
+                <a href="https://www.okrummy7.com/?code=27BUATLPZ2C&t=1786090173" target="_blank" class="download-btn">Download Now</a>
+            </div>
+
+            <!-- Card 2: 101Z -->
+            <div class="promo-card">
+                <img src="https://i.ibb.co/r2qFKkqC/IMG-20260526-095252-042.jpg" class="game-icon" alt="101z">
+                <div class="game-title">101z</div>
+                <div class="code-box-wrapper">
+                    <span class="code-text" id="code2">101ZBONUSWIN</span>
+                    <button class="copy-btn" onclick="copyCode('code2', this)">Click to Copy</button>
+                </div>
+                <a href="https://101z2.com/?code=398ZMFCUX85&t=1786090522" target="_blank" class="download-btn">Download Now</a>
+            </div>
+
+            <!-- Card 3: IND Club -->
+            <div class="promo-card">
+                <img src="https://i.ibb.co/2YPG2mrK/IMG-20260527-084343-458.jpg" class="game-icon" alt="IND Club">
+                <div class="game-title">IND Club</div>
+                <div class="code-box-wrapper">
+                    <span class="code-text" id="code3">indclub.net</span>
+                    <button class="copy-btn" onclick="copyCode('code3', this)">Click to Copy</button>
+                </div>
+                <a href="http://indclub90.com/?code=34U7Q463L21&t=1786090704" target="_blank" class="download-btn">Download Now</a>
+            </div>
+
+            <!-- Card 4: Rumble Rummy -->
+            <div class="promo-card">
+                <img src="https://i.ibb.co/gLJWSPmY/IMG-20260527-082552-806.jpg" class="game-icon" alt="Rumble Rummy">
+                <div class="game-title">Rumble Rummy</div>
+                <div class="code-box-wrapper">
+                    <span class="code-text" id="code4">-Prosafebet@RumbleRummy-8/7</span>
+                    <button class="copy-btn" onclick="copyCode('code4', this)">Click to Copy</button>
+                </div>
+                <a href="https://www.rumblerummy999.vip/?code=UC02RS4D5NF&t=1786090873" target="_blank" class="download-btn">Download Now</a>
+            </div>
+
+            <!-- Card 5: Jaiho Rummy -->
+            <div class="promo-card">
+                <img src="https://i.ibb.co/WvDR2nJ3/IMG-20260527-083816-794.jpg" class="game-icon" alt="Jaiho Rummy">
+                <div class="game-title">Jaiho Rummy</div>
+                <div class="code-box-wrapper">
+                    <span class="code-text" id="code5">jaihorummy.bet.psb</span>
+                    <button class="copy-btn" onclick="copyCode('code5', this)">Click to Copy</button>
+                </div>
+                <a href="https://jaihorummy.co/?code=E743FQGJMGT&t=1786091068" target="_blank" class="download-btn">Download Now</a>
+            </div>
+
+            <!-- Card 6: Bingo 101 -->
+            <div class="promo-card">
+                <img src="https://i.ibb.co/ch9jPhg0/Screenshot-2026-0524-214009.png" class="game-icon" alt="Bingo 101">
+                <div class="game-title">Bingo 101</div>
+                <div class="code-box-wrapper">
+                    <span class="code-text" id="code6">ProSafeBet&bingo101.buzz8/7</span>
+                    <button class="copy-btn" onclick="copyCode('code6', this)">Click to Copy</button>
+                </div>
+                <a href="https://bin7go101.com/?code=AZTWFC1LN3P&t=1786091288" target="_blank" class="download-btn">Download Now</a>
+            </div>
+
+            <!-- Card 7: Yono Rummy -->
+            <div class="promo-card">
+                <img src="https://i.ibb.co/5hyM4SMt/Screenshot-2026-0524-121950.png" class="game-icon" alt="Yono Rummy">
+                <div class="game-title">Yono Rummy</div>
+                <div class="code-box-wrapper">
+                    <span class="code-text" id="code7">www.yonorummy.com</span>
+                    <button class="copy-btn" onclick="copyCode('code7', this)">Click to Copy</button>
+                </div>
+                <a href="https://yonorummy051.com/?code=VIP3X1XWA3G&t=1786088591" target="_blank" class="download-btn">Download Now</a>
+            </div>
+
+            <!-- Card 8: Dhan Game -->
+            <div class="promo-card">
+                <img src="https://i.ibb.co/Lzg4kqdt/IMG-20260723-075159-651.jpg" class="game-icon" alt="Dhan Game">
+                <div class="game-title">Dhan Game</div>
+                <div class="code-box-wrapper">
+                    <span class="code-text" id="code8">dhangamevip.com</span>
+                    <button class="copy-btn" onclick="copyCode('code8', this)">Click to Copy</button>
+                </div>
+                <a href="https://www.dhangameplay.com/?code=L2VAT8QQLE3&t=1786088819" target="_blank" class="download-btn">Download Now</a>
+            </div>
+
+            <!-- Card 9: Win Rummy -->
+            <div class="promo-card">
+                <img src="https://i.ibb.co/prMJpyLC/IMG-20260729-083044-255.jpg" class="game-icon" alt="Win Rummy">
+                <div class="game-title">Win Rummy</div>
+                <div class="code-box-wrapper">
+                    <span class="code-text" id="code9">winrummy.app</span>
+                    <button class="copy-btn" onclick="copyCode('code9', this)">Click to Copy</button>
+                </div>
+                <a href="https://www.winrummy7.com/?code=8JTHSY7W456&t=1786088994" target="_blank" class="download-btn">Download Now</a>
+            </div>
+
+        </div>
+
+        <!-- How To Claim Promo Code Guide Box -->
+        <div class="guide-section-box">
+            <h2 class="guide-main-heading">How To Claim Promo Code</h2>
+            <img src="https://i.ibb.co/R1DBrjj/IMG-20260716-071853-995.jpg" class="guide-banner-img" alt="How to claim promo code step guide">
+        </div>
+
+        <!-- Telegram Premium Promotion Card -->
+        <div class="telegram-promo-card">
+            <div class="tg-card-title">📢 Join Official Telegram Channel</div>
+            <div class="tg-card-subtitle">Claim All Yono Games Daily Working Promo Codes & Updates</div>
+            <a href="https://t.me/invitnew" target="_blank" class="tg-join-btn">
+                <span>✈️ JOIN TELEGRAM NOW</span>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p class="footer-text">&copy; 2026 ProSafe Yono Game Network. All Rights Reserved.<br>Daily Verification Active.</p>
+        </footer>
+
     </div>
 
+    <!-- JavaScript Logic Layer -->
+    <script>
+        // 1. Auto-Looping 24-Hour Countdown Timer Logic
+        function update24hTimer() {
+            const now = new Date();
+            const hours = 23 - now.getHours();
+            const minutes = 59 - now.getMinutes();
+            const seconds = 59 - now.getSeconds();
+
+            document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        setInterval(update24hTimer, 1000);
+        update24hTimer();
+
+        // 2. Click to Copy Functionality Logic
+        function copyCode(elementId, btnElement) {
+            const codeText = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                btnElement.innerText = "COPIED! ✓";
+                btnElement.classList.add("copied");
+                setTimeout(() => {
+                    btnElement.innerText = "Click to Copy";
+                    btnElement.classList.remove("copied");
+                }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>
-
