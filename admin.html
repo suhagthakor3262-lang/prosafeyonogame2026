@@ -72,11 +72,20 @@
       }
     });
 
-    // Login with Google
+    // Login with Google (Redirect method for Mobile)
     function loginWithGoogle() {
       const provider = new firebase.auth.GoogleAuthProvider();
-      auth.signInWithPopup(provider).catch(err => alert("Login Error: " + err.message));
+      auth.signInWithRedirect(provider);
     }
+
+    // Handle Redirect Result
+    auth.getRedirectResult().then(result => {
+      if (result && result.user) {
+        console.log("Logged in successfully");
+      }
+    }).catch(err => {
+      if(err && err.code) alert("Login Error: " + err.message);
+    });
 
     // Logout
     function logout() {
