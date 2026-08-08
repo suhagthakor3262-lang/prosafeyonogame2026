@@ -591,16 +591,19 @@
     .faq-item-card.active .faq-arrow-icon {
         transform: rotate(180deg);
     }
-    .faq-answer-content {
+        .faq-answer-content {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.25s ease-out, padding 0.25s ease;
+        transition: max-height 0.3s ease-out, padding 0.3s ease;
         background: #ffffff;
         padding: 0 16px;
     }
     .faq-item-card.active .faq-answer-content {
+        max-height: 500px; /* पर्याप्त हाइट ताकि पूरा उत्तर दिखे */
         padding: 12px 16px 14px 16px;
         border-top: 1px dashed #bfdbfe;
+    }
+   
     }
     .faq-answer-text {
         font-size: 12.5px;
@@ -672,12 +675,10 @@
 
     </div>
 </section>
-
 <script>
     function toggleFaqAccordion(btn) {
         const itemCard = btn.parentElement;
         const answerBox = itemCard.querySelector('.faq-answer-content');
-        
         const isActive = itemCard.classList.contains('active');
         
         // Close all other open items
@@ -689,10 +690,11 @@
         // Open current item if it was closed
         if (!isActive) {
             itemCard.classList.add('active');
-            answerBox.style.maxHeight = answerBox.scrollHeight + "px";
+            answerBox.style.maxHeight = answerBox.scrollHeight + 30 + "px"; // +30px सुरक्षित पैडिंग के लिए
         }
     }
 </script>
+
 <!-- END: PREMIUM FAQ ACCORDION SECTION -->
        
  <!-- ========================================== -->
