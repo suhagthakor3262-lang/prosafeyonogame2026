@@ -36,7 +36,233 @@
    </script>
    
    <style>
-       /* Custom SEO Article & Info Cards Styling */
+    /* ========================================== */
+/* PREMIUM LIVE WINNER, TICKER & REVIEWS CSS  */
+/* ========================================== */
+
+/* 1. Live Winner Bar */
+.prosafe-live-win-box {
+    background: #ffffff;
+    border: 1.5px solid #2563eb;
+    border-radius: 12px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0 10px 0;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.08);
+}
+.live-badge-chip {
+    background: #16a34a;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+}
+.live-pulse-dot {
+    width: 7px;
+    height: 7px;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: livePulseAnim 1.2s infinite ease-in-out;
+}
+@keyframes livePulseAnim {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.5; }
+}
+.live-win-text-stream {
+    font-size: 12.5px;
+    color: #1e293b;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.win-cash-glow {
+    color: #16a34a;
+    font-weight: 800;
+}
+
+/* 2. Marquee Ticker Bar */
+.prosafe-ticker-wrap {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1.5px solid #2563eb;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.06);
+}
+.ticker-badge-lead {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 10px 14px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+.ticker-marquee-track {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    background: #eff6ff;
+    padding: 8px 0;
+}
+.ticker-scroll-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: prosafeMarqueeScroll 20s linear infinite;
+    font-size: 12px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+.ticker-scroll-content span {
+    margin: 0 12px;
+}
+@keyframes prosafeMarqueeScroll {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+/* 3. Ratings & Reviews Card */
+.prosafe-reviews-card {
+    background: #ffffff;
+    border: 1.5px solid #2563eb;
+    border-radius: 16px;
+    padding: 18px 14px;
+    margin: 16px 0;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+}
+.review-header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #1e3a8a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+}
+.review-metric-grid {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+}
+.review-score-box {
+    text-align: center;
+    min-width: 90px;
+}
+.review-big-num {
+    font-size: 38px;
+    font-weight: 900;
+    color: #1e293b;
+    line-height: 1;
+}
+.review-stars-display {
+    color: #f59e0b;
+    font-size: 13px;
+    margin: 4px 0 2px 0;
+}
+.review-total-votes {
+    font-size: 10.5px;
+    color: #64748b;
+    font-weight: 600;
+}
+.review-bars-stack {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.review-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: #475569;
+    font-weight: 700;
+}
+.bar-track {
+    flex: 1;
+    height: 7px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.bar-fill {
+    height: 100%;
+    background: #2563eb;
+    border-radius: 10px;
+}
+
+/* User Feedback Items */
+.user-comment-block {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+.user-comment-block:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.comment-user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0284c7 0%, #1e3a8a 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+.comment-user-body {
+    flex: 1;
+}
+.comment-user-name {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.verified-tick {
+    color: #2563eb;
+    font-size: 11px;
+}
+.comment-user-stars {
+    color: #f59e0b;
+    font-size: 11px;
+    margin: 1px 0;
+}
+.comment-user-text {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.45;
+    margin: 0;
+    }
+       
+  /* Custom SEO Article & Info Cards Styling */
 .seo-article-card {
     background: #ffffff;
     border: 1.5px solid #2563eb;
@@ -826,6 +1052,90 @@
 
 </div>
 <!-- END: PROSAFE UNIQUE SEO ARTICLE SECTION -->
+<!-- ========================================== -->
+<!-- START: LIVE WINNER, TICKER & REVIEWS SYSTEM -->
+<!-- ========================================== -->
+
+<!-- 1. Live Winner Dynamic Bar -->
+<div class="prosafe-live-win-box">
+    <div class="live-badge-chip">
+        <span class="live-pulse-dot"></span>
+        <span>Live Win</span>
+    </div>
+    <div class="live-win-text-stream" id="tickerLiveWinner">
+        💰 User <span id="winUserName">***156</span> won <span class="win-cash-glow" id="winAmount">₹4,100</span>
+    </div>
+</div>
+
+<!-- 2. Smooth Marquee All Games Bar -->
+<div class="prosafe-ticker-wrap">
+    <div class="ticker-badge-lead">All Yono Games</div>
+    <div class="ticker-marquee-track">
+        <div class="ticker-scroll-content">
+            <span>Slots Spin</span> | <span>Bet 213</span> | <span>IND Slots</span> | <span>Spin 101</span> | <span>Jaiho Rummy</span> | <span>789 Jackpot</span> | <span>Maha Game</span> | <span>Yono VIP</span> | <span>Max Rummy</span> | <span>Dhan Game</span> | <span>Win Rummy</span>
+        </div>
+    </div>
+</div>
+
+<!-- 3. Ratings & Reviews Showcase Box -->
+<section class="prosafe-reviews-card">
+    <div class="review-header-title">
+        <span>⭐ Ratings & Reviews</span>
+    </div>
+
+    <div class="review-metric-grid">
+        <div class="review-score-box">
+            <div class="review-big-num">4.8</div>
+            <div class="review-stars-display">★★★★★</div>
+            <div class="review-total-votes">1,250 Reviews</div>
+        </div>
+
+        <div class="review-bars-stack">
+            <div class="review-bar-row">
+                <span>5★</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 82%;"></div></div>
+            </div>
+            <div class="review-bar-row">
+                <span>4★</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 12%;"></div></div>
+            </div>
+            <div class="review-bar-row">
+                <span>3★</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 4%;"></div></div>
+            </div>
+            <div class="review-bar-row">
+                <span>2★</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 1%;"></div></div>
+            </div>
+            <div class="review-bar-row">
+                <span>1★</span>
+                <div class="bar-track"><div class="bar-fill" style="width: 1%;"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Real User Comments -->
+    <div class="user-comment-block">
+        <div class="comment-user-avatar">R</div>
+        <div class="comment-user-body">
+            <div class="comment-user-name">Rahul Sharma <span class="verified-tick">✔</span></div>
+            <div class="comment-user-stars">★★★★★</div>
+            <p class="comment-user-text">"Fast withdrawal and ₹500 bonus received. Best and most trusted app in 2026!"</p>
+        </div>
+    </div>
+
+    <div class="user-comment-block">
+        <div class="comment-user-avatar">A</div>
+        <div class="comment-user-body">
+            <div class="comment-user-name">Ankit Patel <span class="verified-tick">✔</span></div>
+            <div class="comment-user-stars">★★★★★</div>
+            <p class="comment-user-text">"Minimum withdrawal ₹100 is great. Very smooth gameplay and zero lags."</p>
+        </div>
+    </div>
+</section>
+<!-- ========================================== -->
+<!-- END: LIVE WINNER, TICKER & REVIEWS SYSTEM   -->
+<!-- ========================================== -->
         
 <section class="faq-wrapper-section">
     <h2 class="faq-section-title">FAQs</h2>
@@ -1263,7 +1573,27 @@
             particle.style.animationDelay = (Math.random() * -25) + "s";
             particleContainer.appendChild(particle);
         }
-       
+       // Live Winner Real-Time Rotator
+const liveWinPool = [
+    { user: "***156", amount: "₹4,100" },
+    { user: "***990", amount: "₹1,250" },
+    { user: "***412", amount: "₹2,800" },
+    { user: "***845", amount: "₹5,600" },
+    { user: "***321", amount: "₹1,800" },
+    { user: "***674", amount: "₹3,500" }
+];
+
+let winIndex = 0;
+setInterval(() => {
+    winIndex = (winIndex + 1) % liveWinPool.length;
+    const nameEl = document.getElementById("winUserName");
+    const amountEl = document.getElementById("winAmount");
+    if (nameEl && amountEl) {
+        nameEl.innerText = liveWinPool[winIndex].user;
+        amountEl.innerText = liveWinPool[winIndex].amount;
+    }
+}, 3000);
+        
     </script>
 </body>
 </html>
