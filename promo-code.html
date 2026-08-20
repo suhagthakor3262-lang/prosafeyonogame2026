@@ -261,7 +261,284 @@
                 <span class="timer-unit" id="seconds">59</span>
             </div>
         </div>
+        <!-- START: LIVE JACKPOT LOTTO WIDGET -->
+<style>
+    .jackpot-lotto-box {
+        background: radial-gradient(circle at top left, #0d532a 0%, #032b14 70%, #011a0b 100%);
+        border: 2px solid #eab308;
+        border-radius: 16px;
+        padding: 12px 14px;
+        margin: 12px 0 16px 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(234, 179, 8, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        position: relative;
+        overflow: hidden;
+        color: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
 
+    /* Left Content Section */
+    .lotto-left-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .lotto-header-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .lotto-title {
+        font-size: 15px;
+        font-weight: 900;
+        color: #22c55e;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        text-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+    }
+
+    .lotto-live-badge {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid #22c55e;
+        color: #22c55e;
+        font-size: 9px;
+        font-weight: 900;
+        padding: 1px 6px;
+        border-radius: 6px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .live-dot-pulse {
+        width: 5px;
+        height: 5px;
+        background-color: #22c55e;
+        border-radius: 50%;
+        animation: pulseLive 1.2s infinite;
+    }
+
+    @keyframes pulseLive {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.3; transform: scale(1.3); }
+    }
+
+    .lotto-jackpot-label {
+        font-size: 11px;
+        font-weight: 700;
+        color: #f3f4f6;
+    }
+
+    /* Golden 3D Jackpot Amount */
+    .lotto-jackpot-amount {
+        font-size: 22px;
+        font-weight: 900;
+        color: #fbbf24;
+        background: linear-gradient(180deg, #fff7ed 0%, #facc15 40%, #eab308 70%, #ca8a04 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.6));
+        letter-spacing: 0.5px;
+        line-height: 1.1;
+        margin: 2px 0 4px 0;
+    }
+
+    /* Sub Details */
+    .lotto-detail-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 10px;
+        font-weight: 700;
+    }
+
+    .timer-text { color: #fde047; }
+    .ticket-text { color: #86efac; }
+    .fair-text { color: #22c55e; }
+
+    /* Right Section: Machine & Button */
+    .lotto-right-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        width: 110px;
+        flex-shrink: 0;
+    }
+
+    .lotto-machine-slot {
+        width: 80px;
+        height: 55px;
+        background: linear-gradient(180deg, #b45309 0%, #78350f 100%);
+        border: 2px solid #facc15;
+        border-radius: 12px 12px 8px 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .machine-badge {
+        background: #facc15;
+        color: #78350f;
+        font-size: 7.5px;
+        font-weight: 900;
+        padding: 1px 6px;
+        border-radius: 4px;
+        position: absolute;
+        top: -6px;
+        letter-spacing: 0.3px;
+    }
+
+    .machine-reel {
+        background: #000000;
+        border: 1px solid #ca8a04;
+        width: 85%;
+        height: 24px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        color: #facc15;
+        font-weight: 900;
+        letter-spacing: 2px;
+        box-shadow: inset 0 0 6px rgba(250, 204, 21, 0.4);
+    }
+
+    .machine-buttons {
+        display: flex;
+        gap: 6px;
+        margin-top: 3px;
+    }
+
+    .mini-btn {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ef4444;
+        border: 1px solid #fca5a5;
+    }
+    .mini-btn.yellow { background: #eab308; border-color: #fef08a; }
+
+    /* View Jackpot Action Button */
+    .view-jackpot-btn {
+        background: linear-gradient(180deg, #fef08a 0%, #facc15 50%, #eab308 100%);
+        color: #713f12;
+        font-size: 11px;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 8px;
+        border: 1px solid #ca8a04;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.1s;
+    }
+
+    .view-jackpot-btn:active {
+        transform: scale(0.96);
+    }
+</style>
+
+<div class="jackpot-lotto-box">
+    <!-- Left Section Details -->
+    <div class="lotto-left-content">
+        <div class="lotto-header-row">
+            <span class="lotto-title">JACKPOT LOTTO</span>
+            <span class="lotto-live-badge">
+                <span class="live-dot-pulse"></span> LIVE
+            </span>
+        </div>
+
+        <div class="lotto-jackpot-label">Current Jackpot</div>
+        
+        <!-- Live Counting Jackpot Amount -->
+        <div class="lotto-jackpot-amount" id="jackpotAmountText">₹1,095,855</div>
+
+        <div class="lotto-detail-item timer-text">
+            <span>🕒</span> Draw In: <span id="drawTimerText">12:20:58</span>
+        </div>
+
+        <div class="lotto-detail-item ticket-text">
+            <span>🎟️</span> My Lotto Tickets: 0/100
+        </div>
+
+        <div class="lotto-detail-item fair-text">
+            <span>🛡️</span> Random & Provably Fair
+        </div>
+    </div>
+
+    <!-- Right Section Machine & Button -->
+    <div class="lotto-right-content">
+        <div class="lotto-machine-slot">
+            <span class="machine-badge">JACKPOT</span>
+            <div class="machine-reel">7 7 7</div>
+            <div class="machine-buttons">
+                <span class="mini-btn yellow"></span>
+                <span class="mini-btn"></span>
+                <span class="mini-btn"></span>
+            </div>
+        </div>
+        <a href="https://t.me/invitnew" target="_blank" class="view-jackpot-btn">View Jackpot</a>
+    </div>
+</div>
+
+<!-- JavaScript for Live Numbers & Countdown -->
+<script>
+    // 1. Live Countdown Timer Logic
+    let drawTotalSeconds = 12 * 3600 + 20 * 60 + 58; // 12 hours 20 mins 58 secs
+
+    function updateDrawTimer() {
+        if (drawTotalSeconds <= 0) {
+            drawTotalSeconds = 24 * 3600; // Reset to 24 hours
+        }
+        drawTotalSeconds--;
+
+        const hrs = Math.floor(drawTotalSeconds / 3600);
+        const mins = Math.floor((drawTotalSeconds % 3600) / 60);
+        const secs = drawTotalSeconds % 60;
+
+        const hStr = hrs < 10 ? '0' + hrs : hrs;
+        const mStr = mins < 10 ? '0' + mins : mins;
+        const sStr = secs < 10 ? '0' + secs : secs;
+
+        const timerEl = document.getElementById('drawTimerText');
+        if (timerEl) {
+            timerEl.innerText = `${hStr}:${mStr}:${sStr}`;
+        }
+    }
+    setInterval(updateDrawTimer, 1000);
+
+    // 2. Realtime Increasing Jackpot Amount Animation
+    let currentJackpot = 1095855;
+
+    function increaseJackpot() {
+        // Har 2 se 3 second me ₹15 se ₹65 badhega
+        const randomAdd = Math.floor(Math.random() * 50) + 15;
+        currentJackpot += randomAdd;
+
+        const el = document.getElementById('jackpotAmountText');
+        if (el) {
+            el.innerText = '₹' + currentJackpot.toLocaleString('en-IN');
+        }
+    }
+    setInterval(increaseJackpot, 2500);
+</script>
+<!-- END: LIVE JACKPOT LOTTO WIDGET -->
+    
         <!-- 2-Column Responsive Promo Code Grid -->
         <div class="promo-grid">
             <!-- Card 1: Gold Rummy (With NEW Badge) -->
