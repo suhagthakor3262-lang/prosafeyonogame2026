@@ -251,7 +251,170 @@
         </div>
     </header>
         <div class="promo-container">
+        <!-- START: HANGING BANNER & SEARCH BAR WIDGET -->
+        <style>
+            .hanging-banner-wrapper {
+                position: relative;
+                margin-bottom: 22px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .banner-top-img-box {
+                width: 100%;
+                border-radius: 14px;
+                overflow: hidden;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+                border: 1.5px solid #2563eb;
+                position: relative;
+                z-index: 2;
+                background: #ffffff;
+            }
+            .banner-top-img-box img {
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: cover;
+            }
+            /* Hanging Ropes Effect */
+            .hanging-ropes-connector {
+                width: 78%;
+                display: flex;
+                justify-content: space-between;
+                height: 20px;
+                position: relative;
+                margin-top: -3px;
+                margin-bottom: -3px;
+                z-index: 1;
+            }
+            .rope-line {
+                width: 3.5px;
+                height: 100%;
+                background: repeating-linear-gradient(
+                    45deg,
+                    #d97706,
+                    #d97706 3px,
+                    #92400e 3px,
+                    #92400e 6px
+                );
+                box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+                border-radius: 2px;
+                position: relative;
+            }
+            .rope-line::before, .rope-line::after {
+                content: '';
+                position: absolute;
+                width: 7px;
+                height: 7px;
+                background: #b45309;
+                border-radius: 50%;
+                left: -2px;
+                box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
+            }
+            .rope-line::before { top: 0; }
+            .rope-line::after { bottom: 0; }
+            
+            /* Hanging Search Box */
+            .hanging-search-box {
+                width: 94%;
+                background: #ffffff;
+                border: 2px solid #2563eb;
+                border-radius: 25px;
+                padding: 6px 14px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                box-shadow: 0 6px 16px rgba(37, 99, 235, 0.15);
+                position: relative;
+                z-index: 3;
+            }
+            .search-icon-badge {
+                font-size: 16px;
+                color: #2563eb;
+            }
+            .hanging-search-input {
+                width: 100%;
+                border: none;
+                outline: none;
+                font-size: 13px;
+                font-weight: 700;
+                color: #1e3a8a;
+                background: transparent;
+            }
+            .hanging-search-input::placeholder {
+                color: #94a3b8;
+                font-weight: 600;
+            }
+            .clear-search-btn {
+                background: #e2e8f0;
+                color: #475569;
+                border: none;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                font-size: 11px;
+                font-weight: 900;
+                cursor: pointer;
+            }
+        </style>
 
+        <div class="hanging-banner-wrapper">
+            <!-- Top Banner Image -->
+            <div class="banner-top-img-box">
+                <img src="https://i.ibb.co/9mWfmJSb/grok-1787035830211.jpg" alt="Promo Codes & Games Header Banner">
+            </div>
+
+            <!-- Hanging 2 Ropes -->
+            <div class="hanging-ropes-connector">
+                <div class="rope-line"></div>
+                <div class="rope-line"></div>
+            </div>
+
+            <!-- Hanging Live Search Input -->
+            <div class="hanging-search-box">
+                <span class="search-icon-badge">🔍</span>
+                <input type="text" id="promoLiveSearch" class="hanging-search-input" placeholder="Search game or promo code..." oninput="filterPromoGames()">
+                <button id="clearSearchBtn" class="clear-search-btn" onclick="clearPromoSearch()">✕</button>
+            </div>
+        </div>
+
+        <!-- Live Instant Search JS Logic -->
+        <script>
+            function filterPromoGames() {
+                const query = document.getElementById('promoLiveSearch').value.toLowerCase().trim();
+                const clearBtn = document.getElementById('clearSearchBtn');
+                const cards = document.querySelectorAll('.promo-card');
+
+                if (query.length > 0) {
+                    clearBtn.style.display = 'flex';
+                } else {
+                    clearBtn.style.display = 'none';
+                }
+
+                cards.forEach(card => {
+                    const gameTitle = card.querySelector('.game-title')?.innerText.toLowerCase() || '';
+                    const promoText = card.querySelector('.code-text')?.innerText.toLowerCase() || '';
+
+                    if (gameTitle.includes(query) || promoText.includes(query)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            function clearPromoSearch() {
+                const searchInput = document.getElementById('promoLiveSearch');
+                searchInput.value = '';
+                filterPromoGames();
+                searchInput.focus();
+            }
+        </script>
+        <!-- END: HANGING BANNER & SEARCH BAR WIDGET -->
+            
         <!-- Global 24 Hours Countdown Timer Header -->
         <div class="global-timer-card">
             <div class="timer-title">⏳ ALL PROMO CODES EXPIRE IN</div>
