@@ -36,7 +36,105 @@
    </script>
    
    <style>
-    /* ========================================== */
+  /* ========================================== */
+/* ALL DIWA COLLECTION SECTION STYLING       */
+/* ========================================== */
+
+.diwa-collection-section {
+    background: #ffffff;
+    border: 1.5px solid #2563eb;
+    border-radius: 16px;
+    padding: 20px 14px;
+    margin: 20px 0;
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
+}
+
+.diwa-header-wrap {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+/* Golden Ornamental Divider (SVG based - sharp & clean) */
+.diwa-ornament-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px auto;
+    max-width: 280px;
+    height: 18px;
+}
+
+.diwa-title {
+    font-size: 19px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #d97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 4px 0;
+}
+
+.diwa-subtitle {
+    font-size: 11.5px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+/* Diwa Games Grid */
+.diwa-games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* Coming Soon Game Card */
+.diwa-card-coming-soon {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border: 1.5px dashed #93c5fd;
+    border-radius: 14px;
+    padding: 14px 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.diwa-icon-box {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border: 1px solid #bfdbfe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.1);
+}
+
+.diwa-game-name {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1e3a8a;
+    margin-bottom: 6px;
+}
+
+.diwa-coming-soon-badge {
+    background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+    color: #ffffff;
+    font-size: 9.5px;
+    font-weight: 900;
+    padding: 3px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3);
+}  
+       /* ========================================== */
 /* PREMIUM LIVE WINNER, TICKER & REVIEWS CSS  */
 /* ========================================== */
 
@@ -923,7 +1021,62 @@
                 <a href="max-rummy.html" class="game-download-btn">Get APK</a>
             </div>
         </section>
-       <!-- START: PREMIUM FAQ ACCORDION SECTION -->
+     <!-- ========================================== -->
+<!-- START: ALL DIWA COLLECTION SECTION         -->
+<!-- ========================================== -->
+<section class="diwa-collection-section">
+    
+    <div class="diwa-header-wrap">
+        <!-- Golden Luxury Ornament Line -->
+        <div class="diwa-ornament-divider">
+            <svg viewBox="0 0 400 24" width="100%" height="100%" fill="url(#goldGradient)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#b45309" stop-opacity="0.2"/>
+                        <stop offset="25%" stop-color="#d97706"/>
+                        <stop offset="50%" stop-color="#fef08a"/>
+                        <stop offset="75%" stop-color="#d97706"/>
+                        <stop offset="100%" stop-color="#b45309" stop-opacity="0.2"/>
+                    </linearGradient>
+                </defs>
+                <path d="M 0 12 Q 100 11 150 12 T 180 12 L 188 6 L 194 12 L 200 2 L 206 12 L 212 6 L 220 12 Q 250 11 300 12 T 400 12 L 395 13 Q 300 13 220 12 L 212 18 L 206 12 L 200 22 L 194 12 L 188 18 L 180 12 Q 150 13 5 13 Z"/>
+            </svg>
+        </div>
+
+        <h2 class="diwa-title">✨ All Diwa Collection ✨</h2>
+        <p class="diwa-subtitle">Exclusive Diwa Series Games • Daily New Launch</p>
+    </div>
+
+    <div class="diwa-games-grid">
+        
+        <!-- Diwa Game 1 (Placeholder) -->
+        <div class="diwa-card-coming-soon">
+            <div class="diwa-icon-box">💎</div>
+            <span class="diwa-game-name">Diwa 1</span>
+            <span class="diwa-coming-soon-badge">Coming Soon</span>
+        </div>
+
+        <!-- Diwa Game 2 (Placeholder) -->
+        <div class="diwa-card-coming-soon">
+            <div class="diwa-icon-box">👑</div>
+            <span class="diwa-game-name">Diwa 2</span>
+            <span class="diwa-coming-soon-badge">Coming Soon</span>
+        </div>
+
+        <!-- Diwa Game 3 (Placeholder) -->
+        <div class="diwa-card-coming-soon">
+            <div class="diwa-icon-box">🔥</div>
+            <span class="diwa-game-name">Diwa 3</span>
+            <span class="diwa-coming-soon-badge">Coming Soon</span>
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================================== -->
+<!-- END: ALL DIWA COLLECTION SECTION           -->
+<!-- ========================================== -->
+    <!-- START: PREMIUM FAQ ACCORDION SECTION -->
 <style>
         .faq-wrapper-section {
         margin: 20px 0;
