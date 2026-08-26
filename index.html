@@ -454,16 +454,6 @@
         .footer-legal-nav { display: flex; justify-content: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
         .footer-legal-btn { background: none; border: none; color: #2563eb; font-size: 12px; font-weight: 700; cursor: pointer; text-decoration: underline; }
 
-        /* Live Activity Toast Layout */
-        #win-notification-toast { position: fixed; top: 75px; right: -320px; background: linear-gradient(90deg, #1e293b 0%, #1e3a8a 100%); color: #ffffff; padding: 10px 14px; border-radius: 12px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3); z-index: 1000; transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(255,255,255,0.1); width: 280px; }
-        .toast-game-avatar { width: 44px; height: 44px; border-radius: 10px; object-fit: cover; border: 1.5px solid #fbbf24; }
-        .toast-meta-content { flex: 1; font-size: 12px; line-height: 1.4; position: relative; padding-right: 14px; }
-        .toast-user-string { font-weight: 800; color: #fbbf24; }
-        .toast-uid-string { color: #cbd5e1; font-size: 11px; }
-        .toast-amount-string { color: #4ade80; font-weight: 800; font-size: 13px; }
-        .toast-dismiss-chokadi { position: absolute; top: -2px; right: -6px; background: none; border: none; color: #cbd5e1; font-size: 14px; font-weight: 700; cursor: pointer; padding: 2px; line-height: 1; }
-        .toast-dismiss-chokadi:hover { color: #ffffff; }
-
         .back-to-top-btn { position: fixed; bottom: 80px; right: 16px; width: 40px; height: 40px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 50%; display: none; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); cursor: pointer; z-index: 150; }
         .telegram-float-anchor { position: fixed; bottom: 20px; right: 16px; width: 46px; height: 46px; background: #0284c7; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 10px rgba(2,132,199,0.25); border: 1px solid #38bdf8; z-index: 150; text-decoration: none; }
         footer { background: #ffffff; border-top: 1px solid #e5e7eb; padding: 16px 14px; text-align: center; width: 100%; }
@@ -485,7 +475,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #ff9f43;
+  background: #8b5cf6; 
   opacity: 0.35;
   animation: particleMove linear infinite;
 }
@@ -1000,7 +990,13 @@
     <img src="https://i.ibb.co/B5NBtH1g/IMG-20260821-105923-951.jpg" class="game-app-icon" width="64" height="64" alt="Saga Slots">
     <h3 class="game-app-name">Saga Slots</h3>
     <a href="saga-slots.html" class="game-download-btn">Get APK</a>
-    </div>     
+    </div>   
+    <!-- Game Card: Jaiho 777 -->
+    <div class="game-card-node">
+    <img src="https://i.ibb.co/1GXf3xBW/IMG-20260821-105815-269.jpg" class="game-app-icon" width="64" height="64" alt="Jaiho 777">
+    <h3 class="game-app-name">Jaiho 777</h3>
+    <a href="jaiho-777.html" class="game-download-btn">Get APK</a>
+    </div>
         </section>
      <!-- ========================================== -->
 <!-- START: ALL DIWA COLLECTION SECTION         -->
@@ -1647,17 +1643,6 @@
             }
         };
 
-        // Real Database Array of App Icons for Live Toast Popups
-        const livePlatformWinnersPool = [
-            { name: "Abh***jit", uid: "26746767", amount: "3,000.00", icon: "https://i.ibb.co/pjS0JqJ0/IMG-20260709-090606-552.jpg" }, 
-            { name: "Raj***esh", uid: "84920481", amount: "1,500.00", icon: "https://i.ibb.co/Q7Wr5bhm/IMG-20260604-173703-578.jpg" }, 
-            { name: "Vik***as", uid: "55610293", amount: "4,800.00", icon: "https://i.ibb.co/W4RkkgnW/IMG-20260528-165717-352.jpg" }, 
-            { name: "Ami***kumar", uid: "10394827", amount: "5,400.00", icon: "https://i.ibb.co/wZBnk9sF/IMG-20260528-165407-231.jpg" }, 
-            { name: "Priy***anka", uid: "77294019", amount: "2,200.00", icon: "https://i.ibb.co/XxTS3tdZ/Screenshot-2026-0524-121950.png" }
-        ];
-
-        let toastTimerTracker;
-
         // Sidebar Navigation Toggler
         function toggleSidebarMenu() {
             const sidebar = document.getElementById('sidebarPanel');
@@ -1715,32 +1700,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Live Activity Notification Loop Trigger Engine
-        function executeLiveNotificationCycle() {
-            const toastNode = document.getElementById('win-notification-toast');
-            const activeData = livePlatformWinnersPool[Math.floor(Math.random() * livePlatformWinnersPool.length)];
-            
-            document.getElementById('toast-icon-target').src = activeData.icon;
-            document.getElementById('toast-user-target').innerText = activeData.name;
-            document.getElementById('toast-uid-target').innerText = activeData.uid;
-            document.getElementById('toast-amount-target').innerText = activeData.amount;
-            
-            toastNode.style.right = "14px"; 
-            
-            clearTimeout(toastTimerTracker);
-            
-            toastTimerTracker = setTimeout(() => { 
-                toastNode.style.right = "-320px"; 
-            }, 4000); 
-        }
-
-        function dismissToastManually() {
-            const toastNode = document.getElementById('win-notification-toast');
-            clearTimeout(toastTimerTracker);
-            toastNode.style.right = "-320px"; 
-        }
-
-        setInterval(executeLiveNotificationCycle, 10000);
         // Particle Generator Logic
         const particleContainer = document.getElementById("particles");
         const totalParticles = window.innerWidth <= 600 ? 35 : 70;
