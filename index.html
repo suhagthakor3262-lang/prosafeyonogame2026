@@ -716,34 +716,166 @@
         <div class="compact-timer-badge" id="stripTimerBox">
             <span>⏳</span> <span id="stripTimeDisplay">11d 16:45:00</span>
         </div>
+  <!-- START: MONEY RUMMY AUTO COUNTDOWN LAUNCH STRIP -->
+<style>
+    .auto-launch-strip {
+        background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+        border: 1.5px solid #2563eb;
+        border-radius: 12px;
+        padding: 10px 12px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .launch-left-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .launch-game-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        object-fit: cover;
+        border: 1px solid #dbeafe;
+    }
+    .launch-meta {
+        display: flex;
+        flex-direction: column;
+    }
+    .launch-badge-row {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 2px;
+    }
+    .badge-new-tag {
+        background: #e11d48;
+        color: #ffffff;
+        font-size: 9px;
+        font-weight: 900;
+        padding: 2px 6px;
+        border-radius: 4px;
+        text-transform: uppercase;
+    }
+    .badge-status-text {
+        font-size: 10px;
+        font-weight: 800;
+        color: #2563eb;
+    }
+    .launch-title-text {
+        font-weight: 800;
+        color: #1e3a8a;
+        font-size: 15px;
+    }
+    
+    .launch-action-slot {
+        flex-shrink: 0;
+    }
+
+    /* 4-Box Yellow/Orange Flip Card Timer Style */
+    .four-box-timer-container {
+        background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%);
+        border: 1.5px solid #fbbf24;
+        padding: 3px 5px;
+        border-radius: 9px;
+        display: inline-flex;
+        align-items: center;
+        gap: 3px;
+        box-shadow: 0 3px 6px rgba(217, 119, 6, 0.3);
+    }
+    .time-slot-box {
+        background: linear-gradient(180deg, #b45309 0%, #92400e 100%);
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 900;
+        min-width: 22px;
+        height: 24px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
+        letter-spacing: 0.2px;
+    }
+
+    .launch-apk-btn {
+        background: #0066ff;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 800;
+        text-transform: uppercase;
+        padding: 8px 14px;
+        font-size: 11px;
+        border-radius: 6px;
+        display: none;
+        box-shadow: 0 2px 6px rgba(0, 102, 255, 0.25);
+    }
+</style>
+
+<div class="auto-launch-strip search-item" data-name="money rummy" id="upcomingStripCard">
+    <div class="launch-left-wrap">
+        <img src="https://i.ibb.co/1YVg9hqZ/compressed-image.jpg" id="upcomingGameIcon" class="launch-game-icon" width="48" height="48" alt="Money Rummy Icon">
+        <div class="launch-meta">
+            <div class="launch-badge-row">
+                <span class="badge-new-tag">⚡ NEW</span>
+                <span class="badge-status-text" id="upcomingStatusTag">⏳ LAUNCHING IN</span>
+            </div>
+            <span class="launch-title-text" id="upcomingGameName">Money Rummy</span>
+        </div>
+    </div>
+    <div class="launch-action-slot">
+        <!-- 4-Box Digital Counter -->
+        <div class="four-box-timer-container" id="stripTimerBox">
+            <span class="time-slot-box" id="boxDays">11</span>
+            <span class="time-slot-box" id="boxHours">13</span>
+            <span class="time-slot-box" id="boxMins">50</span>
+            <span class="time-slot-box" id="boxSecs">10</span>
+        </div>
         <a href="money-rummy.html" id="stripApkLink" class="launch-apk-btn">GET APK</a>
     </div>
 </div>
 
 <script>
-    let remainingLaunchSeconds = (11 * 24 * 3600) + (16 * 3600) + (45 * 60);
+    // Total Duration: 11 Days, 13 Hours, 50 Minutes, 10 Seconds
+    const totalDurationMs = ((11 * 24 * 3600) + (13 * 3600) + (55 * 60) + 10) * 1000;
 
-    function updateMoneyRummyTimer() {
+    let targetEndTime = localStorage.getItem('moneyRummyEndTime');
+    if (!targetEndTime) {
+        targetEndTime = new Date().getTime() + totalDurationMs;
+        localStorage.setItem('moneyRummyEndTime', targetEndTime);
+    } else {
+        targetEndTime = parseInt(targetEndTime);
+    }
+
+    function updateFourBoxTimer() {
         const timerBox = document.getElementById('stripTimerBox');
-        const timerDisplay = document.getElementById('stripTimeDisplay');
         const apkBtn = document.getElementById('stripApkLink');
         const statusTag = document.getElementById('upcomingStatusTag');
+        
+        const bDays = document.getElementById('boxDays');
+        const bHours = document.getElementById('boxHours');
+        const bMins = document.getElementById('boxMins');
+        const bSecs = document.getElementById('boxSecs');
 
-        if (remainingLaunchSeconds > 0) {
-            remainingLaunchSeconds--;
+        const now = new Date().getTime();
+        const diff = targetEndTime - now;
 
-            const days = Math.floor(remainingLaunchSeconds / (24 * 3600));
-            const hours = Math.floor((remainingLaunchSeconds % (24 * 3600)) / 3600);
-            const minutes = Math.floor((remainingLaunchSeconds % 3600) / 60);
-            const seconds = remainingLaunchSeconds % 60;
+        if (diff > 0) {
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            const hStr = hours < 10 ? '0' + hours : hours;
-            const mStr = minutes < 10 ? '0' + minutes : minutes;
-            const sStr = seconds < 10 ? '0' + seconds : seconds;
-
-            if (timerDisplay) {
-                timerDisplay.innerText = `${days}d ${hStr}:${mStr}:${sStr}`;
-            }
+            if (bDays) bDays.innerText = days < 10 ? '0' + days : days;
+            if (bHours) bHours.innerText = hours < 10 ? '0' + hours : hours;
+            if (bMins) bMins.innerText = minutes < 10 ? '0' + minutes : minutes;
+            if (bSecs) bSecs.innerText = seconds < 10 ? '0' + seconds : seconds;
         } else {
             if (timerBox) timerBox.style.display = 'none';
             if (apkBtn) apkBtn.style.display = 'inline-block';
@@ -754,8 +886,8 @@
         }
     }
 
-    setInterval(updateMoneyRummyTimer, 1000);
-    updateMoneyRummyTimer();
+    setInterval(updateFourBoxTimer, 1000);
+    updateFourBoxTimer();
 </script>
 <!-- END: MONEY RUMMY AUTO COUNTDOWN LAUNCH STRIP -->
         
