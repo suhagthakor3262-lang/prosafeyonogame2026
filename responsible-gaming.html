@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsible Gaming - ProSafe Yono Game 2026</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="canonical" href="https://prosafeyonogame2026.com/responsible-gaming.html" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-cream: #f9f8f3;
+            --surface-white: #ffffff;
+            --forest-green: #0d2b1d;
+            --emerald-accent: #0e5b38;
+            --badge-bg: #edf8f2;
+            --badge-border: #bee3d0;
+            --gold-accent: #d97706;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --card-border: #e6e3d5;
+            --danger-red: #dc2626;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.65;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: #ffffff;
+            border-bottom: 1px solid var(--card-border);
+            box-shadow: 0 2px 10px rgba(13, 43, 29, 0.05);
+        }
+
+        .header-inner {
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .brand-title {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--forest-green);
+        }
+
+        .back-nav-link {
+            font-size: 12.5px;
+            font-weight: 800;
+            color: var(--emerald-accent);
+            text-decoration: none;
+            background: var(--badge-bg);
+            border: 1px solid var(--badge-border);
+            padding: 5px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .back-nav-link:hover {
+            background: var(--emerald-accent);
+            color: #ffffff;
+        }
+
+        /* Content Container */
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 20px 14px;
+        }
+
+        .policy-card {
+            background: #ffffff;
+            border: 1.5px solid var(--card-border);
+            border-radius: 18px;
+            padding: 24px 18px;
+            box-shadow: 0 4px 16px rgba(13, 43, 29, 0.05);
+        }
+
+        .page-badge-wrap {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .page-badge {
+            display: inline-block;
+            background: #fee2e2;
+            color: var(--danger-red);
+            border: 1px solid #fecaca;
+            font-size: 10.5px;
+            font-weight: 800;
+            padding: 4px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .page-heading {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--forest-green);
+            text-align: center;
+            letter-spacing: -0.4px;
+            margin-bottom: 6px;
+        }
+
+        .page-subheading {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        /* Warning Highlight Box */
+        .alert-banner {
+            background: #fff7ed;
+            border-left: 4px solid var(--gold-accent);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-bottom: 20px;
+            font-size: 12.5px;
+            color: #9a3412;
+            font-weight: 600;
+        }
+
+        .policy-section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 15px;
+            font-weight: 900;
+            color: var(--forest-green);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-text {
+            font-size: 13px;
+            color: #334155;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .policy-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .policy-list li {
+            font-size: 12.5px;
+            color: #334155;
+            background: var(--bg-cream);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 10px 12px;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .policy-list li strong {
+            color: var(--forest-green);
+        }
+
+        .bullet-icon {
+            color: var(--emerald-accent);
+            font-weight: 900;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--forest-green);
+            color: #cbd5e1;
+            padding: 24px 14px;
+            text-align: center;
+            font-size: 11.5px;
+            margin-top: 30px;
+            border-top: 3px solid var(--emerald-accent);
+        }
+
+        footer a {
+            color: #fde047;
+            text-decoration: none;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="brand-link">
+                <span class="brand-title">ProSafe Yono</span>
+            </a>
+            <a href="index.html" class="back-nav-link">← Back to Hub</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="policy-card">
+            
+            <div class="page-badge-wrap">
+                <span class="page-badge">Player Protection & Safety</span>
+            </div>
+            
+            <h1 class="page-heading">Responsible Gaming Policy</h1>
+            <p class="page-subheading">Guidelines for safe, disciplined, and healthy online entertainment.</p>
+
+            <div class="alert-banner">
+                ⚠️ <strong>Financial Risk Notice:</strong> Card games, slot apps, and online rummy involve financial risk and may be habit-forming. Play with moderation and never risk funds intended for basic life necessities.
+            </div>
+
+            <div class="policy-section">
+                <h2 class="section-title">⚖️ 1. Our Commitment to Safety</h2>
+                <p class="section-text">
+                    At <strong>prosafeyonogame2026.com</strong>, we are committed to promoting a healthy gaming ecosystem. While we curate verified third-party APK downloads for adult entertainment, we firmly advocate that gaming should remain a casual leisure activity rather than a source of income or a way to escape personal problems.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2 class="section-title">🔞 2. Strict Age Verification (18+ Only)</h2>
+                <p class="section-text">
+                    Participation in real-money gaming is legally restricted to individuals aged <strong>18 years or older</strong>. Minors are strictly prohibited from creating accounts, depositing funds, or playing cash tournaments on any platform listed on this directory. We advise parents to use filtering software to prevent underage access.
+                </p>
+            </div>
+
+            <div class="policy-section">
+                <h2 class="section-title">💡 3. Best Practices for Responsible Play</h2>
+                <ul class="policy-list">
+                    <li>
+                        <span class="bullet-icon">✔</span>
+                        <div><strong>Set a Fixed Budget:</strong> Decide on a strict daily or weekly bankroll before you play. Never exceed this amount, regardless of wins or losses.</div>
+                    </li>
+                    <li>
+                        <span class="bullet-icon">✔</span>
+                        <div><strong>Avoid Chasing Losses:</strong> Trying to recover lost money urgently often leads to bigger mistakes. Accept losses as entertainment expense and stop playing.</div>
+                    </li>
+                    <li>
+                        <span class="bullet-icon">✔</span>
+                        <div><strong>Track Your Screen Time:</strong> Take regular breaks. Playing continuously impairs judgment, analytical calculations, and decision-making.</div>
+                    </li>
+                    <li>
+                        <span class="bullet-icon">✔</span>
+                        <div><strong>Never Borrow Funds:</strong> Do not use credit cards, loans, or household funds for mobile gaming apps. Only play with surplus pocket money.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2 class="section-title">🚩 4. Signs of Compulsive Gaming</h2>
+                <p class="section-text">
+                    Ask yourself these self-assessment questions to determine if your gaming habits need adjustment:
+                </p>
+                <ul class="policy-list">
+                    <li><span class="bullet-icon">•</span> Do you spend more time or money on gaming apps than initially intended?</li>
+                    <li><span class="bullet-icon">•</span> Do you feel restless or irritable when trying to cut down on game sessions?</li>
+                    <li><span class="bullet-icon">•</span> Have you neglected work, family duties, or sleep to continue playing?</li>
+                    <li><span class="bullet-icon">•</span> Do you play as an emotional escape from stress, anxiety, or loneliness?</li>
+                </ul>
+            </div>
+
+            <div class="policy-section">
+                <h2 class="section-title">🛡️ 5. Self-Exclusion & Assistance</h2>
+                <p class="section-text">
+                    If you feel gaming is affecting your personal or financial well-being, we strongly urge you to use the self-exclusion features provided inside specific game apps (such as temporary account freezing or deposit caps). You can also seek confidential guidance from professional mental health counselors.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 ProSafe Yono Game Network. All Rights Reserved.<br>
+        <a href="index.html">Home Dashboard</a> • <a href="privacy-policy.html">Privacy Policy</a> • <a href="terms-and-conditions.html">Terms</a>
+    </footer>
+
+</body>
+</html>
