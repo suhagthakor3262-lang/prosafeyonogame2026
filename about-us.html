@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Official ProSafe Yono Game 2026</title>
+    
+    <link rel="icon" type="image/png" href="https://i.ibb.co/bRR7qNm8/file-000000002aa872089a44603a2278ac14.png">
+    <meta name="description" content="Discover the mission, safety verification standards, and editorial integrity behind prosafeyonogame2026.com - India's dedicated Yono & Diwa games directory.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://prosafeyonogame2026.com/about-us.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-cream: #f9f8f3;
+            --text-heading: #0d2b1d;
+            --text-body: #334155;
+            --badge-bg: #edf8f2;
+            --badge-border: #bee3d0;
+            --badge-text: #0e5b38;
+            --badge-accent: #d97706;
+            --card-border: #e6e3d5;
+            --card-bg: #ffffff;
+            --link-color: #0e5b38;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-body);
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.75;
+            padding: 24px 14px 60px 14px;
+        }
+
+        .policy-container {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .top-nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 28px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .home-return-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: var(--text-heading);
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            transition: all 0.2s ease;
+        }
+
+        .home-return-link:hover {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+        }
+
+        .badge-pill-header {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--badge-bg);
+            border: 1.5px solid var(--badge-border);
+            border-radius: 999px;
+            padding: 6px 18px;
+            margin-bottom: 20px;
+        }
+
+        .badge-pill-header .accent-bar {
+            width: 22px;
+            height: 3px;
+            background-color: var(--badge-accent);
+            border-radius: 2px;
+        }
+
+        .badge-pill-header span {
+            font-size: 11.5px;
+            font-weight: 800;
+            color: var(--badge-text);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        .policy-hero-heading {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 38px;
+            font-weight: 900;
+            line-height: 1.25;
+            color: var(--text-heading);
+            letter-spacing: -0.8px;
+            margin-bottom: 18px;
+        }
+
+        .policy-lead-intro {
+            font-size: 16px;
+            color: #4a5568;
+            margin-bottom: 32px;
+            line-height: 1.65;
+        }
+
+        .content-card-wrap {
+            background: var(--card-bg);
+            border: 1.5px solid var(--card-border);
+            border-radius: 18px;
+            padding: 32px 26px;
+            box-shadow: 0 4px 20px rgba(13, 43, 29, 0.04);
+        }
+
+        .policy-section-block {
+            margin-bottom: 30px;
+        }
+
+        .policy-section-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-section-title {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-section-title::before {
+            content: "";
+            width: 4px;
+            height: 18px;
+            background-color: var(--badge-accent);
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+        .policy-para {
+            font-size: 14.5px;
+            color: #374151;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .policy-list {
+            margin-left: 20px;
+            margin-bottom: 14px;
+        }
+
+        .policy-list li {
+            font-size: 14px;
+            color: #374151;
+            margin-bottom: 8px;
+            padding-left: 4px;
+        }
+
+        .policy-list strong {
+            color: var(--text-heading);
+        }
+
+        .highlight-notice {
+            background-color: var(--badge-bg);
+            border-left: 4px solid var(--badge-text);
+            padding: 14px 18px;
+            border-radius: 8px;
+            margin: 16px 0;
+            font-size: 13.5px;
+            color: #1a4d33;
+        }
+
+        /* Mission Metric Cards */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 20px 0 26px 0;
+        }
+
+        .metric-card {
+            background: var(--bg-cream);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 14px 10px;
+            text-align: center;
+        }
+
+        .metric-num {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--text-heading);
+        }
+
+        .metric-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--badge-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        .footer-policy-note {
+            text-align: center;
+            margin-top: 36px;
+            font-size: 12.5px;
+            color: #64748b;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 18px 12px 40px 12px; }
+            .policy-hero-heading { font-size: 28px; }
+            .content-card-wrap { padding: 22px 16px; }
+            .policy-section-title { font-size: 18px; }
+            .policy-para { text-align: left; }
+            .metrics-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="policy-container">
+    
+    <div class="top-nav-bar">
+        <a href="index.html" class="home-return-link">← Back to Games</a>
+        <span style="font-size: 12px; font-weight: 700; color: #64748b;">prosafeyonogame2026.com</span>
+    </div>
+
+    <div class="badge-pill-header">
+        <div class="accent-bar"></div>
+        <span>OUR IDENTITY & MISSION</span>
+    </div>
+
+    <h1 class="policy-hero-heading">About ProSafe Yono Game Network</h1>
+    
+    <p class="policy-lead-intro">
+        Built for performance, transparency, and user safety. Learn about our verification process, directory architecture, and dedicated portal for Indian gaming enthusiasts.
+    </p>
+
+    <div class="content-card-wrap">
+
+        <!-- Stats Overview -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-num">50+</div>
+                <div class="metric-label">Verified APKs</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-num">100%</div>
+                <div class="metric-label">Malware Clean</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-num">2026</div>
+                <div class="metric-label">Latest Builds</div>
+            </div>
+        </div>
+
+        <div class="policy-section-block">
+            <h2 class="policy-section-title">1. Who We Are</h2>
+            <p class="policy-para">
+                <strong>prosafeyonogame2026.com</strong> was created to solve a persistent issue in the Indian card gaming and skill entertainment community: broken mirrors, misleading advertisements, expired bonus links, and unsafe third-party package modifications.
+            </p>
+            <p class="policy-para">
+                We operate as an independent aggregator and digital library. Our editorial team tracks and indexes authentic Android packages (APKs) for recognized collections including the <strong>Diwa Series</strong> (Diwa Play, Diwa King, Diwa X), classic <strong>Yono Rummy</strong> variants, <strong>Gold Rummy</strong>, <strong>Money Rummy</strong>, and leading slot titles.
+            </p>
+        </div>
+
+        <div class="policy-section-block">
+            <h2 class="policy-section-title">2. Our Core Principles</h2>
+            <ul class="policy-list">
+                <li><strong>Direct Verified Links:</strong> We do not wrap downloads inside multi-step ad shorteners, forced pop-ups, or spam redirects. Clicking "GET APK" leads straight to genuine installation files.</li>
+                <li><strong>Malware & Virus Screening:</strong> Every APK package link is evaluated through automated signature checks and antivirus scans to verify hash integrity before being published.</li>
+                <li><strong>Community Transparency:</strong> We openly display user reviews, genuine withdrawal threshold notices (e.g. standard ₹100 limits), and accurate signup bonus expectations.</li>
+            </ul>
+        </div>
+
+        <div class="policy-section-block">
+            <h2 class="policy-section-title">3. What Sets Us Apart</h2>
+            <p class="policy-para">
+                Unlike chaotic download portals cluttered with confusing pop-under ads, our user experience is optimized for speed, clarity, and mobile usability:
+            </p>
+            <div class="highlight-notice">
+                Our Guarantee: We never store your personal payment information, bank credentials, or gaming account data on our servers. You interact directly with the game developers upon installation.
+            </div>
+            <p class="policy-para">
+                Our responsive mobile interface allows players to search, filter, compare ratings, and check live payout telemetry instantly, even on moderate 4G mobile networks.
+            </p>
+        </div>
+
+        <div class="policy-section-block">
+            <h2 class="policy-section-title">4. Responsible Gaming Philosophy</h2>
+            <p class="policy-para">
+                We believe skill-based real-money gaming should remain purely a source of entertainment, not a stressful financial hazard. We advocate for:
+            </p>
+            <ul class="policy-list">
+                <li>Strict age screening (18+ only).</li>
+                <li>Clear awareness of financial risks and loss possibilities.</li>
+                <li>Taking frequent breaks and never wagering essential living funds.</li>
+            </ul>
+        </div>
+
+        <div class="policy-section-block">
+            <h2 class="policy-section-title">5. Connect With Our Community</h2>
+            <p class="policy-para">
+                We maintain active communication channels to share release notices, server maintenance updates, and new tournament launches:
+            </p>
+            <ul class="policy-list">
+                <li><strong>Official Portal:</strong> prosafeyonogame2026.com</li>
+                <li><strong>Telegram Channel:</strong> <a href="https://t.me/invitnew" target="_blank" rel="noopener noreferrer" style="color: var(--link-color); font-weight: 700;">Join Official Telegram</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <p class="footer-policy-note">
+        &copy; 2026 ProSafe Yono Game Network. All rights reserved.
+    </p>
+
+</div>
+
+</body>
+  </html>
+  
