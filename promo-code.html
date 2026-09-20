@@ -847,13 +847,14 @@
     <script>
         // 🎯 MASTER PROMO DATABASE (Cards render directly from here)[span_0](start_span)[span_0](end_span)
         const promoGamesDatabase = [
+        
             {
                 name: "Money Rummy",
                 icon: "https://i.ibb.co/hRdQ5Vhy/compressed-image.jpg",
                 code: "moneyrummy.me",
                 appUrl: "https://moneyrummygg.com/?code=T1XZF816UJ5&t=1789035199",
                 isNew: true,
-                startTime: "2026-09-20T17:30:00"
+                startTime: "2026-09-20T12:00:00"
             },
             {
                 name: "Gold Rummy",
@@ -977,30 +978,91 @@
             }
         ];
 
-        const duration24Hours = 24 * 60 * 60 * 1000;[span_1](start_span)[span_1](end_span)
+        const duration24Hours = 24 * 60 * 60 * 1000;
+
+        function renderPromoCards() {
+            const grid = document.getElementById('dynamicPromoGrid');
+            if (!grid) return;
+            const now = new Date().getTime();
+            let htmlOutput = "";
+
+            promoGamesDatabase.forEach((game, idx) => {
+                const startTimeMs = new Date(game.startTime).getTime();
+                const expireTimeMs = startTimeMs + duration24Hours;
+                const diff = expireTimeMs - now;
+
+                // Card tabhi render hoga jab 24 hours ke andar bacha ho
+                if (diff > 0) {
+                    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+                    const hStr = hours < 10 ? '0' + hours : hours;
+                    const mStr = mins < 10 ? '0' + mins : mins;
+                    const sStr = secs < 10 ? '0' + secs : secs;
+
+                    const newBadge = game.isNew ? `
+                        <span style="position: absolute; top: -5px; right: -5px; background: #dc2626; color: #ffffff; font-size: 8px; font-weight: 900; padding: 2px 5px; border-radius: 6px; z-index: 2; box-shadow: 0 2px 4px rgba(220,38,38,0.4); text-transform: uppercase;">NEW</span>
+                    ` : '';
+
+                    htmlOutput += `
+                        <div class="promo-card" data-gamename="${game.name.toLowerCase()}" data-promocode="${game.code.toLowerCase()}">
+                            <div class="card-timer-strip">
+                                <span class="card-time-num">${hStr}</span><span class="card-time-sep">:</span>
+                                <span class="card-time-num">${mStr}</span><span class="card-time-sep">:</span>
+                                <span class="card-time-num">${sStr}</span>
+                            </div>
+
+                            <div style="position: relative; display: inline-block;">
+                                ${newBadge}
+                                <img src="${game.icon}" class="game-icon" alt="${game.name}">
+                            </div>
+                            
+                            <div class="game-title">${game.name}</div>
+                            
+                            <div class="code-box-wrapper">
+                                <span class="code-text" id="promoCodeVal_${idx}">${game.code}</span>
+                                <button class="copy-btn" onclick="copyCode('promoCodeVal_${idx}', this)">Click to Copy</button>
+                            </div>
+                            
+                            <a href="${game.appUrl}" target="_blank" class="download-btn">Download</a>
+                        </div>
+                    `;
+                }
+            });
+
+            grid.innerHTML = htmlOutput;
+            applySearchFilter();
+        }
+
+        setInterval(renderPromoCards, 1000);
+        renderPromoCards();
+        }
+
+        const duration24Hours = 24 * 60 * 60 * 1000;
 
         // Dynamic Card Rendering Logic with Custom Ordering
         function renderPromoCards() {
             const grid = document.getElementById('dynamicPromoGrid');
             if (!grid) return;
 
-            const now = new Date().getTime();[span_2](start_span)[span_2](end_span)
+            const now = new Date().getTime();
             let htmlOutput = "";
 
             promoGamesDatabase.forEach((game, idx) => {
-                const startTimeMs = new Date(game.startTime).getTime();[span_3](start_span)[span_3](end_span)
-                const expireTimeMs = startTimeMs + duration24Hours;[span_4](start_span)[span_4](end_span)
-                const diff = expireTimeMs - now;[span_5](start_span)[span_5](end_span)
+                const startTimeMs = new Date(game.startTime).getTime();
+                const expireTimeMs = startTimeMs + duration24Hours;
+                const diff = expireTimeMs - now;
 
-                // 24 ghante tak hi card live rahega[span_6](start_span)[span_6](end_span)
+                // 24 ghante tak hi card live rahega
                 if (diff > 0) {
-                    const hours = Math.floor(diff / (1000 * 60 * 60));[span_7](start_span)[span_7](end_span)
-                    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));[span_8](start_span)[span_8](end_span)
-                    const secs = Math.floor((diff % (1000 * 60)) / 1000);[span_9](start_span)[span_9](end_span)
+                    const hours = Math.floor(diff / (1000 * 60 * 60));
+                    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const secs = Math.floor((diff % (1000 * 60)) / 1000);
 
-                    const hStr = hours < 10 ? '0' + hours : hours;[span_10](start_span)[span_10](end_span)
-                    const mStr = mins < 10 ? '0' + mins : mins;[span_11](start_span)[span_11](end_span)
-                    const sStr = secs < 10 ? '0' + secs : secs;[span_12](start_span)[span_12](end_span)
+                    const hStr = hours < 10 ? '0' + hours : hours;
+                    const mStr = mins < 10 ? '0' + mins : mins;
+                    const sStr = secs < 10 ? '0' + secs : secs;
 
                     const newBadge = game.isNew ? `
                         <span class="badge-new-chip">NEW</span>
@@ -1045,40 +1107,40 @@
             applySearchFilter();
         }
 
-        setInterval(renderPromoCards, 1000);[span_13](start_span)[span_13](end_span)
-        renderPromoCards();[span_14](start_span)[span_14](end_span)
+        setInterval(renderPromoCards, 1000);
+        renderPromoCards();
 
-        // Live Search Filter Engine[span_15](start_span)[span_15](end_span)
+        // Live Search Filter Engine
         function filterPromoGames() {
-            applySearchFilter();[span_16](start_span)[span_16](end_span)
+            applySearchFilter();
         }
 
         function applySearchFilter() {
-            const query = document.getElementById('promoLiveSearch').value.toLowerCase().trim();[span_17](start_span)[span_17](end_span)
-            const clearBtn = document.getElementById('clearSearchBtn');[span_18](start_span)[span_18](end_span)
-            const cards = document.querySelectorAll('.promo-card');[span_19](start_span)[span_19](end_span)
+            const query = document.getElementById('promoLiveSearch').value.toLowerCase().trim();
+            const clearBtn = document.getElementById('clearSearchBtn');
+            const cards = document.querySelectorAll('.promo-card');
 
             if (clearBtn) {
-                clearBtn.style.display = query.length > 0 ? 'flex' : 'none';[span_20](start_span)[span_20](end_span)
+                clearBtn.style.display = query.length > 0 ? 'flex' : 'none';
             }
 
             cards.forEach(card => {
-                const name = card.getAttribute('data-gamename') || '';[span_21](start_span)[span_21](end_span)
-                const code = card.getAttribute('data-promocode') || '';[span_22](start_span)[span_22](end_span)
+                const name = card.getAttribute('data-gamename') || '';
+                const code = card.getAttribute('data-promocode') || '';
                 if (name.includes(query) || code.includes(query)) {
-                    card.style.display = 'flex';[span_23](start_span)[span_23](end_span)
+                    card.style.display = 'flex';
                 } else {
-                    card.style.display = 'none';[span_24](start_span)[span_24](end_span)
+                    card.style.display = 'none';
                 }
             });
         }
 
         function clearPromoSearch() {
-            const searchInput = document.getElementById('promoLiveSearch');[span_25](start_span)[span_25](end_span)
+            const searchInput = document.getElementById('promoLiveSearch');
             if (searchInput) {
-                searchInput.value = '';[span_26](start_span)[span_26](end_span)
-                applySearchFilter();[span_27](start_span)[span_27](end_span)
-                searchInput.focus();[span_28](start_span)[span_28](end_span)
+                searchInput.value = '';
+                applySearchFilter();
+                searchInput.focus();
             }
         }
 
@@ -1090,47 +1152,47 @@
             if (!isActive) item.classList.add('active');
         }
 
-        // Click to Copy Logic with Money Flying Animation[span_29](start_span)[span_29](end_span)
+        // Click to Copy Logic with Money Flying Animation
         function copyCode(elementId, btnElement) {
-            const codeText = document.getElementById(elementId).innerText;[span_30](start_span)[span_30](end_span)
+            const codeText = document.getElementById(elementId).innerText;
             
-            navigator.clipboard.writeText(codeText).then(() => {[span_31](start_span)[span_31](end_span)
+            navigator.clipboard.writeText(codeText).then(() => {
                 triggerMoneyFly(btnElement);
                 
-                btnElement.classList.add("copy-success");[span_32](start_span)[span_32](end_span)
-                btnElement.innerText = "COPIED! ✓";[span_33](start_span)[span_33](end_span)
-                btnElement.classList.add("copied");[span_34](start_span)[span_34](end_span)
+                btnElement.classList.add("copy-success");
+                btnElement.innerText = "COPIED! ✓"
+                btnElement.classList.add("copied");
 
                 setTimeout(() => {
-                    btnElement.innerText = "Click to Copy";[span_35](start_span)[span_35](end_span)
-                    btnElement.classList.remove("copied");[span_36](start_span)[span_36](end_span)
-                    btnElement.classList.remove("copy-success");[span_37](start_span)[span_37](end_span)
-                }, 2000);[span_38](start_span)[span_38](end_span)
+                    btnElement.innerText = "Click to Copy";
+                    btnElement.classList.remove("copied");
+                    btnElement.classList.remove("copy-success");
+                }, 2000);
             });
         }
 
         function triggerMoneyFly(button) {
-            const rect = button.getBoundingClientRect();[span_39](start_span)[span_39](end_span)
-            const centerX = rect.left + rect.width / 2;[span_40](start_span)[span_40](end_span)
-            const centerY = rect.top + rect.height / 2;[span_41](start_span)[span_41](end_span)
-            const symbols = ["💵", "💸", "🪙", "✨", "💰"];[span_42](start_span)[span_42](end_span)
+            const rect = button.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const symbols = ["💵", "💸", "🪙", "✨", "💰"];
 
-            for (let i = 0; i < 12; i++) {[span_43](start_span)[span_43](end_span)
-                const money = document.createElement("span");[span_44](start_span)[span_44](end_span)
-                money.className = "money-fly";[span_45](start_span)[span_45](end_span)
-                money.textContent = symbols[Math.floor(Math.random() * symbols.length)];[span_46](start_span)[span_46](end_span)
-                money.style.left = centerX + "px";[span_47](start_span)[span_47](end_span)
-                money.style.top = centerY + "px";[span_48](start_span)[span_48](end_span)
+            for (let i = 0; i < 12; i++) {
+                const money = document.createElement:
+                money.className = "money-fly";
+                money.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                money.style.left = centerX + "px";
+                money.style.top = centerY + "px";
 
-                money.style.setProperty("--x", Math.random() * 180 - 90);[span_49](start_span)[span_49](end_span)
-                money.style.setProperty("--y", Math.random() * 160 - 100);[span_50](start_span)[span_50](end_span)
-                money.style.setProperty("--rotate", (Math.random() * 90 - 45) + "deg");[span_51](start_span)[span_51](end_span)
+                money.style.setProperty("--x", Math.random() * 180 - 90);
+                money.style.setProperty("--y", Math.random() * 160 - 100);
+                money.style.setProperty("--rotate", (Math.random() * 90 - 45) + "deg");
 
-                document.body.appendChild(money);[span_52](start_span)[span_52](end_span)
+                document.body.appendChild(money);
 
                 setTimeout(() => {
-                    money.remove();[span_53](start_span)[span_53](end_span)
-                }, 1100);[span_54](start_span)[span_54](end_span)
+                    money.remove();
+                }, 1100);
             }
         }
     </script>
