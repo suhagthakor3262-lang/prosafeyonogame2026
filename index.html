@@ -1446,7 +1446,183 @@
             </div>
             <a href="promo-code.html" class="promo-get-btn">GET CODE</a>
         </div>
+                <!-- START: DIWA ACE AUTO COUNTDOWN LAUNCH STRIP -->
+        <style>
+            .diwa-ace-launch-strip {
+                background: linear-gradient(135deg, #0d2b1d 0%, #0e5b38 60%, #166534 100%);
+                border: 1.5px solid #22c55e;
+                border-radius: 14px;
+                padding: 10px 14px;
+                margin: 0 0 16px 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
+                box-shadow: 0 4px 14px rgba(13, 43, 29, 0.18);
+                width: 100%;
+                box-sizing: border-box;
+            }
+            .diwa-ace-left-wrap {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .diwa-ace-icon {
+                width: 44px;
+                height: 44px;
+                border-radius: 10px;
+                object-fit: cover;
+                border: 1.5px solid #fde047;
+                flex-shrink: 0;
+                background: #ffffff;
+            }
+            .diwa-ace-meta {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+            }
+            .diwa-ace-badge-row {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                margin-bottom: 2px;
+            }
+            .diwa-ace-new-tag {
+                background: #dc2626;
+                color: #ffffff;
+                font-size: 8px;
+                font-weight: 900;
+                padding: 1.5px 5px;
+                border-radius: 4px;
+                text-transform: uppercase;
+                letter-spacing: 0.4px;
+            }
+            .diwa-ace-status-text {
+                font-size: 10px;
+                font-weight: 800;
+                color: #bbf7d0;
+                letter-spacing: 0.3px;
+            }
+            .diwa-ace-title-text {
+                font-size: 13.5px;
+                font-weight: 900;
+                color: #ffffff;
+                line-height: 1.2;
+                font-family: 'Merriweather', Georgia, serif;
+            }
+            .diwa-ace-action-slot {
+                flex-shrink: 0;
+            }
 
+            /* 4-Box Flip Timer Matching Gold & Mustard Accent */
+            .diwa-ace-timer-container {
+                background: linear-gradient(180deg, #f59e0b 0%, #d97706 100%);
+                border: 1.5px solid #fbbf24;
+                padding: 3px 5px;
+                border-radius: 8px;
+                display: inline-flex;
+                align-items: center;
+                gap: 3px;
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+            }
+            .diwa-ace-time-box {
+                background: linear-gradient(180deg, #78350f 0%, #451a03 100%);
+                color: #ffffff;
+                font-size: 11px;
+                font-weight: 900;
+                min-width: 20px;
+                height: 22px;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                letter-spacing: 0.2px;
+            }
+
+            /* Live GET APK Button */
+            .diwa-ace-apk-btn {
+                background: #fde047;
+                color: #713f12;
+                font-size: 11px;
+                font-weight: 900;
+                padding: 8px 14px;
+                border-radius: 8px;
+                text-decoration: none;
+                text-transform: uppercase;
+                white-space: nowrap;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+                display: none;
+            }
+        </style>
+
+        <div class="diwa-ace-launch-strip search-item" data-name="diwa ace" id="diwaAceStripCard">
+            <div class="diwa-ace-left-wrap">
+                <img src="https://i.ibb.co/0Rmc47jq/Diwa-Ace.png" class="diwa-ace-icon" width="44" height="44" alt="Diwa Ace">
+                <div class="diwa-ace-meta">
+                    <div class="diwa-ace-badge-row">
+                        <span class="diwa-ace-new-tag">NEW</span>
+                        <span class="diwa-ace-status-text" id="diwaAceStatusTag">⏳ LAUNCHING IN</span>
+                    </div>
+                    <span class="diwa-ace-title-text">Diwa Ace</span>
+                </div>
+            </div>
+            <div class="diwa-ace-action-slot">
+                <!-- 4-Box Digital Counter [Days : Hours : Mins : Secs] -->
+                <div class="diwa-ace-timer-container" id="diwaAceTimerBox">
+                    <span class="diwa-ace-time-box" id="diwaAceDays">04</span>
+                    <span class="diwa-ace-time-box" id="diwaAceHours">03</span>
+                    <span class="diwa-ace-time-box" id="diwaAceMins">30</span>
+                    <span class="diwa-ace-time-box" id="diwaAceSecs">10</span>
+                </div>
+                <!-- Active Download Button -->
+                <a href="https://t.me/invitnew" target="_blank" rel="noopener noreferrer" id="diwaAceApkBtn" class="diwa-ace-apk-btn">GET APK</a>
+            </div>
+        </div>
+
+        <script>
+            // 🎯 Fixed Universal Target Time (4d 3h 30m 10s from now)
+            // Har user ko exact yahi se ghata hua live timer dikhega
+            const diwaAceTargetTime = new Date("2026-09-25T11:48:10").getTime();
+
+            function updateDiwaAceTimer() {
+                const timerBox = document.getElementById('diwaAceTimerBox');
+                const apkBtn = document.getElementById('diwaAceApkBtn');
+                const statusTag = document.getElementById('diwaAceStatusTag');
+
+                const bDays = document.getElementById('diwaAceDays');
+                const bHours = document.getElementById('diwaAceHours');
+                const bMins = document.getElementById('diwaAceMins');
+                const bSecs = document.getElementById('diwaAceSecs');
+
+                const now = new Date().getTime();
+                const diff = diwaAceTargetTime - now;
+
+                if (diff > 0) {
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                    if (bDays) bDays.innerText = days < 10 ? '0' + days : days;
+                    if (bHours) bHours.innerText = hours < 10 ? '0' + hours : hours;
+                    if (bMins) bMins.innerText = minutes < 10 ? '0' + minutes : minutes;
+                    if (bSecs) bSecs.innerText = seconds < 10 ? '0' + seconds : seconds;
+                } else {
+                    if (timerBox) timerBox.style.display = 'none';
+                    if (apkBtn) apkBtn.style.display = 'inline-block';
+                    if (statusTag) {
+                        statusTag.innerText = '🚀 TODAY LAUNCHED';
+                        statusTag.style.color = '#fde047';
+                    }
+                }
+            }
+
+            setInterval(updateDiwaAceTimer, 1000);
+            updateDiwaAceTimer();
+        </script>
+        <!-- END: DIWA ACE AUTO COUNTDOWN LAUNCH STRIP -->
+        
         <!-- TOP 3 PODIUM RANKING CARDS -->
         <section class="podium-rank-section" id="topPodiumSection">
             <div class="podium-header-badge-wrap">
@@ -2284,7 +2460,103 @@
 
 </section>
 <!-- END: NEW DIWA RELEASES 2026 (ARTICLE)---->
-       
+<!-- ========================================== -->
+<!-- START: YONO RUMMY 2026 FEATURED ARTICLE    -->
+<!-- ========================================== -->
+<section class="seo-article-card" id="yono-rummy-review" style="margin-top: 24px;">
+
+    <div class="seo-title-wrapper">
+        <div class="seo-emerald-bar"></div>
+        <h2 class="seo-heading-text" id="yono-rummy-guide">Yono Rummy APK Download 2026: Get Free ₹51 Bonus & Instant UPI Payout</h2>
+    </div>
+
+    <p class="seo-content-para">
+        Yadi aap online card games khelkar real cash jeetna chahte hain, toh <strong class="seo-highlight-kw">Yono Rummy APK</strong> 2026 ka sabse bharosemand aur lokpriya platform hai. Is app me aapko classic rummy ke saath-saath high-speed in-game features milte hain. Aaj hi Yono Rummy App download karein aur bina kisi rukawat ke lag-free fast gameplay ka anand lein.
+    </p>
+
+    <!-- Quick Highlights Table -->
+    <div class="specs-table-box" style="margin: 14px 0 18px 0; border: 1.5px solid var(--card-border); border-radius: 12px; overflow: hidden; background: #ffffff;">
+        <div class="specs-row" style="display: flex; justify-content: space-between; padding: 9px 14px; border-bottom: 1px solid var(--card-border); font-size: 12.5px;">
+            <span style="font-weight: 700; color: var(--text-muted);">App Name</span>
+            <span style="font-weight: 800; color: var(--forest-green);">Yono Rummy (Official Build)</span>
+        </div>
+        <div class="specs-row" style="display: flex; justify-content: space-between; padding: 9px 14px; border-bottom: 1px solid var(--card-border); font-size: 12.5px;">
+            <span style="font-weight: 700; color: var(--text-muted);">File Size</span>
+            <span style="font-weight: 800; color: var(--forest-green);">~ 40 MB (Lightweight)</span>
+        </div>
+        <div class="specs-row" style="display: flex; justify-content: space-between; padding: 9px 14px; border-bottom: 1px solid var(--card-border); font-size: 12.5px;">
+            <span style="font-weight: 700; color: var(--text-muted);">Sign-Up Bonus</span>
+            <span style="font-weight: 800; color: var(--emerald-accent);">₹51 Free (On Mobile Binding)</span>
+        </div>
+        <div class="specs-row" style="display: flex; justify-content: space-between; padding: 9px 14px; border-bottom: 1px solid var(--card-border); font-size: 12.5px;">
+            <span style="font-weight: 700; color: var(--text-muted);">Minimum Withdrawal</span>
+            <span style="font-weight: 800; color: var(--gold-accent);">₹100 Only</span>
+        </div>
+        <div class="specs-row" style="display: flex; justify-content: space-between; padding: 9px 14px; border-bottom: 1px solid var(--card-border); font-size: 12.5px;">
+            <span style="font-weight: 700; color: var(--text-muted);">Withdrawal Modes</span>
+            <span style="font-weight: 800; color: var(--forest-green);">Instant UPI & Bank Transfer</span>
+        </div>
+        <div class="specs-row" style="display: flex; justify-content: space-between; padding: 9px 14px; font-size: 12.5px;">
+            <span style="font-weight: 700; color: var(--text-muted);">User Rating</span>
+            <span style="font-weight: 800; color: var(--gold-accent);">4.7 / 5 ⭐</span>
+        </div>
+    </div>
+
+    <!-- Download Button (Mustard-Yellow Pill) -->
+    <div style="text-align: center; margin: 16px 0;">
+        <a href="yono-rummy.html" class="btn-mustard-pill" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; max-width: 320px; background: var(--btn-mustard); color: #ffffff; border: 2px solid #ffffff; border-radius: 50px; font-size: 12.5px; font-weight: 900; text-transform: uppercase; text-decoration: none; padding: 10px 0; letter-spacing: 0.5px; box-shadow: 0 4px 14px rgba(234, 179, 8, 0.45);">
+            <span>📥 GET YONO RUMMY APK NOW</span>
+        </a>
+    </div>
+
+    <!-- How to Claim Steps -->
+    <h3 style="font-family: 'Merriweather', Georgia, serif; font-size: 15px; font-weight: 900; color: var(--forest-green); margin: 18px 0 8px 0;">
+        🚀 How to Claim Your ₹51 Yono Rummy Bonus
+    </h3>
+    <div class="seo-step-list">
+        <div class="seo-step-item">
+            <span class="seo-step-dot">1.</span>
+            <span>Sabse pehle <strong>prosafeyonogame2026.com</strong> ke official <strong>[GET APK]</strong> button par click karke safe file download karein.</span>
+        </div>
+        <div class="seo-step-item">
+            <span class="seo-step-dot">2.</span>
+            <span>Phone ki Settings me jakar <em>"Unknown Sources"</em> se installation ko allow karein.</span>
+        </div>
+        <div class="seo-step-item">
+            <span class="seo-step-dot">3.</span>
+            <span>App open karein aur seedha <strong>Profile</strong> section me jakar apna 10-digit mobile number enter karein.</span>
+        </div>
+        <div class="seo-step-item">
+            <span class="seo-step-dot">4.</span>
+            <span>Aapke number par aaye SMS OTP ko fill karke verification complete karein.</span>
+        </div>
+        <div class="seo-step-item">
+            <span class="seo-step-dot">5.</span>
+            <span>Mobile number bind hote hi <strong>₹51 Free Signup Bonus</strong> aapke game wallet me turant add ho jayega.</span>
+        </div>
+    </div>
+
+    <!-- Instant Withdrawal Review -->
+    <h3 style="font-family: 'Merriweather', Georgia, serif; font-size: 15px; font-weight: 900; color: var(--forest-green); margin: 18px 0 8px 0;">
+        💰 Instant UPI Withdrawal Review
+    </h3>
+    <p class="seo-content-para">
+        Yono Rummy ki sabse badi khasiyat iska fast <strong>Instant Cashout</strong> feature hai. Players ko apni jeeti hui winning amount nikaalne ke liye ghanton intezar nahi karna padta:
+    </p>
+    <ul class="seo-step-list" style="list-style: none; padding: 0;">
+        <li class="seo-step-item">
+            <span class="seo-step-dot">✔</span>
+            <span>Aap wallet me minimum ₹100 complete hote hi instant withdrawal request submit kar sakte hain.</span>
+        </li>
+        <li class="seo-step-item">
+            <span class="seo-step-dot">✔</span>
+            <span>Winning amount direct aapke linked UPI ID (PhonePe, GPay, Paytm) ya Bank Account me 2 se 5 minute ke bheetar transfer kar di jaati hai.</span>
+        </li>
+    </ul>
+
+</section>
+<!-- END: YONO RUMMY 2026 FEATURED ARTICLE      -->
+        
     <!-- START: PLAYER GUIDE & DISCLAIMER SECTION -->
     <section class="custom-guide-section">
         <span class="guide-badge">PLAYER GUIDE</span>
