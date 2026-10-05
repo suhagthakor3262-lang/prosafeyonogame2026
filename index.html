@@ -1471,7 +1471,8 @@
             </div>
             <a href="promo-code.html" class="promo-get-btn">GET CODE</a>
         </div>
-        <!-- ================= UPCOMING GAME LIVE TARGET TIMER (ALL-IN-ONE) ================= -->
+         
+        <!-- ================= UPCOMING GAME LIVE TARGET TIMER (EXACT DATE LOCK) ================= -->
 <div class="upcoming-timer-wrapper">
     <div class="upcoming-badge">🚀 UPCOMING LAUNCH</div>
     
@@ -1618,13 +1619,13 @@
 
 <script>
     (function () {
-        // Target time set: 9 Din, 22 Ghante, 55 Minute, 45 Second
-        const targetTimestamp = 1792135013000;
+        // Target Date Set: Exactly 9 Din, 22 Ghante, 45 Minute, 45 Second
+        const targetDate = new Date("2026-10-15T12:13:38").getTime();
         const displayNode = document.getElementById("globalFixedTimer");
 
         function updateFixedClock() {
-            const currentTimestamp = new Date().getTime();
-            const distance = targetTimestamp - currentTimestamp;
+            const now = new Date().getTime();
+            const distance = targetDate - now;
 
             if (distance <= 0) {
                 displayNode.innerText = "00 : 00 : 00 : 00";
