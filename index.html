@@ -1471,7 +1471,182 @@
             </div>
             <a href="promo-code.html" class="promo-get-btn">GET CODE</a>
         </div>
+        <!-- ================= UPCOMING GAME LIVE TARGET TIMER (ALL-IN-ONE) ================= -->
+<div class="upcoming-timer-wrapper">
+    <div class="upcoming-badge">🚀 UPCOMING LAUNCH</div>
     
+    <div class="upcoming-body">
+        <img src="https://i.ibb.co/whzfVym8/6ac21b6419e01.webp" alt="Jaiho Play Upcoming" class="upcoming-thumb" width="70" height="70" loading="lazy">
+        
+        <div class="upcoming-details">
+            <h3 class="upcoming-name">Jaiho Play Official</h3>
+            <p class="upcoming-note">Official APK Launch & ₹500 Bonus</p>
+            
+            <div class="upcoming-timer-display" id="globalFixedTimer">
+                09 : 22 : 55 : 45
+            </div>
+            
+            <div class="upcoming-sub-labels">
+                <div>DAYS</div>
+                <div>HRS</div>
+                <div>MIN</div>
+                <div>SEC</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="upcoming-btn-wrap">
+        <a href="jaiho-play.html" class="upcoming-btn">
+            PRE-REGISTER / CLAIM BONUS ➔
+        </a>
+    </div>
+</div>
+
+<style>
+    .upcoming-timer-wrapper {
+        background: #ffffff;
+        border: 2px solid #e6e3d5;
+        border-radius: 16px;
+        padding: 14px;
+        margin: 14px 10px;
+        box-shadow: 0 4px 14px rgba(13, 43, 29, 0.06);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: relative;
+    }
+
+    .upcoming-badge {
+        align-self: flex-start;
+        background: #0d2b1d;
+        color: #fde047;
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 0.5px;
+        padding: 3px 8px;
+        border-radius: 8px;
+    }
+
+    .upcoming-body {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .upcoming-thumb {
+        width: 70px;
+        height: 70px;
+        border-radius: 14px;
+        object-fit: cover;
+        border: 2px solid #fcd34d;
+        flex-shrink: 0;
+    }
+
+    .upcoming-details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .upcoming-name {
+        font-family: 'Merriweather', Georgia, serif;
+        font-size: 15px;
+        font-weight: 900;
+        color: #0d2b1d;
+        margin-bottom: 2px;
+    }
+
+    .upcoming-note {
+        font-size: 11px;
+        color: #64748b;
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+
+    .upcoming-timer-display {
+        background: #edf8f2;
+        border: 1px solid #bee3d0;
+        border-radius: 8px;
+        padding: 4px 8px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 15px;
+        font-weight: 900;
+        color: #0e5b38;
+        letter-spacing: 2px;
+        display: inline-block;
+        width: fit-content;
+    }
+
+    .upcoming-sub-labels {
+        display: flex;
+        gap: 13px;
+        font-size: 7.5px;
+        font-weight: 800;
+        color: #94a3b8;
+        margin-top: 3px;
+        padding-left: 4px;
+    }
+
+    .upcoming-btn-wrap {
+        width: 100%;
+        margin-top: 2px;
+    }
+
+    .upcoming-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background: #eab308;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 900;
+        padding: 9px 0;
+        border-radius: 50px;
+        text-decoration: none;
+        border: 1.5px solid #ffffff;
+        letter-spacing: 0.5px;
+        box-shadow: 0 3px 10px rgba(234, 179, 8, 0.4);
+        transition: transform 0.2s ease;
+    }
+
+    .upcoming-btn:hover {
+        background: #ca8a04;
+        transform: translateY(-1px);
+    }
+</style>
+
+<script>
+    (function () {
+        // Target time set: 9 Din, 22 Ghante, 55 Minute, 45 Second
+        const targetTimestamp = 1792135013000;
+        const displayNode = document.getElementById("globalFixedTimer");
+
+        function updateFixedClock() {
+            const currentTimestamp = new Date().getTime();
+            const distance = targetTimestamp - currentTimestamp;
+
+            if (distance <= 0) {
+                displayNode.innerText = "00 : 00 : 00 : 00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const pad = (n) => String(n).padStart(2, '0');
+
+            displayNode.innerText = `${pad(days)} : ${pad(hours)} : ${pad(minutes)} : ${pad(seconds)}`;
+        }
+
+        updateFixedClock();
+        setInterval(updateFixedClock, 1000);
+    })();
+</script>
+<!-- ================= END UPCOMING GAME TIMER ================= -->
+        
         <!-- TOP 3 PODIUM RANKING CARDS -->
         <section class="podium-rank-section" id="topPodiumSection">
             <div class="podium-header-badge-wrap">
